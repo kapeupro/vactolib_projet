@@ -69,6 +69,11 @@ if(!empty($_POST['submitted'])) {
 <link rel="stylesheet" href="asset/css/style.css">
 <a href="index.php"><img src="asset/img/logo_vactolib.png" alt="logo vactolib"></a>
 <section id="register_form">
+    <div class="img_float1"></div>
+    <div class="img_float2"></div>
+    <div class="img_float3"></div>
+
+
     <div class="wrap2">
         <form action="" method="post" class="wrapform" novalidate>
 
