@@ -63,6 +63,13 @@ include('inc/header.php'); ?>
                         <p>Prenez rendez vous en ligne, 24h/24 et 7j/7, pour une consultation physique ou vidéo.</p>
                     </div>
                 </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="stats_bis">
+        <div class="wrap">
+            <ul>
                 <li>
                     <div class="boxs_text">
                         <p>Vactolib c'est...</p>
