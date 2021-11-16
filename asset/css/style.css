@@ -26,6 +26,12 @@ a{
     padding: 20px 0;
 }
 
+.wrap2{
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
 /*BOUTONS connexion/inscription*/
 
 
@@ -34,9 +40,9 @@ a{
 
 /*FORMULAIRE INSCRIPTION*/
 
-#register_form .wrap {max-width: 960px;width:100%;margin: 0 auto;}
-#register_form{padding:2rem 0 ;font-family: 'Nunito', sans-serif;}
-#register_form .wrap{
+
+#register_form {padding:2rem 0;}
+#register_form .wrap2{
     display:flex;
     justify-content: center;
     border:solid 1px rgba(0,0,0,0) ;
@@ -48,10 +54,11 @@ a{
 }
 #register_form .info_box{padding:1rem;}
 #register_form .error{color:red;}
-#register_form ::placeholder{font-family: 'Nunito',sans-serif;color:black;}
+#register_form ::placeholder{color:black;}
 #register_form form{
     display:flex;
     flex-flow:column nowrap;
+    align-items: center;
 }
 #form textarea {resize: none;min-height: 50px; max-height: 150px; max-width: 350px}
 #register_form input,textarea{
@@ -60,18 +67,19 @@ a{
     border-radius: 20px;
     padding: 0.5rem 1rem;
     margin-bottom:0.5rem;
-    -webkit-box-shadow: 0px 0px 5px 5px #8E8E8E;
-    box-shadow: 0px 0px 5px 5px #8E8E8E;
+    -webkit-box-shadow: 0px 0px 5px 5px #d9d9d9;
+    box-shadow: 0px 0px 5px 5px #d9d9d9;
 }
 #register_form .info_box_button input{
     text-align:center;
     padding:.6rem 6rem;
     cursor:pointer;
     color:black;
+    margin:1.2rem 0;
 }
+#register_form p{color:red;font-size: .75rem;}
 /* HEADER */
 .logo_vactolib {
-
     padding: 1rem;
 }
 .logo_vactolib img {
@@ -83,7 +91,6 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .nav_header {

@@ -7,7 +7,9 @@ require('inc/fonction.php');
 $errors = [];
 if(!empty($_POST['submitted'])) {
     // Faille xss
-    $pseudo    = cleanXss('pseudo');
+    $prenom    = cleanXss('prenom');
+    $nom    = cleanXss('nom');
+    $email     = cleanXss('email');
     $email     = cleanXss('email');
     $password  = cleanXss('password');
     $password2 = cleanXss('password2');
@@ -65,36 +67,54 @@ if(!empty($_POST['submitted'])) {
 }
 ?>
 <link rel="stylesheet" href="asset/css/style.css">
-
-
-    <a href="index.php"><img src="asset/img/logo_vactolib.png" alt="logo vactolib"></a>
-
+<a href="index.php"><img src="asset/img/logo_vactolib.png" alt="logo vactolib"></a>
 <section id="register_form">
-    <div class="wrap">
+    <div class="wrap2">
         <form action="" method="post" class="wrapform" novalidate>
+
             <div class="info_box">
-                <label for="pseudo"></label>
-                <input type="text" placeholder="Nom" id="pseudo" name="pseudo" value="<?=recupInputValue('pseudo');?>">
-                <span class="error"><?= viewError($errors,'pseudo'); ?></span>
+                <label for="nom"></label>
+                <input type="text" placeholder="Nom" id="nom" name="nom" value="<?=recupInputValue('nom');?>">
+                <span class="error"><?= viewError($errors,'nom'); ?></span>
             </div>
+            <div class="info_box">
+                <label for="prenom"></label>
+                <input type="text" placeholder="Prénom" id="prenom" name="prenom" value="<?=recupInputValue('prenom');?>">
+                <span class="error"><?= viewError($errors,'prenom'); ?></span>
+            </div>
+
+            <div class="info_box">
+                <label for="birthdate"></label>
+                <input type="text" placeholder="Date de naissance" id="birthdate" name="birthdate" value="<?=recupInputValue('birthdate');?>">
+                <span class="error"><?= viewError($errors,'birthdate'); ?></span>
+            </div>
+
+            <div class="info_box">
+                <label for="phone"></label>
+                <input type="tel" placeholder="Numéro de téléphone" pattern="[0-9]{10}" maxlength="10" id="phone" name="phone" value="<?= recupInputValue('phone'); ?>">
+                <span class="error"><?= viewError($errors,'phone'); ?></span>
+            </div>
+
             <div class="info_box">
                 <label for="email"></label>
-                <input type="email" placeholder="Email" id="email" name="email" value="<?= recupInputValue('email'); ?>">
+                <input type="email" placeholder="Email*" id="email" name="email" value="<?= recupInputValue('email'); ?>">
                 <span class="error"><?= viewError($errors,'email'); ?></span>
             </div>
+
             <div class="info_box">
                 <label for="password"></label>
-                <input type="password" placeholder="Mot de passe" id="password" name="password" value="">
+                <input type="password" placeholder="Mot de passe*" id="password" name="password" value="">
                 <span class="error"><?= viewError($errors,'password'); ?></span>
             </div>
             <div class="info_box">
                 <label for="password2"></label>
-                <input type="password" placeholder="Confirmer Mot de passe" id="password2" name="password2" value="">
+                <input type="password" placeholder="Confirmer Mot de passe*" id="password2" name="password2" value="">
             </div>
 
             <div class="info_box_button">
                 <input type="submit" name="submitted" value="ENVOYER">
             </div>
+            <p>Les champs avec * sont requis</p>
         </form>
     </div>
 </section>
