@@ -112,7 +112,6 @@ a{
     height: 20px;
     background: black;
 }
-
 /*SECTION ACCUEIL*/
 .container_accueil{
     display: flex;
@@ -161,7 +160,35 @@ a{
     text-align: center;
     padding-top: 0.7rem;
 }
+/*SECTION STATS*/
+#stats{
+    padding-top: 4rem;
+}
+#stats .wrap{}
+#stats .tache{
+    background-image: url("../img/tache.png");
+}
+#stats .title{
+    text-align: center;
+}
+#stats ul.boxs{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    padding: 4rem 0 4rem 0;
+    gap: 2rem;
+}
+#stats ul.boxs li {
+    width: 23%;
 
+}
+#stats ul.boxs .img img{
+    width: 100%
+}
+#stats ul.boxs li .boxs_text{
+    padding-top: 1.5rem;
+    align-content: center;
+}
 /*FOOTER*/
 #footer{
     display: flex;
