@@ -4,8 +4,8 @@ require('inc/fonction.php');
 require('inc/request.php');
 
 
-echo 'La page Dev avant de envoyer en master';
-echo 'mettre juste les trucs qui marchent :D';
+echo'<a href="register.php"> S\'inscrire </a>';
+
 
 
 include('inc/header.php'); ?>
@@ -25,3 +25,5 @@ include('inc/header.php'); ?>
         </div>
     </div>
 </section>
+
+
