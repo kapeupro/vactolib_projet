@@ -26,6 +26,12 @@ a{
     padding: 20px 0;
 }
 
+.wrap2{
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
 /*BOUTONS connexion/inscription*/
 
 
@@ -33,25 +39,26 @@ a{
 
 
 /*FORMULAIRE INSCRIPTION*/
-
-#register_form .wrap {max-width: 960px;width:100%;margin: 0 auto;}
-#register_form{padding:2rem 0 ;font-family: 'Nunito', sans-serif;}
-#register_form .wrap{
+#register_form {padding:1rem 0 5rem 0; position:relative;}
+#register_form .img_float1{background: url("../img/img_background_deco.png") no-repeat ;background-size:cover;width:250px;height:250px; position:absolute;top:250;left:0;}
+#register_form .img_float2{background: url("../img/tache-4.png") no-repeat ;width:300px;height:350px; position:absolute; bottom:100;right:0;}
+#register_form .wrap2{
     display:flex;
     justify-content: center;
     border:solid 1px rgba(0,0,0,0) ;
     border-radius: 50px;
-    width:50%;
+    width:35%;
     padding:2rem 0;
     -webkit-box-shadow: 0px 1px 14px 23px ;
     box-shadow: 0px 1px 14px 23px #F2DFE6;
 }
 #register_form .info_box{padding:1rem;}
 #register_form .error{color:red;}
-#register_form ::placeholder{font-family: 'Nunito',sans-serif;color:black;}
+#register_form ::placeholder{color:black;}
 #register_form form{
     display:flex;
     flex-flow:column nowrap;
+    align-items: center;
 }
 #form textarea {resize: none;min-height: 50px; max-height: 150px; max-width: 350px}
 #register_form input,textarea{
@@ -60,18 +67,22 @@ a{
     border-radius: 20px;
     padding: 0.5rem 1rem;
     margin-bottom:0.5rem;
-    -webkit-box-shadow: 0px 0px 5px 5px #8E8E8E;
-    box-shadow: 0px 0px 5px 5px #8E8E8E;
+    -webkit-box-shadow: 0px 0px 5px 5px #d9d9d9;
+    box-shadow: 0px 0px 5px 5px #d9d9d9;
 }
 #register_form .info_box_button input{
     text-align:center;
     padding:.6rem 6rem;
     cursor:pointer;
     color:black;
+    margin:1.2rem 0;
 }
+#register_form p{color:red;font-size: .75rem;}
+.logo {display:flex;justify-content: center;margin:2rem;}
+
+
 /* HEADER */
 .logo_vactolib {
-
     padding: 1rem;
 }
 .logo_vactolib img {
@@ -83,7 +94,6 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .nav_header {
@@ -102,4 +112,116 @@ a{
     height: 20px;
     background: black;
 }
+/*SECTION ACCUEIL*/
+.container_accueil{
+    display: flex;
+    flex-direction: row;
+}
+.items_accueil {
+    display: flex;
+    align-items: center;
+    padding-top: 5rem;
+    justify-content: center;
+}
+.items_accueil_p {
+    display: flex;
+    flex-direction: column;
+}
 
+.items_a {
+    display: flex;
+}
+.items_a a{
+    font-size: 18px;
+    color: black;
+}
+.p_items_a p {
+    font-size: 28px;
+}
+.items_groupe img {
+    width: 100%;
+}
+.items_groupe {
+    width: 45%;
+}
+.items_accueil p {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+}
+.items_accueil_p {
+    width: 45%;
+}
+.items_accueil a {
+    background: var(--rose);
+    border-radius: 30px;
+    width: 177px;
+    height: 48px;
+    text-align: center;
+    padding-top: 0.7rem;
+}
+/*SECTION STATS*/
+#stats{
+    padding-top: 4rem;
+}
+#stats .wrap{}
+#stats .tache{
+    background-image: url("../img/tache.png");
+}
+#stats .title{
+    text-align: center;
+}
+#stats ul.boxs{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    padding: 4rem 0 4rem 0;
+    gap: 2rem;
+}
+#stats ul.boxs li {
+    width: 23%;
+
+}
+#stats ul.boxs .img img{
+    width: 100%
+}
+#stats ul.boxs li .boxs_text{
+    padding-top: 1.5rem;
+    align-content: center;
+}
+/*FOOTER*/
+#footer{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    padding: 3rem 7rem 2rem 7rem;
+}
+
+#footer .footer__container{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+}
+
+#footer .footer__logo{
+    width: 25%;
+}
+#footer .footer__logo img{
+    width: 100%;
+}
+
+#footer .footer__copyright{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+#footer .footer__copyright ul {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: .7rem;
+}
+#footer .footer__copyright ul li i{
+    font-size: 1.5rem;
+    color: black;
+}
