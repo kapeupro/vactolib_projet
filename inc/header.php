@@ -19,7 +19,9 @@
         <nav>
             <ul class="nav_header">
                 <li><a href="#">vie privée</a></li>
+                <li class="ligne_black"></li>
                 <li><a href="register.php">inscription</a></li>
+                <li class="ligne_black"></li>
                 <li><a href="#">connexion</a></li>
             </ul>
         </nav>

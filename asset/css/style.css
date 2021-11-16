@@ -73,7 +73,10 @@ a{
 /* HEADER */
 .logo_vactolib {
 
-    padding: 0.4rem;
+    padding: 1rem;
+}
+.logo_vactolib img {
+    width: 70%;
 }
 
 #container_header {
@@ -82,10 +85,20 @@ a{
     justify-content: space-between;
     align-items: center;
 }
+
 .nav_header {
     display: flex;
     flex-direction: row;
 }
-.items_header {
-    padding-right: 1rem;
+.items_header{
+    padding-right: 2rem;
+}
+.items_header ul{
+    display: flex;
+    gap: 1rem;
+}
+.nav_header .ligne_black {
+    width: 2px;
+    height: 20px;
+    background: black;
 }
