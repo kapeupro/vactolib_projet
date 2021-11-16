@@ -13,7 +13,7 @@
 
 <header id="container_header">
     <div class="logo_vactolib">
-        <img src="asset/img/unknown.png" alt="logo_vactolib">
+        <img src="asset/img/logo_vactolib.png" alt="logo_vactolib">
     </div>
     <div class="items_header">
         <nav>

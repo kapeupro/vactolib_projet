@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 
@@ -40,3 +41,36 @@
     font-family: 'sfrbold',serif;
     color:black;
 }
+=======
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+:root {
+    --bleu : E8F6FC;
+    --rose : F2DFE6;
+    --vert_clair : E3EDF1;
+}
+
+.wrap{
+    max-width: 1040px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+    font-family: 'Lunito', sans-serif;
+}
+
+/*BOUTONS connexion/inscription*/
+
+
+/*Input*/
+>>>>>>> 37a10aedcb405e23454e780618d0c5905b175dab
