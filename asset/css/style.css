@@ -13,9 +13,9 @@ a{
 }
 
 :root {
-    --bleu : E8F6FC;
-    --rose : F2DFE6;
-    --vert_clair : E3EDF1;
+    --bleu : #E8F6FC;
+    --rose : #F2DFE6;
+    --vert_clair : #E3EDF1;
 }
 
 .wrap{
@@ -69,4 +69,21 @@ a{
     cursor:pointer;
     font-family: 'sfrbold',serif;
     color:black;
+}
+/* HEADER */
+.logo_vactolib {
+    background: orange;
+    padding: 1rem;
+}
+
+#container_header {
+    background: var(--rose);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav_header {
+    display: flex;
+    flex-direction: row;
+
 }
