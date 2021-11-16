@@ -9,3 +9,6 @@ echo 'mettre juste les trucs qui marchent :D';
 
 
 include('inc/header.php');
+
+
+
