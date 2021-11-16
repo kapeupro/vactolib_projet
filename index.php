@@ -9,9 +9,9 @@ require('inc/request.php');
 
 include('inc/header.php'); ?>
     <section>
-        <div class="container">
+        <div class="container_accueil">
             <div class="wrap">
-                <div class="items">
+                <div class="items_accueil">
                     <p>Vactolib est une application
                         pilotée par l'État pour vous retrouver dans vos différents vaccins.</p>
                     <a href="#">Inscription</a>
