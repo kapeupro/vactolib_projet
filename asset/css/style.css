@@ -113,41 +113,6 @@ a{
     background: black;
 }
 
-
-/*FOOTER*/
-#footer{
-    display: flex;
-    flex-flow: column nowrap;
-    gap: 1rem;
-    padding: 1rem;
-}
-
-#footer .footer__container{
-    display: flex;
-    justify-content: space-between;
-    flex-flow: row nowrap;
-    padding: 0 7rem;
-}
-
-#footer .footer__logo{
-    width: 25%;
-}
-#footer .footer__logo img{
-    width: 100%;
-}
-
-#footer .footer__copyright{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    padding: 0 2rem;
-}
-#footer .footer__copyright ul {
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 1rem;
-}
-
 /*SECTION ACCUEIL*/
 .container_accueil{
     display: flex;
@@ -195,4 +160,41 @@ a{
     height: 48px;
     text-align: center;
     padding-top: 0.7rem;
+}
+
+/*FOOTER*/
+#footer{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    padding: 3rem 7rem 2rem 7rem;
+}
+
+#footer .footer__container{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+}
+
+#footer .footer__logo{
+    width: 25%;
+}
+#footer .footer__logo img{
+    width: 100%;
+}
+
+#footer .footer__copyright{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+#footer .footer__copyright ul {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: .7rem;
+}
+#footer .footer__copyright ul li i{
+    font-size: 1.5rem;
+    color: black;
 }
