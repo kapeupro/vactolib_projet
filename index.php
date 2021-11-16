@@ -10,10 +10,10 @@ echo 'mettre juste les trucs qui marchent :D';
 
 include('inc/header.php'); ?>
 
-<section>
-    <div class="container">
+<section id="section_accueil">
+    <div class="container_accueil">
         <div class="wrap">
-            <div class="items">
+            <div class="items_accueil">
                 <p>Vactolib est une application
                     pilotée par l'État pour vous retrouver dans vos différents vaccins.</p>
                 <a href="#">Inscription</a>
