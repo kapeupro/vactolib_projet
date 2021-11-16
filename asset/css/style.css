@@ -48,7 +48,7 @@ a{
 }
 #register_form .info_box{padding:1rem;}
 #register_form .error{color:red;}
-#register_form ::placeholder{font-family: 'sfrbold',serif;color:black;}
+#register_form ::placeholder{font-family: 'Nunito',sans-serif;color:black;}
 #register_form form{
     display:flex;
     flex-flow:column nowrap;
@@ -67,7 +67,6 @@ a{
     text-align:center;
     padding:.6rem 6rem;
     cursor:pointer;
-    font-family: 'sfrbold',serif;
     color:black;
 }
 /* HEADER */
@@ -103,3 +102,5 @@ a{
     height: 20px;
     background: black;
 }
+
+/**/

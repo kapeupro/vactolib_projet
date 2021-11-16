@@ -16,7 +16,7 @@
 
 <header id="container_header">
     <div class="logo_vactolib">
-        <img src="asset/img/logo_vactolib.png" alt="logo_vactolib">
+        <a href="index.php"><img src="asset/img/logo_vactolib.png" alt="logo_vactolib"></a>
     </div>
     <div class="items_header">
         <nav>
