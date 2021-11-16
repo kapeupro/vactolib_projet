@@ -39,7 +39,7 @@ a{
 
 
 /*FORMULAIRE INSCRIPTION*/
-#register_form {padding:10rem 0; position:relative;}
+#register_form {padding:1rem 0 5rem 0; position:relative;}
 #register_form .img_float1{background: url("../img/img_background_deco.png") no-repeat ;background-size:cover;width:250px;height:250px; position:absolute;top:250;left:0;}
 #register_form .img_float2{background: url("../img/tache-4.png") no-repeat ;width:300px;height:350px; position:absolute; bottom:100;right:0;}
 #register_form .wrap2{
@@ -78,6 +78,9 @@ a{
     margin:1.2rem 0;
 }
 #register_form p{color:red;font-size: .75rem;}
+.logo {display:flex;justify-content: center;margin:2rem;}
+
+
 /* HEADER */
 .logo_vactolib {
     padding: 1rem;
