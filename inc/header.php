@@ -11,3 +11,17 @@
 <body>
 
 
+<header id="container_header">
+    <div class="logo_vactolib">
+        <img src="asset/img/unknown.png" alt="logo_vactolib">
+    </div>
+    <div class="items_header">
+        <nav>
+            <ul class="nav_header">
+                <li><a href="#">vie privée</a></li>
+                <li><a href="#">inscription</a></li>
+                <li><a href="#">connexion</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
