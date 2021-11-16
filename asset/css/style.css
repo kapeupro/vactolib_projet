@@ -72,8 +72,8 @@ a{
 }
 /* HEADER */
 .logo_vactolib {
-    background: orange;
-    padding: 1rem;
+
+    padding: 0.4rem;
 }
 
 #container_header {
@@ -85,5 +85,7 @@ a{
 .nav_header {
     display: flex;
     flex-direction: row;
-
+}
+.items_header {
+    padding-right: 1rem;
 }
