@@ -17,6 +17,7 @@ a{
     --bleu : #E8F6FC;
     --rose : #F2DFE6;
     --vert_clair : #E3EDF1;
+    --noir : #000000;
 }
 
 .wrap{
@@ -100,6 +101,9 @@ a{
     display: flex;
     flex-direction: row;
 }
+.nav_header a {
+    color: var(--noir);
+}
 .items_header{
     padding-right: 2rem;
 }
@@ -130,13 +134,14 @@ a{
 
 .items_a {
     display: flex;
+    gap: 2rem;
 }
 .items_a a{
     font-size: 18px;
     color: black;
 }
 .p_items_a p {
-    font-size: 28px;
+    font-size: 34px;
 }
 .items_groupe img {
     width: 100%;
@@ -159,6 +164,15 @@ a{
     height: 48px;
     text-align: center;
     padding-top: 0.7rem;
+}
+/*Section STATS BIS*/
+#stats_bis ul {
+    display: flex;
+    justify-content: space-around;
+}
+/*Donnes_secure*/
+.container_secure{
+    background-color: var(--rose);
 }
 /*SECTION STATS*/
 #stats{
