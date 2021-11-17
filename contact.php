@@ -30,6 +30,30 @@ if(!empty($_POST['submitted']))
 debug($errors);
 include('inc/header.php');
 ?>
+    <section id="contact_form">
+
+    <form method="post">
+        <label>Email</label>
+        <input type="email" name="email" required><br>
+        <label>Message</label>
+        <textarea name="message" required></textarea><br>
+        <input type="submit">
+    </form>
+    <?php
+    if (isset($_POST['message'])) {
+        $position_arobase = strpos($_POST['email'], '@');
+        if ($position_arobase === false)
+            echo '<p>Votre email doit comporter un arobase.</p>';
+        else {
+            $retour = mail('jules@free.fr', 'Envoi depuis la page Contact', $_POST['message'], 'From: ' . $_POST['email']);
+            if($retour)
+                echo '<p>Votre message a été envoyé.</p>';
+            else
+                echo '<p>Erreur.</p>';
+        }
+    }
+    ?>
+    </section>
 
 
 <?php

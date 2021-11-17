@@ -63,6 +63,9 @@ if(!empty($_POST['submitted'])) {
                 <div class="info_box_button">
                     <input type="submit" name="submitted" value="ENVOYER">
                 </div>
+                <div>
+                    <a href="missingpassword.php">Mot de passe oublié ?</a>
+                </div>
 
             </form>
         </div>
