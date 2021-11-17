@@ -211,36 +211,8 @@ if(!empty($_SESSION)){
             <div class="tache4">
                 <p>Vactolib c'est...</p>
             </div>
-            <ul>
-                <li>
-                    <div class="boxs_tache1"></div>
-                    <div class="boxs_text">
-                        <p>Vactolib c'est...</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="boxs_tache2"></div>
-                    <div class="boxs_text">
-                        <p><?php count(getUsers()) ?>millions de patients</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="boxs_tache3"></div>
-                    <div class="boxs_text">
-                        <p>150 00 personnels <br>de santé</br></p>
-                    </div>
-                </li>
-                <li>
-                    <div class="boxs_tache4"></div>
-                    <div class="boxs_text">
-                        <p>98% d'avis positifs</p>
-                    </div>
-                </li>
-            </ul>
         </div>
     </section>
-
-
 
     <section id="donnes_secure">
         <div class="wrap">
