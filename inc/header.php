@@ -22,12 +22,21 @@
     <div class="items_header">
         <nav>
             <ul class="nav_header">
-                <li><a href="#">vie privée</a></li>
+                <?php if(!empty($_SESSION)){ ?>
+                <li><a href="#">Mon Carnet</a></li>
                 <li class="ligne_black"></li>
-                <li><a href="register.php">inscription</a></li>
+                <li><a href="#">Profil</a></li>
                 <li class="ligne_black"></li>
-                <li><a href="#">connexion</a></li>
+                <li><a href="logout.php">Déconnexion</a></li>
+                <?php } else { ?>
+                <li><a href="#">Vie privée</a></li>
+                <li class="ligne_black"></li>
+                <li><a href="register.php">Inscription</a></li>
+                <li class="ligne_black"></li>
+                <li><a href="login.php">Connexion</a></li>
+                <?php } ?>
             </ul>
         </nav>
     </div>
 </header>
+
