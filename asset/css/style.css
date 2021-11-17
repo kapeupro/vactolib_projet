@@ -97,6 +97,8 @@ a{
 }
 .logo_vactolib img:hover{
     opacity: 70%;
+    transform: scale(0.5);
+    transition: .5s;
 }
 #container_header {
     background: var(--rose);
