@@ -42,6 +42,8 @@ if(!empty($_SESSION)){
         </div>
         </section>
 
+        <div class="separator"></div>
+
         <section id="stats">
             <div class="wrap">
                 <div class="tache"></div>
@@ -67,7 +69,7 @@ if(!empty($_SESSION)){
                     </li>
                     <li>
                         <div class="img">
-                            <img src="asset/img/pq_vactolib1.png" alt="">
+                            <img src="asset/img/pq_vactolib3.png" alt="img3">
                         </div>
                         <div class="boxs_text">
                             <p>Accédez aux disponibilités de dizaines de milliers de professionnels de santé.</p>
@@ -91,13 +93,13 @@ if(!empty($_SESSION)){
                     <p>Vactolib c'est...</p>
                 </div>
                 <div class="tache2">
-                    <p>Vactolib c'est...</p>
+                    <p>30 millions de patients</p>
                 </div>
                 <div class="tache3">
-                    <p>Vactolib c'est...</p>
+                    <p>150 00 personnels de santé</p>
                 </div>
                 <div class="tache4">
-                    <p>Vactolib c'est...</p>
+                    <p>98% d'avis positifs</p>
                 </div>
             </div>
         </section>
@@ -174,7 +176,7 @@ if(!empty($_SESSION)){
                 </li>
                 <li>
                     <div class="img">
-                        <img src="asset/img/pq_vactolib2.png" alt="img3">
+                        <img src="asset/img/pq_vactolib3.png" alt="img3">
                     </div>
                     <div class="boxs_text">
                         <p>Accédez aux disponibilités de dizaines de milliers de professionnels de santé.</p>
