@@ -127,7 +127,6 @@ a{
 }
 .logo_vactolib img:hover{
     opacity: 70%;
-    transform: scale(0.5);
     transition: .5s;
 }
 .logo_vactolib {padding: 1rem;}
@@ -268,7 +267,7 @@ a{
 }
 /*SECTION STATS*/
 #stats{
-    padding-top: 4rem;
+    padding: 4rem 0 5rem 0;
 }
 #stats .wrap{}
 #stats .tache{
@@ -276,6 +275,7 @@ a{
 }
 #stats .title{
     text-align: center;
+    margin-bottom: 2rem;
 }
 #stats ul.boxs{
     display: flex;
