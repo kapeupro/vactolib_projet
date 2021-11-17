@@ -5,30 +5,26 @@
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
 }
-
 ul, li{
     list-style: none;
 }
 a{
     text-decoration: none;
 }
-
 :root {
-    --rose : #E8F6FC;
-    --bleu : #F2DFE6;
+    --bleu : #e8f6fc;
+    --rose :#E8F6FC ;
     --vert_clair : #E3EDF1;
     --noir : #000000;
     --gris : #8d8989;
     --roser : #EFE9EE;
 }
-
 .wrap{
     max-width: 1040px;
     width: 100%;
     margin: 0 auto;
     padding: 20px 0;
 }
-
 .wrap2{
     max-width: 800px;
     width: 100%;
@@ -292,7 +288,7 @@ a{
     position:absolute;
     bottom:0;
     left:0;
-    background: var(--rose);
+    background: var(--bleu);
 }
 .wave {
     background: url(../img/wave_animation2.svg) repeat-x;
@@ -303,13 +299,11 @@ a{
     animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
     transform: translate3d(0, 0, 0);
 }
-
 .wave:nth-of-type(2) {
     top: -175px;
     animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
     opacity: 1;
 }
-
 @keyframes wave {
     0% {
         margin-left: 0;
@@ -318,7 +312,6 @@ a{
         margin-left: -1600px;
     }
 }
-
 @keyframes swell {
     0%, 100% {
         transform: translate3d(0,-25px,0);
@@ -327,8 +320,6 @@ a{
         transform: translate3d(0,5px,0);
     }
 }
-
-
 #footer .footer__container{
     display: flex;
     justify-content: space-between;
@@ -371,8 +362,14 @@ a{
 }
 #footer .footer__copyright ul li i{
     font-size: 1.5rem;
-    color: var(--gris);
+    color: var(--noir);
 }
-#footer .footer__copyright ul li i:hover{
-    color: white;
+#footer .footer__copyright ul li i.fa-facebook-square:hover{
+    color: #21529C;
+}
+#footer .footer__copyright ul li i.fa-twitter-square:hover{
+    color: #46C6FA;
+}
+#footer .footer__copyright ul li i.fa-instagram:hover{
+    color: #F7288B;
 }
