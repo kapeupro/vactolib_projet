@@ -13,8 +13,8 @@ function getUsers(){
     return $query->fetchAll();
 }
 
-debug(getUsers());
-debug($_SESSION);
+//debug(getUsers());
+//debug($_SESSION);
 if(!empty($_SESSION)){
     include('inc/header.php'); ?>
     <section>
