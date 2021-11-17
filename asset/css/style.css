@@ -161,6 +161,8 @@ a{
 .container_accueil{
     display: flex;
     flex-direction: row;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
 }
 .separator {
     background: url("../img/separateur_acceuil.svg") no-repeat;
