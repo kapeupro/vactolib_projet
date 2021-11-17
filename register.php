@@ -14,8 +14,11 @@ if(!empty($_POST['submitted'])) {
     $email     = cleanXss('email');
     $password  = cleanXss('password');
     $password2 = cleanXss('password2');
+
     // Validation
     $errors = mailValidation($errors,$email,'email');
+    $errors=textValidation($errors,$nom,'nom',10);
+    $errors=textValidation($errors,$prenom,'prenom',2,80);
 
     if(empty($errors['email'])) {
         $sql = "SELECT * FROM vactolib_user WHERE email = :email";

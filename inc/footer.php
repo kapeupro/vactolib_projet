@@ -30,7 +30,7 @@
         <div class="footer__contact">
             <h3>Contact</h3>
             <ul>
-                <li><a href="#">Nous contacter</a></li>
+                <li><a href="contact.php">Nous contacter</a></li>
             </ul>
         </div>
     </div>

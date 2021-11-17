@@ -50,13 +50,14 @@ if(!empty($_POST['submitted'])) {
 
                 <div class="info_box">
                     <label for="login"></label>
-                    <input type="text" placeholder="Mail / Numéro" id="login" name="login" value="<?= recupInputValue('login'); ?>">
+                    <input type="text" placeholder="Mail" id="login" name="login" value="<?= recupInputValue('login'); ?>">
                     <span class="error"><?= viewError($errors,'login'); ?></span>
                 </div>
 
                 <div class="info_box">
                     <label for="password"></label>
                     <input type="password" placeholder="Mot de passse" id="password" name="password" value="">
+                    <span class="error"><?= viewError($errors,'password'); ?></span>
                 </div>
 
                 <div class="info_box_button">
