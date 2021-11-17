@@ -17,7 +17,7 @@ if(!empty($_POST['submitted'])) {
 
     // Validation
     $errors = mailValidation($errors,$email,'email');
-    $errors=textValidation($errors,$nom,'nom',10);
+    $errors=textValidation($errors,$nom,'nom',2);
     $errors=textValidation($errors,$prenom,'prenom',2,80);
 
     if(empty($errors['email'])) {

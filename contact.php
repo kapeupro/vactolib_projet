@@ -1,11 +1,11 @@
 <?php
 include('inc/fonction.php');
-include('inc/header.php');
+
 
 //echo $_GET['nom'];
 //echo $_GET['prenom'];
 //debut($_GET);
-$errors=array();
+//$errors=array();
 
 
 //existe et n'est pas vide
@@ -28,37 +28,13 @@ if(!empty($_POST['submitted']))
 
     //If no error
     if(count($errors)==0){
-        die('ok ici aucune error cest good');
+
     }
 }
 debug($errors);
+include('inc/header.php');
 ?>
 
-    <h1>Les formulaires</h1>
-
-    <form action="" method="post" novalidate>
-        <label for="nom">Nom *</label>
-        <input type="text" name="nom" id="nom" value="<?php recupInputeValue('nom'); ?>">
-        <span class="error"> <?php viewError($errors,'nom');?></span>
-
-        <label for="prenom">Prénom *</label>
-        <input type="text" name="prenom" id="prenom" value="<?php recupInputeValue('prenom'); ?>" >
-        <span class="error"> <?php viewError($errors,'prenom');?></span>
-
-        <label for="email">Email *</label>
-        <input type="text" name="email" id="email" value="<?php recupInputeValue('prenom'); ?>">
-        <span class="error"> <?php viewError($errors,'email'); ?></span>
-        <br/>
-        <br/>
-
-        <label for="message">Message :</label>
-        <textarea name="message" id="message" cols="30" rows="10"><?php if (!empty($_POST['message'])) {echo $_POST['message']; } ?></textarea>
-        <span class="error"> <?php if(!empty($errors['message'])){echo$errors['message'];} ?></span>
-        <br/>
-
-        <input type="submit" name="submitted">
-
-    </form>
 
 <?php
 include('inc/footer.php');
