@@ -277,7 +277,7 @@ a{
     color: var(--noir);
 }
 #footer a:hover{
-    color: white;
+    color: #f6a2f6;
 }
 
 /*WAVE*/
