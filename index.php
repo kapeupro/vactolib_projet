@@ -15,7 +15,7 @@ include('inc/header.php'); ?>
                     <div class="items_accueil_p">
                         <div class="p_items_a">
                             <p>Vactolib est une application <br>
-                                pilotée par l'État pour vous retrouver <br> dans vos différents vaccins.</p>
+                                pilotée par l'État pour vous retrouver dans vos différents vaccins.</p>
                         </div>
                         <div class="items_a">
                             <a href="#">Inscription</a>
@@ -77,7 +77,7 @@ include('inc/header.php'); ?>
         <div class="wrap">
             <ul>
                 <li>
-                    <div class="boxs_text">
+                    <div class="boxs_text_1">
                         <p>Vactolib c'est...</p>
                     </div>
                 </li>
@@ -101,11 +101,13 @@ include('inc/header.php'); ?>
     </section>
 
     <section id="donnes_secure">
-        <div class="container">
+        <div class="wrap">
+        <div class="container_secure">
             <div class="ds_text">
                 <h2>Chez Vactolib votre Santé, C’est aussi vos données.</h2>
                 <p>La confidentialité de vos informations personnelles est une priorité absolue pour Vactolib et guide notre action au quotidien.</p>
             </div>
+        </div>
         </div>
     </section>
 
