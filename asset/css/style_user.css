@@ -14,8 +14,8 @@ a{
 }
 
 :root {
-    --bleu : #E8F6FC;
-    --rose : #F2DFE6;
+    --rose : #E8F6FC;
+    --bleu : #F2DFE6;
     --vert_clair : #E3EDF1;
     --noir : #000000;
     --gris : #8d8989;
@@ -37,14 +37,13 @@ a{
 }
 /*BOUTONS connexion/inscription*/
 .items_accueil a {
-    background: var(--bleu);
+    background: var(--rose);
     border-radius: 30px;
     width: 177px;
     height: 48px;
     text-align: center;
     padding-top: 0.7rem;
 }
-
 /*Input*/
 
 
@@ -89,8 +88,6 @@ a{
 }
 #register_form p{color:red;font-size: .75rem;}
 .logo {display:flex;justify-content: center;margin:2rem;}
-
-
 /* HEADER */
 .logo_vactolib {
     padding: 1rem;
@@ -102,7 +99,7 @@ a{
     opacity: 70%;
 }
 #container_header {
-    background: var(--bleu);
+    background: var(--rose);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -134,6 +131,12 @@ a{
     display: flex;
     flex-direction: row;
 }
+.separator {
+    background: url("../img/separateur_acceuil.svg") no-repeat;
+    background-size: cover;
+    height: 12rem;
+    justify-content: center;
+}
 .items_accueil {
     display: flex;
     align-items: center;
@@ -144,7 +147,6 @@ a{
     display: flex;
     flex-direction: column;
 }
-
 .items_a {
     display: flex;
     gap: 2rem;
@@ -174,7 +176,7 @@ a{
     width: 45%;
 }
 .items_accueil a {
-    background: var(--bleu);
+    background: var(--rose);
     border-radius: 30px;
     width: 177px;
     height: 48px;
@@ -182,34 +184,35 @@ a{
     padding-top: 0.7rem;
 }
 /*Section STATS BIS*/
-#stats_bis {
-    margin-bottom: 40px;
-    margin-top: 40px;
-    padding-top: 2rem;
-}
-#stats_bis ul {
+#stats_chiffre .wrap{
     display: flex;
+    flex-flow: row nowrap;
     justify-content: space-between;
-    font-size: 22px;
+    gap: 2rem;
 }
-#stats_bis .boxs_tache1 {
-    background: url(../img/tache-1.png) no-repeat;width: 300px;height: 200px;position: absolute;left: -10px;top: 1050px;
+#stats_chiffre .tache1{
+    background: url("../img/tache1.svg") no-repeat;
+    background-size: cover;
 }
-#stats_bis .boxs_tache2 {
-    background: url(../img/tache-2.png) no-repeat;width: 300px;height: 200px;position: absolute;left: 335px;top: 1050px;
+#stats_chiffre .tache2{
+    background: url("../img/tache2.svg") no-repeat;
+    background-size: cover;
 }
-#stats_bis .boxs_tache3 {
-    background: url(../img/tache-3.png) no-repeat;width: 300px;height: 200px;position: absolute;left: 650px;top: 1050px;
+#stats_chiffre .tache3{
+    background: url("../img/tache3.svg") no-repeat;
+    background-size: cover;
 }
-#stats_bis .boxs_tache4 {
-    background: url(../img/tache-4.png) no-repeat;width: 300px;height: 200px;position: absolute;left: 915px;top: 1050px;
+#stats_chiffre .tache4{
+    background: url("../img/tache4.svg") no-repeat;
+    background-size: cover;
 }
-#stats_bis .boxs_text{
-    position: relative;
+#stats_chiffre div{}
+#stats_chiffre p{
+    padding: 5rem;
 }
 /*Donnes_secure*/
 .container_secure{
-    background-color: var(--bleu);
+    background-color: var(--roser);
     padding: 3rem;
 }
 .ds_text {
@@ -268,14 +271,14 @@ a{
     padding: 10rem 7rem 2rem 7rem;
     position: relative;
     overflow: hidden;
-    color: var(--noir);
+    color: var(--gris);
 }
 #footer h3{
     padding-bottom: 1rem;
     font-size: 23px;
 }
 #footer a{
-    color: var(--noir);
+    color: var(--gris);
 }
 #footer a:hover{
     color: white;
@@ -289,7 +292,7 @@ a{
     position:absolute;
     bottom:0;
     left:0;
-    background: var(--bleu);
+    background: var(--rose);
 }
 .wave {
     background: url(../img/wave_animation2.svg) repeat-x;
@@ -368,8 +371,8 @@ a{
 }
 #footer .footer__copyright ul li i{
     font-size: 1.5rem;
-    color: var(--noir);
+    color: var(--gris);
 }
 #footer .footer__copyright ul li i:hover{
-    color: var(--gris);
+    color: white;
 }
