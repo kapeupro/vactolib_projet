@@ -197,8 +197,20 @@ if(!empty($_SESSION)){
         </div>
     </section>
 
-    <section id="stats_bis">
+    <section id="stats_chiffre">
         <div class="wrap">
+            <div class="tache1">
+                <p>Vactolib c'est...</p>
+            </div>
+            <div class="tache2">
+                <p>Vactolib c'est...</p>
+            </div>
+            <div class="tache3">
+                <p>Vactolib c'est...</p>
+            </div>
+            <div class="tache4">
+                <p>Vactolib c'est...</p>
+            </div>
             <ul>
                 <li>
                     <div class="boxs_tache1"></div>
@@ -227,6 +239,8 @@ if(!empty($_SESSION)){
             </ul>
         </div>
     </section>
+
+
 
     <section id="donnes_secure">
         <div class="wrap">
