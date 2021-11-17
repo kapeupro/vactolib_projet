@@ -154,6 +154,7 @@ a{
 }
 .items_a a:hover{
     opacity: 70%;
+    transition: .5s
 }
 .items_a a{
     font-size: 18px;
@@ -283,6 +284,7 @@ a{
 }
 #footer a:hover{
     color: white;
+    transition: .5s
 }
 
 /*WAVE*/
@@ -376,10 +378,13 @@ a{
 }
 #footer .footer__copyright ul li i.fa-facebook-square:hover{
     color: #21529C;
+    transition: .5s
 }
 #footer .footer__copyright ul li i.fa-twitter-square:hover{
     color: #46C6FA;
+    transition: .5s
 }
 #footer .footer__copyright ul li i.fa-instagram:hover{
     color: #F7288B;
+    transition: .5s
 }
