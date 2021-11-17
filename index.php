@@ -140,10 +140,16 @@ if(!empty($_SESSION)){
                             <p>Vactolib est une application <br>
                                 pilotée par l'État pour vous retrouver dans vos différents vaccins.</p>
                         </div>
-                        <div class="items_a">
-                            <a href="#">Inscription</a>
-                            <a href="#">Connexion</a>
+
+                        <div class="accueil_buttons_container">
+                            <div class="button_type1">
+                                <a href="#">Inscription</a>
+                            </div>
+                            <div class="button_type1">
+                                <a href="#">Connexion</a>
+                            </div>
                         </div>
+
                     </div>
                     <div class="items_groupe">
                         <img src="asset/img/groupe.png">
