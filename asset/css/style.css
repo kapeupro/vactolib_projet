@@ -18,6 +18,7 @@ a{
     --rose : #F2DFE6;
     --vert_clair : #E3EDF1;
     --noir : #000000;
+    --roser : #EFE9EE;
 }
 
 .wrap{
@@ -34,7 +35,14 @@ a{
     padding: 20px 0;
 }
 /*BOUTONS connexion/inscription*/
-
+.items_accueil a {
+    background: var(--rose);
+    border-radius: 30px;
+    width: 177px;
+    height: 48px;
+    text-align: center;
+    padding-top: 0.7rem;
+}
 
 /*Input*/
 
@@ -89,7 +97,9 @@ a{
 .logo_vactolib img {
     width: 50%;
 }
-
+.logo_vactolib img:hover{
+    opacity: 70%;
+}
 #container_header {
     background: var(--rose);
     display: flex;
@@ -116,6 +126,9 @@ a{
     height: 20px;
     background: black;
 }
+.nav_header li a:hover{
+    color: white;
+}
 /*SECTION ACCUEIL*/
 .container_accueil{
     display: flex;
@@ -135,6 +148,9 @@ a{
 .items_a {
     display: flex;
     gap: 2rem;
+}
+.items_a a:hover{
+    opacity: 70%;
 }
 .items_a a{
     font-size: 18px;
@@ -169,15 +185,49 @@ a{
 #stats_bis {
     margin-bottom: 40px;
     margin-top: 40px;
+    padding-top: 2rem;
 }
 #stats_bis ul {
     display: flex;
     justify-content: space-between;
     font-size: 22px;
 }
+#stats_bis .boxs_tache1 {
+    background: url(../img/tache-1.png) no-repeat;width: 300px;height: 200px;position: absolute;left: -10px;top: 1050px;
+}
+#stats_bis .boxs_tache2 {
+    background: url(../img/tache-2.png) no-repeat;width: 300px;height: 200px;position: absolute;left: 335px;top: 1050px;
+}
+#stats_bis .boxs_tache3 {
+    background: url(../img/tache-3.png) no-repeat;width: 300px;height: 200px;position: absolute;left: 650px;top: 1050px;
+}
+#stats_bis .boxs_tache4 {
+    background: url(../img/tache-4.png) no-repeat;width: 300px;height: 200px;position: absolute;left: 915px;top: 1050px;
+}
+#stats_bis .boxs_text{
+    position: relative;
+}
 /*Donnes_secure*/
 .container_secure{
-    background-color: var(--rose);
+    background-color: var(--roser);
+    padding: 3rem;
+}
+.ds_text {
+    display: flex;
+    gap: 10rem;
+}
+.items_secure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.items_secure h2 {
+    font-size: 28px;
+    line-height: 2rem;
+    padding-bottom: 1rem;
+}
+.logo_coffre img {
+    width: 70%;
 }
 /*SECTION STATS*/
 #stats{
@@ -207,6 +257,7 @@ a{
 #stats ul.boxs li .boxs_text{
     padding-top: 1.5rem;
     align-content: center;
+    text-align: center;
 }
 /*FOOTER*/
 #footer{
