@@ -166,9 +166,10 @@ a{
     padding-top: 0.7rem;
 }
 /*Section STATS BIS*/
+
 #stats_bis ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 /*Donnes_secure*/
 .container_secure{
