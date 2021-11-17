@@ -36,7 +36,7 @@ a{
     padding: 20px 0;
 }
 /*BOUTONS connexion/inscription*/
-.button1 a {
+.items_accueil a {
     background: var(--rose);
     border-radius: 30px;
     width: 177px;
@@ -107,7 +107,6 @@ a{
     justify-content: space-between;
     align-items: center;
 }
-
 .nav_header {
     display: flex;
     flex-direction: row;
