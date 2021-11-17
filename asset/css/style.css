@@ -18,6 +18,7 @@ a{
     --rose : #F2DFE6;
     --vert_clair : #E3EDF1;
     --noir : #000000;
+    --roser : #EFE9EE;
 }
 
 .wrap{
@@ -34,7 +35,14 @@ a{
     padding: 20px 0;
 }
 /*BOUTONS connexion/inscription*/
-
+.items_accueil a {
+    background: var(--rose);
+    border-radius: 30px;
+    width: 177px;
+    height: 48px;
+    text-align: center;
+    padding-top: 0.7rem;
+}
 
 /*Input*/
 
@@ -198,7 +206,25 @@ a{
 }
 /*Donnes_secure*/
 .container_secure{
-    background-color: var(--rose);
+    background-color: var(--roser);
+    padding: 3rem;
+}
+.ds_text {
+    display: flex;
+    gap: 10rem;
+}
+.items_secure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.items_secure h2 {
+    font-size: 28px;
+    line-height: 2rem;
+    padding-bottom: 1rem;
+}
+.logo_coffre img {
+    width: 70%;
 }
 /*SECTION STATS*/
 #stats{
