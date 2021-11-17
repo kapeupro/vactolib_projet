@@ -34,7 +34,14 @@ a{
     padding: 20px 0;
 }
 /*BOUTONS connexion/inscription*/
-
+.items_accueil a {
+    background: var(--rose);
+    border-radius: 30px;
+    width: 177px;
+    height: 48px;
+    text-align: center;
+    padding-top: 0.7rem;
+}
 
 /*Input*/
 
