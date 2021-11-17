@@ -18,6 +18,7 @@ a{
     --rose : #F2DFE6;
     --vert_clair : #E3EDF1;
     --noir : #000000;
+    --gris : #8d8989;
     --roser : #EFE9EE;
 }
 
@@ -35,7 +36,7 @@ a{
     padding: 20px 0;
 }
 /*BOUTONS connexion/inscription*/
-.items_accueil a {
+.button1 a {
     background: var(--rose);
     border-radius: 30px;
     width: 177px;
@@ -263,14 +264,79 @@ a{
 #footer{
     display: flex;
     flex-flow: column nowrap;
-    gap: 1rem;
-    padding: 3rem 7rem 2rem 7rem;
+    gap: 2rem;
+    margin-top: 6rem;
+    padding: 10rem 7rem 2rem 7rem;
+    position: relative;
+    overflow: hidden;
+    color: var(--gris);
 }
+#footer h3{
+    padding-bottom: 1rem;
+    font-size: 23px;
+}
+#footer a{
+    color: var(--gris);
+}
+#footer a:hover{
+    color: white;
+}
+
+/*WAVE*/
+
+#footer .footer__wave{
+    height: 45%;
+    width:100%;
+    position:absolute;
+    bottom:0;
+    left:0;
+    background: var(--rose);
+}
+.wave {
+    background: url(../img/wave_animation.svg) repeat-x;
+    position: absolute;
+    top: -198px;
+    width: 6400px;
+    height: 300px;
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+    top: -175px;
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+    opacity: 1;
+}
+
+@keyframes wave {
+    0% {
+        margin-left: 0;
+    }
+    100% {
+        margin-left: -1600px;
+    }
+}
+
+@keyframes swell {
+    0%, 100% {
+        transform: translate3d(0,-25px,0);
+    }
+    50% {
+        transform: translate3d(0,5px,0);
+    }
+}
+
 
 #footer .footer__container{
     display: flex;
     justify-content: space-between;
     flex-flow: row nowrap;
+    z-index: 1;
+}
+#footer .footer__container ul{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .5rem;
 }
 
 #footer .footer__logo{
@@ -280,11 +346,21 @@ a{
     width: 100%;
 }
 
+#footer .footer__separation{
+    width: 90%;
+    height: 2px;
+    background-color: white;
+    margin: 0 auto;
+    z-index: 1;
+}
+
 #footer .footer__copyright{
+    z-index: 1;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    padding: 0 5rem;
 }
 #footer .footer__copyright ul {
     display: flex;
@@ -293,5 +369,8 @@ a{
 }
 #footer .footer__copyright ul li i{
     font-size: 1.5rem;
-    color: black;
+    color: var(--gris);
+}
+#footer .footer__copyright ul li i:hover{
+    color: white;
 }

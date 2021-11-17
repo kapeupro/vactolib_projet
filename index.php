@@ -131,7 +131,7 @@ if(!empty($_SESSION)){
     <section>
         <div class="container_accueil">
             <div class="wrap">
-                <div class="items_accueil">
+                <div class="button1">
                     <div class="items_accueil_p">
                         <div class="p_items_a">
                             <p>Vactolib est une application <br>

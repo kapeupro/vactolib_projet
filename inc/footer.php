@@ -1,7 +1,13 @@
 <footer id="footer">
+    <div class="footer__wave">
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+
     <div class="footer__container">
         <div class="footer__logo">
-            <img src="asset/img/logo_vactolib.png" alt="logo vactolib">
+            <a href="index.php"><img src="asset/img/logo_vactolib.png" alt="logo vactolib"></a>
         </div>
 
         <div class="footer__services">
