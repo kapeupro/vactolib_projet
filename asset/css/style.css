@@ -170,6 +170,7 @@ a{
 #stats_bis ul {
     display: flex;
     justify-content: space-between;
+    font-size: 22px;
 }
 /*Donnes_secure*/
 .container_secure{
