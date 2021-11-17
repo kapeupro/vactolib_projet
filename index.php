@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 require('inc/pdo.php');
 require('inc/fonction.php');
@@ -126,7 +127,7 @@ if(!empty($_SESSION)){
             </div>
         </div>
     </section>
-} else {
+<?php } else {
     include('inc/header.php'); ?>
     <section>
         <div class="container_accueil">

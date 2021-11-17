@@ -21,11 +21,11 @@ if(!empty($_POST['submitted'])) {
     } else {
         if (password_verify($password , $user['password'] )==true){
             $_SESSION['user']=array(
-                'id '    =>$user['id'],
-                'email ' =>$user['email'],
-                'nom '=>$user['nom'],
-                'prenom '=>$user['prenom'],
-                'role   '=>$user['role'],
+                'id'    =>$user['id'],
+                'email' =>$user['email'],
+                'nom'=>$user['nom'],
+                'prenom'=>$user['prenom'],
+                'role'=>$user['role'],
                 'ip'     =>$_SERVER['REMOTE_ADDR'],//::1
             );
         }else {
