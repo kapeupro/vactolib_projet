@@ -263,7 +263,7 @@ a{
 }
 /*SECTION STATS*/
 #stats{
-    padding-top: 4rem;
+    padding: 4rem 0 3rem 0;
 }
 #stats .wrap{}
 #stats .tache{
@@ -271,6 +271,7 @@ a{
 }
 #stats .title{
     text-align: center;
+    margin-bottom: 2rem;
 }
 #stats ul.boxs{
     display: flex;
