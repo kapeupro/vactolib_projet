@@ -166,7 +166,10 @@ a{
     padding-top: 0.7rem;
 }
 /*Section STATS BIS*/
-
+#stats_bis {
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
 #stats_bis ul {
     display: flex;
     justify-content: space-between;
