@@ -223,5 +223,4 @@ if(!empty($_SESSION)){
     </section>
 <?php } ?>
 
-
 <?php include ('inc/footer.php');
