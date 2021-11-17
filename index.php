@@ -152,7 +152,50 @@ if(!empty($_SESSION)){
             </div>
         </div>
     </section>
-
+        <div class="separator">
+        </div>
+    <section id="stats">
+        <div class="wrap">
+            <div class="tache"></div>
+            <div class="title">
+                <h2>Pourquoi prendre Vactolib ?</h2>
+            </div>
+            <ul class="boxs">
+                <li>
+                    <div class="img">
+                        <img src="asset/img/pq_vactolib1.png" alt="img1">
+                    </div>
+                    <div class="boxs_text">
+                        <p>Recevez des rappels automatiques par SMS ou par email.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="asset/img/pq_vactolib2.png" alt="img2">
+                    </div>
+                    <div class="boxs_text">
+                        <p>Retrouvez votre historique de vacination et vos documents de rappel.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="asset/img/pq_vactolib3.png" alt="img3">
+                    </div>
+                    <div class="boxs_text">
+                        <p>Accédez aux disponibilités de dizaines de milliers de professionnels de santé.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="asset/img/pq_vactolib4.png" alt="img4">
+                    </div>
+                    <div class="boxs_text">
+                        <p>Prenez rendez vous en ligne, 24h/24 et 7j/7, pour une consultation physique ou vidéo.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
 
     <section id="stats_chiffre">
         <div class="wrap">
@@ -170,8 +213,6 @@ if(!empty($_SESSION)){
             </div>
         </div>
     </section>
-
-
 
     <section id="donnes_secure">
         <div class="wrap">
