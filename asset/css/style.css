@@ -215,6 +215,8 @@ a{
 .container_secure{
     background-color: var(--roser);
     padding: 3rem;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
 }
 .ds_text {
     display: flex;
