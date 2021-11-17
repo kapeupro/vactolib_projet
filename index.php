@@ -12,6 +12,7 @@ function getUsers(){
     $query->execute();
     return $query->fetchAll();
 }
+
 debug(getUsers());
 debug($_SESSION);
 if(!empty($_SESSION)){
@@ -37,6 +38,9 @@ if(!empty($_SESSION)){
             </div>
         </div>
     </section>
+
+//debug(getUsers());
+
 
     <section id="stats">
         <div class="wrap">
@@ -132,7 +136,7 @@ if(!empty($_SESSION)){
     <section>
         <div class="container_accueil">
             <div class="wrap">
-                <div class="button1">
+                <div class="items_accueil">
                     <div class="items_accueil_p">
                         <div class="p_items_a">
                             <p>Vactolib est une application <br>
