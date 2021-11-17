@@ -127,7 +127,6 @@ if(!empty($_SESSION)){
                                 pilotée par l'État pour vous retrouver dans vos différents vaccins.</p>
                         </div>
 
-
                         <div class="accueil_buttons_container">
                             <div class="button_type1">
                                 <a href="register.php">Inscription</a>

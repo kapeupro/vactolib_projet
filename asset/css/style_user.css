@@ -208,7 +208,7 @@ a{
 }
 /*Donnes_secure*/
 .container_secure{
-    background-color: var(--roser);
+    background-color: var(--bleu);
     padding: 3rem;
 }
 .ds_text {
@@ -267,14 +267,14 @@ a{
     padding: 10rem 7rem 2rem 7rem;
     position: relative;
     overflow: hidden;
-    color: var(--gris);
+    color: var(--noir);
 }
 #footer h3{
     padding-bottom: 1rem;
     font-size: 23px;
 }
 #footer a{
-    color: var(--gris);
+    color: var(--noir);
 }
 #footer a:hover{
     color: white;
