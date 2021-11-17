@@ -8,35 +8,26 @@ $errors = [];
 if(!empty($_POST['submitted'])) {
     // Faille xss
     $prenom    = cleanXss('prenom');
-    $nom    = cleanXss('nom');
-    $email     = cleanXss('email');
+    $nom       = cleanXss('nom');
+    $birthdate = cleanXss('birthdate');
+    $phone     = cleanXss('phone');
     $email     = cleanXss('email');
     $password  = cleanXss('password');
     $password2 = cleanXss('password2');
     // Validation
-    $errors = textValidation($errors,$pseudo,'pseudo',3, 50);
-
-    if(empty($errors['pseudo'])) {
-        $sql = "SELECT * FROM vactolib_user WHERE pseudo = :pseudo";
-        $query = $pdo->prepare($sql);
-        $query->bindValue(':pseudo',$pseudo,PDO::PARAM_STR);
-        $query->execute();
-        $verifPseudo = $query->fetch();
-        if(!empty($verifPseudo)) {
-            $errors['pseudo'] = 'Pseudo existe dèjà';
-        }
-    }
     $errors = mailValidation($errors,$email,'email');
+
     if(empty($errors['email'])) {
         $sql = "SELECT * FROM vactolib_user WHERE email = :email";
         $query = $pdo->prepare($sql);
         $query->bindValue(':email',$email,PDO::PARAM_STR);
         $query->execute();
-        $verifEmail = $query->fetch();
-        if(!empty($verifEmail)) {
-            $errors['email'] = 'Email existe dèjà';
+        $verifPseudo = $query->fetch();
+        if(!empty($verifPseudo)) {
+            $errors['email'] = 'Vous avez déjà un compte avec cette adresse mail';
         }
     }
+
     // password
     if(!empty($password) || !empty($password2)) {
         if($password != $password2) {
@@ -53,13 +44,16 @@ if(!empty($_POST['submitted'])) {
         // hashpassword
         $hashpassword = password_hash($password,PASSWORD_DEFAULT);
         // INSERT INTO
-        $sql = "INSERT INTO vactolib_user (pseudo,email,password,token,created_at,role)
-                VALUES (:pseudo,:email,:password,:token,NOW(),'user')";
+        $sql = "INSERT INTO `vactolib_user`(`nom`, `prenom`, `date_de_naissance`, `email`, `portable`, `password`, `token`,`status`, `created_at`) 
+                VALUES (:nom,:prenom,:birthdate,:email,:phone,:password,:token,'user',NOW())";
         $query = $pdo->prepare($sql);
-        $query->bindValue(':pseudo',  $pseudo,      PDO::PARAM_STR);
-        $query->bindValue(':email',   $email,       PDO::PARAM_STR);
-        $query->bindValue(':password',$hashpassword,PDO::PARAM_STR);
-        $query->bindValue(':token',   $token,       PDO::PARAM_STR);
+        $query->bindValue(':nom',        $nom,      PDO::PARAM_STR);
+        $query->bindValue(':prenom',     $prenom,      PDO::PARAM_STR);
+        $query->bindValue(':email',      $email,       PDO::PARAM_STR);
+        $query->bindValue(':birthdate',  $birthdate,       PDO::PARAM_STR);
+        $query->bindValue(':phone',      $phone,       PDO::PARAM_INT);
+        $query->bindValue(':password',   $hashpassword,PDO::PARAM_STR);
+        $query->bindValue(':token',      $token,       PDO::PARAM_STR);
         $query->execute();
         // redirection
         header('Location: index.php');
@@ -90,7 +84,7 @@ if(!empty($_POST['submitted'])) {
 
             <div class="info_box">
                 <label for="birthdate"></label>
-                <input type="text" placeholder="Date de naissance" id="birthdate" name="birthdate" value="<?=recupInputValue('birthdate');?>">
+                <input type="date" placeholder="Date de naissance" id="birthdate" name="birthdate" value="<?=recupInputValue('birthdate');?>">
                 <span class="error"><?= viewError($errors,'birthdate'); ?></span>
             </div>
 

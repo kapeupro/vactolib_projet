@@ -1,11 +1,17 @@
 <?php
-
+require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
 
 
-
-
+function getUsers(){
+    global $pdo;
+    $sql="SELECT * FROM vactolib_user ORDER BY id DESC";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    return $query->fetchAll();
+}
+debug(getUsers());
 
 include('inc/header.php'); ?>
     <section>
@@ -83,7 +89,7 @@ include('inc/header.php'); ?>
                 </li>
                 <li>
                     <div class="boxs_text">
-                        <p>30 millions de patients</p>
+                        <p><?php count(getUsers()) ?>millions de patients</p>
                     </div>
                 </li>
                 <li>
