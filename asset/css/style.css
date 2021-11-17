@@ -134,6 +134,12 @@ a{
     display: flex;
     flex-direction: row;
 }
+.separator {
+    background: url("../img/separateur_acceuil.svg") no-repeat;
+    background-size: cover;
+    height: 12rem;
+    justify-content: center;
+}
 .items_accueil {
     display: flex;
     align-items: center;
