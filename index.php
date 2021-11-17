@@ -17,7 +17,10 @@ function getUsers(){
 }
 
 //debug(getUsers());
-//debug($_SESSION);
+//debug($_SESSION);ED
+
+
+//PARTIE UTILISATEUR CONNECTED
 if(!empty($_SESSION)){
     include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style_user.css">
@@ -118,6 +121,7 @@ if(!empty($_SESSION)){
             </div>
         </section>
     <?php } else {
+    //PARTIE UTILISATEUR PAS CONNECTED
     include('inc/header.php'); ?>
     <section>
         <div class="container_accueil">
