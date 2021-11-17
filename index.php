@@ -1,17 +1,23 @@
 <?php
-
+require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
 
 
-
-
+function getUsers(){
+    global $pdo;
+    $sql="SELECT * FROM vactolib_user ORDER BY id DESC";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    return $query->fetchAll();
+}
+debug(getUsers());
 
 include('inc/header.php'); ?>
     <section>
         <div class="container_accueil">
             <div class="wrap">
-                <div class="items_accueil">
+                <div class="button1">
                     <div class="items_accueil_p">
                         <div class="p_items_a">
                             <p>Vactolib est une application <br>
@@ -86,7 +92,7 @@ include('inc/header.php'); ?>
                 <li>
                     <div class="boxs_tache2"></div>
                     <div class="boxs_text">
-                        <p>30 millions de patients</p>
+                        <p><?php count(getUsers()) ?>millions de patients</p>
                     </div>
                 </li>
                 <li>
