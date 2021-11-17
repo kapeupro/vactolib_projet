@@ -68,7 +68,7 @@ if(!empty($_SESSION)){
                     </li>
                     <li>
                         <div class="img">
-                            <img src="asset/img/pq_vactolib3.png" alt="img3">
+                            <img src="asset/img/pq_vactolib3.png" alt="">
                         </div>
                         <div class="boxs_text">
                             <p>Accédez aux disponibilités de dizaines de milliers de professionnels de santé.</p>
