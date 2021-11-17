@@ -373,6 +373,12 @@ a{
     font-size: 1.5rem;
     color: var(--gris);
 }
-#footer .footer__copyright ul li i:hover{
-    color: white;
+#footer .footer__copyright ul li i.fa-facebook-square:hover{
+    color: #21529C;
+}
+#footer .footer__copyright ul li i.fa-twitter-square:hover{
+    color: #46C6FA;
+}
+#footer .footer__copyright ul li i.fa-instagram:hover{
+    color: #F7288B;
 }
