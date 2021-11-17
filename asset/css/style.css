@@ -127,7 +127,6 @@ a{
 }
 .logo_vactolib img:hover{
     opacity: 70%;
-    transform: scale(0.5);
     transition: .5s;
 }
 .logo_vactolib {padding: 1rem;}
