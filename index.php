@@ -152,7 +152,8 @@ if(!empty($_SESSION)){
             </div>
         </div>
     </section>
-
+        <div class="separator">
+        </div>
     <section id="stats">
         <div class="wrap">
             <div class="tache"></div>
