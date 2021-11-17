@@ -73,50 +73,38 @@ include('inc/header.php'); ?>
         </div>
     </section>
 
-    <section id="stats_bis">
+    <section id="stats_chiffre">
         <div class="wrap">
-            <ul>
-                <li>
-                    <div class="boxs_tache1"></div>
-                    <div class="boxs_text">
-                        <p>Vactolib c'est...</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="boxs_tache2"></div>
-                    <div class="boxs_text">
-                        <p>30 millions de patients</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="boxs_tache3"></div>
-                    <div class="boxs_text">
-                        <p>150 00 personnels <br>de santé</br></p>
-                    </div>
-                </li>
-                <li>
-                    <div class="boxs_tache4"></div>
-                    <div class="boxs_text">
-                        <p>98% d'avis positifs</p>
-                    </div>
-                </li>
-            </ul>
+            <div class="tache1">
+                <p>Vactolib c'est...</p>
+            </div>
+            <div class="tache2">
+                <p>Vactolib c'est...</p>
+            </div>
+            <div class="tache3">
+                <p>Vactolib c'est...</p>
+            </div>
+            <div class="tache4">
+                <p>Vactolib c'est...</p>
+            </div>
         </div>
     </section>
 
+
+
     <section id="donnes_secure">
         <div class="wrap">
-        <div class="container_secure">
-            <div class="ds_text">
-                <div class="items_secure">
-                <h2>Chez Vactolib votre Santé, <br>C’est aussi vos données.</h2>
-                <p>La confidentialité de vos informations personnelles est une priorité absolue pour Vactolib et guide notre action au quotidien.</p>
-                </div>
-                <div class="logo_coffre">
-                <img src="asset/img/coffret%20fort.png" alt="coffre fort">
+            <div class="container_secure">
+                <div class="ds_text">
+                    <div class="items_secure">
+                        <h2>Chez Vactolib votre Santé, <br>C’est aussi vos données.</h2>
+                        <p>La confidentialité de vos informations personnelles est une priorité absolue pour Vactolib et guide notre action au quotidien.</p>
+                    </div>
+                    <div class="logo_coffre">
+                        <img src="asset/img/coffret%20fort.png" alt="coffre fort">
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 
