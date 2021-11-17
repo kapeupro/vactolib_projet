@@ -17,6 +17,7 @@ function getUsers(){
 //debug($_SESSION);
 if(!empty($_SESSION)){
     include('inc/header.php'); ?>
+    <link rel="stylesheet" href="asset/css/style_user.css">
     <section>
         <div class="container_accueil">
             <div class="wrap">
