@@ -57,6 +57,7 @@ if(!empty($_POST['submitted'])) {
                 <div class="info_box">
                     <label for="password"></label>
                     <input type="password" placeholder="Mot de passse" id="password" name="password" value="">
+                    <span class="error"><?= viewError($errors,'password'); ?></span>
                 </div>
 
                 <div class="info_box_button">

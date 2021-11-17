@@ -39,9 +39,6 @@ if(!empty($_SESSION)){
         </div>
     </section>
 
-//debug(getUsers());
-
-
     <section id="stats">
         <div class="wrap">
             <div class="tache"></div>
