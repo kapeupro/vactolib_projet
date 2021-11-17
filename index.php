@@ -77,21 +77,25 @@ include('inc/header.php'); ?>
         <div class="wrap">
             <ul>
                 <li>
-                    <div class="boxs_text_1">
+                    <div class="boxs_tache1"></div>
+                    <div class="boxs_text">
                         <p>Vactolib c'est...</p>
                     </div>
                 </li>
                 <li>
+                    <div class="boxs_tache2"></div>
                     <div class="boxs_text">
                         <p>30 millions de patients</p>
                     </div>
                 </li>
                 <li>
+                    <div class="boxs_tache3"></div>
                     <div class="boxs_text">
-                        <p>150 00 personnels de santé</p>
+                        <p>150 00 personnels <br>de santé</br></p>
                     </div>
                 </li>
                 <li>
+                    <div class="boxs_tache4"></div>
                     <div class="boxs_text">
                         <p>98% d'avis positifs</p>
                     </div>

@@ -89,7 +89,9 @@ a{
 .logo_vactolib img {
     width: 50%;
 }
-
+.logo_vactolib img:hover{
+    opacity: 70%;
+}
 #container_header {
     background: var(--rose);
     display: flex;
@@ -115,6 +117,9 @@ a{
     width: 2px;
     height: 20px;
     background: black;
+}
+.nav_header li a:hover{
+    color: white;
 }
 /*SECTION ACCUEIL*/
 .container_accueil{
@@ -169,11 +174,27 @@ a{
 #stats_bis {
     margin-bottom: 40px;
     margin-top: 40px;
+    padding-top: 2rem;
 }
 #stats_bis ul {
     display: flex;
     justify-content: space-between;
     font-size: 22px;
+}
+#stats_bis .boxs_tache1 {
+    background: url(../img/tache-1.png) no-repeat;width: 300px;height: 200px;position: absolute;left: -10px;top: 1050px;
+}
+#stats_bis .boxs_tache2 {
+    background: url(../img/tache-2.png) no-repeat;width: 300px;height: 200px;position: absolute;left: 305px;top: 1050px;
+}
+#stats_bis .boxs_tache3 {
+    background: url(../img/tache-3.png) no-repeat;width: 300px;height: 200px;position: absolute;left: 605px;top: 1050px;
+}
+#stats_bis .boxs_tache4 {
+    background: url(../img/tache-4.png) no-repeat;width: 300px;height: 200px;position: absolute;left: 915px;top: 1050px;
+}
+#stats_bis .boxs_text{
+    position: relative;
 }
 /*Donnes_secure*/
 .container_secure{
@@ -207,6 +228,7 @@ a{
 #stats ul.boxs li .boxs_text{
     padding-top: 1.5rem;
     align-content: center;
+    text-align: center;
 }
 /*FOOTER*/
 #footer{
