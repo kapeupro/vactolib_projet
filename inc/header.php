@@ -25,7 +25,7 @@
                 <?php if(!empty($_SESSION)){ ?>
                 <li><a href="#">Mon Carnet</a></li>
                 <li class="ligne_black"></li>
-                <li><a href="#">Profil</a></li>
+                <li><a href="profil.php">Profil</a></li>
                 <li class="ligne_black"></li>
                 <li><a href="logout.php">Déconnexion</a></li>
                 <?php } else { ?>

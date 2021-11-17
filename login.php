@@ -3,6 +3,8 @@ session_start();
 
 require('inc/pdo.php');
 require('inc/fonction.php');
+require('inc/request.php');
+
 
 $errors = [];
 if(!empty($_POST['submitted'])) {
@@ -62,6 +64,9 @@ if(!empty($_POST['submitted'])) {
 
                 <div class="info_box_button">
                     <input type="submit" name="submitted" value="ENVOYER">
+                </div>
+                <div>
+                  <?php  echo'<a href="missingpassword.php">Mot de passe oublié ?</a>'?>
                 </div>
 
             </form>

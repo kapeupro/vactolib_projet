@@ -36,14 +36,35 @@ a{
     padding: 20px 0;
 }
 /*BOUTONS connexion/inscription*/
-.items_accueil a {
-    background: var(--rose);
+
+.container_accueil .wrap .accueil_buttons_container{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+}
+.container_accueil .wrap .accueil_buttons_container a{
+    color: black;
+    font-size: 18px;
+}
+
+.button_type1 {
     border-radius: 30px;
     width: 177px;
     height: 48px;
     text-align: center;
     padding-top: 0.7rem;
+    background: var(--rose);
+    box-shadow: 0px 1px 1px 3px var(--rose);
+    background-image: linear-gradient(0, white, white);
+    background-size: 0;
+    transition: 1s;
+    background-repeat: no-repeat;
 }
+
+.button_type1:hover {
+    background-size: 100%;
+}
+
 /*Input*/
 
 
@@ -61,8 +82,15 @@ a{
     -webkit-box-shadow: 0px 1px 14px 23px ;
     box-shadow: 0px 1px 14px 23px #F2DFE6;
 }
-#register_form .info_box{padding:1rem;}
-#register_form .error{color:red;}
+#register_form .info_box{
+    padding:1rem;
+    display: flex;
+    flex-flow: column nowrap;
+}
+#register_form .error{
+    color:red;
+    text-align: center;
+}
 #register_form ::placeholder{color:black;}
 #register_form form{
     display:flex;
@@ -86,8 +114,10 @@ a{
     color:black;
     margin:1.2rem 0;
 }
-#register_form p{color:red;font-size: .75rem;}
+#register_form p{color:lightpink;font-size: .75rem;}
 .logo {display:flex;justify-content: center;margin:2rem;}
+
+
 /* HEADER */
 .logo_vactolib {
     padding: 1rem;
@@ -97,7 +127,12 @@ a{
 }
 .logo_vactolib img:hover{
     opacity: 70%;
+    transform: scale(0.5);
+    transition: .5s;
 }
+.logo_vactolib {padding: 1rem;}
+.logo_vactolib img {width: 50%;}
+.logo_vactolib img:hover{opacity: 70%;}
 #container_header {
     background: var(--rose);
     display: flex;
@@ -108,14 +143,9 @@ a{
     display: flex;
     flex-direction: row;
 }
-.nav_header a {
-    color: var(--noir);
-}
-.items_header{
-    padding-right: 2rem;
-}
-.items_header ul{
-    display: flex;
+.nav_header a {color: var(--noir);}
+.items_header{padding-right: 2rem;}
+.items_header ul{display: flex;
     gap: 1rem;
 }
 .nav_header .ligne_black {
@@ -148,17 +178,20 @@ a{
     display: flex;
     flex-direction: column;
 }
+
 .items_a {
     display: flex;
     gap: 2rem;
 }
 .items_a a:hover{
     opacity: 70%;
+    transition: .5s
 }
 .items_a a{
     font-size: 18px;
     color: black;
 }
+
 .p_items_a p {
     font-size: 34px;
 }
@@ -176,14 +209,7 @@ a{
 .items_accueil_p {
     width: 45%;
 }
-.items_accueil a {
-    background: var(--rose);
-    border-radius: 30px;
-    width: 177px;
-    height: 48px;
-    text-align: center;
-    padding-top: 0.7rem;
-}
+
 /*Section STATS BIS*/
 #stats_chiffre .wrap{
     display: flex;
@@ -212,6 +238,9 @@ a{
     padding: 5rem;
 }
 /*Donnes_secure*/
+#donnes_secure{
+    margin: 4rem 0;
+}
 .container_secure{
     background-color: var(--roser);
     padding: 3rem;
@@ -253,13 +282,8 @@ a{
     padding: 4rem 0 4rem 0;
     gap: 2rem;
 }
-#stats ul.boxs li {
-    width: 23%;
-
-}
-#stats ul.boxs .img img{
-    width: 100%
-}
+#stats ul.boxs li {width: 23%;}
+#stats ul.boxs .img img{width: 100%}
 #stats ul.boxs li .boxs_text{
     padding-top: 1.5rem;
     align-content: center;
@@ -285,6 +309,7 @@ a{
 }
 #footer a:hover{
     color: white;
+    transition: .5s
 }
 
 /*WAVE*/
@@ -378,10 +403,13 @@ a{
 }
 #footer .footer__copyright ul li i.fa-facebook-square:hover{
     color: #21529C;
+    transition: .5s
 }
 #footer .footer__copyright ul li i.fa-twitter-square:hover{
     color: #46C6FA;
+    transition: .5s
 }
 #footer .footer__copyright ul li i.fa-instagram:hover{
     color: #F7288B;
+    transition: .5s
 }
