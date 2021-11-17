@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 session_start();
 require('inc/pdo.php');
 require('inc/fonction.php');
@@ -34,8 +31,7 @@ if(!empty($_SESSION)){
         <p>Vactolib est content de vous revoir <?php echo $_SESSION['prenom']?>. <br>
             Avec nous, vos donnée sont protegées </p>
     <?php } else ?>
-        <p>Vactolib est content de vous revoir. <br>
-            Avec nous, vos donnée sont protegées </p>
+        <p>Vactolib est content de vous revoir. <br>Avec nous, vos donnée sont protegées </p>
         </div>
         </div>
         <div class="items_groupe">
@@ -71,7 +67,7 @@ if(!empty($_SESSION)){
                     </li>
                     <li>
                         <div class="img">
-                            <img src="asset/img/pq_vactolib3.png" alt="img3">
+                            <img src="asset/img/pq_vactolib1.png" alt="">
                         </div>
                         <div class="boxs_text">
                             <p>Accédez aux disponibilités de dizaines de milliers de professionnels de santé.</p>
@@ -178,7 +174,7 @@ if(!empty($_SESSION)){
                 </li>
                 <li>
                     <div class="img">
-                        <img src="asset/img/pq_vactolib3.png" alt="img3">
+                        <img src="asset/img/pq_vactolib2.png" alt="img3">
                     </div>
                     <div class="boxs_text">
                         <p>Accédez aux disponibilités de dizaines de milliers de professionnels de santé.</p>
