@@ -2,12 +2,8 @@
 include('inc/fonction.php');
 
 
-//echo $_GET['nom'];
-//echo $_GET['prenom'];
-//debut($_GET);
-//$errors=array();
 
-
+$errors=array();
 //existe et n'est pas vide
 if(!empty($_POST['submitted']))
 {

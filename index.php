@@ -127,8 +127,8 @@ if(!empty($_SESSION)){
                                 pilotée par l'État pour vous retrouver dans vos différents vaccins.</p>
                         </div>
                         <div class="items_a">
-                            <a href="#">Inscription</a>
-                            <a href="#">Connexion</a>
+                            <a href="register.php">Inscription</a>
+                            <a href="login.php">Connexion</a>
                         </div>
                     </div>
                     <div class="items_groupe">

@@ -86,18 +86,12 @@ a{
     color:black;
     margin:1.2rem 0;
 }
-#register_form p{color:red;font-size: .75rem;}
+#register_form p{color:lightpink;font-size: .75rem;}
 .logo {display:flex;justify-content: center;margin:2rem;}
 /* HEADER */
-.logo_vactolib {
-    padding: 1rem;
-}
-.logo_vactolib img {
-    width: 50%;
-}
-.logo_vactolib img:hover{
-    opacity: 70%;
-}
+.logo_vactolib {padding: 1rem;}
+.logo_vactolib img {width: 50%;}
+.logo_vactolib img:hover{opacity: 70%;}
 #container_header {
     background: var(--rose);
     display: flex;
@@ -108,14 +102,9 @@ a{
     display: flex;
     flex-direction: row;
 }
-.nav_header a {
-    color: var(--noir);
-}
-.items_header{
-    padding-right: 2rem;
-}
-.items_header ul{
-    display: flex;
+.nav_header a {color: var(--noir);}
+.items_header{padding-right: 2rem;}
+.items_header ul{display: flex;
     gap: 1rem;
 }
 .nav_header .ligne_black {
@@ -251,13 +240,8 @@ a{
     padding: 4rem 0 4rem 0;
     gap: 2rem;
 }
-#stats ul.boxs li {
-    width: 23%;
-
-}
-#stats ul.boxs .img img{
-    width: 100%
-}
+#stats ul.boxs li {width: 23%;}
+#stats ul.boxs .img img{width: 100%}
 #stats ul.boxs li .boxs_text{
     padding-top: 1.5rem;
     align-content: center;
