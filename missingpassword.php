@@ -1,21 +1,28 @@
 <?php
-session_start();
 
 require('inc/pdo.php');
 require('inc/fonction.php');
-require('inc/request.php');
 
 
 $errors = [];
 if(!empty($_POST['submitted'])) {
     // Faille xss
+    $password  = cleanXss('password');
+    $password2 = cleanXss('password2');
 
-    $password  = trim(strip_tags($_POST['password']));
-    $password2  = trim(strip_tags($_POST['password']));
+    // Validation
 
-
-
-
+    if(empty($errors['email'])) {
+        $sql = "SELECT * FROM vactolib_user WHERE id = :email";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':id',$id,PDO::PARAM_STR);
+        $query->execute();
+        $verifPseudo = $query->fetch();
+        if(!empty($verifPseudo)) {
+            $errors['email'] = 'Vous avez déjà un compte avec cette adresse mail';
+        }
+    }
+    // password
     if(!empty($password) || !empty($password2)) {
         if($password != $password2) {
             $errors['password'] = 'Veuillez renseigner des mot de passe identiques';
@@ -25,29 +32,18 @@ if(!empty($_POST['submitted'])) {
     } else {
         $errors['password'] = 'Veuillez renseigner un mot de passe';
     }
-    if(empty($user)) {
-        $errors['login'] = 'Email invalide';
-    } else {
-        if (password_verify($password , $user['password'] )==true){
-            $_SESSION['user']=array(
-                'id'    =>$user['id'],
-                'email' =>$user['email'],
-                'nom'=>$user['nom'],
-                'prenom'=>$user['prenom'],
-                'role'=>$user['role'],
-                'ip'     =>$_SERVER['REMOTE_ADDR'],//::1
-            );
-        }else {
-            $errors['password'] = 'Mot de passe incorrect';
-        }
-    }
     if(count($errors) == 0) {
-
-
-        header('Location: index.php');
+        // hashpassword
+        $hashpassword = password_hash($password,PASSWORD_DEFAULT);
+        // INSERT INTO
+        $sql = "UPDATE `vactolib_user` SET `password`=:password WHERE id=:id";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':password',$hashpassword,PDO::PARAM_STR);
+        $query->execute();
+        // redirection
+        die('oui good');
     }
 }
-
 ?>
 <link rel="stylesheet" href="asset/css/style.css">
 <div class="logo">
@@ -62,7 +58,7 @@ if(!empty($_POST['submitted'])) {
 
             <div class="info_box">
                 <label for="password"></label>
-                <input type="password" placeholder="Nouveau Mot de passe"" id="password" name="password" value="">
+                <input type="password" placeholder="Nouveau mot de passe" id="password" name="password" value="">
                 <span class="error"><?= viewError($errors,'password'); ?></span>
             </div>
             <div class="info_box">
@@ -73,13 +69,7 @@ if(!empty($_POST['submitted'])) {
             <div class="info_box_button">
                 <input type="submit" name="submitted" value="ENVOYER">
             </div>
-            <div>
-                <a href="missingpassword.php">Mot de passe oublié ?</a>
-            </div>
-
+            <p>Les champs avec * sont requis</p>
         </form>
     </div>
 </section>
-
-
-
