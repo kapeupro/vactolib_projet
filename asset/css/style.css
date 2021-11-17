@@ -162,7 +162,7 @@ a{
     display: flex;
     flex-direction: row;
     padding-top: 7rem;
-    padding-bottom: 7rem;
+    padding-bottom: 8rem;
 }
 .separator {
     background: url("../img/separateur_acceuil.svg") no-repeat;
