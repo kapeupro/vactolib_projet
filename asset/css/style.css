@@ -125,6 +125,7 @@ a{
 }
 .nav_header li a:hover{
     color: white;
+    transition: .5s;
 }
 /*SECTION ACCUEIL*/
 .container_accueil{
