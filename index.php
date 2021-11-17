@@ -104,9 +104,13 @@ include('inc/header.php'); ?>
         <div class="wrap">
         <div class="container_secure">
             <div class="ds_text">
-                <h2>Chez Vactolib votre Santé, C’est aussi vos données.</h2>
+                <div class="items_secure">
+                <h2>Chez Vactolib votre Santé, <br>C’est aussi vos données.</h2>
                 <p>La confidentialité de vos informations personnelles est une priorité absolue pour Vactolib et guide notre action au quotidien.</p>
+                </div>
+                <div class="logo_coffre">
                 <img src="asset/img/coffret%20fort.png" alt="coffre fort">
+                </div>
             </div>
         </div>
         </div>
