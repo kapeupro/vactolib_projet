@@ -203,13 +203,13 @@ if(!empty($_SESSION)){
                 <p>Vactolib c'est...</p>
             </div>
             <div class="tache2">
-                <p>Vactolib c'est...</p>
+                <p>30 millions de patients</p>
             </div>
             <div class="tache3">
-                <p>Vactolib c'est...</p>
+                <p>150 00 personnels de santé</p>
             </div>
             <div class="tache4">
-                <p>Vactolib c'est...</p>
+                <p>98% d'avis positifs</p>
             </div>
         </div>
     </section>
