@@ -23,39 +23,33 @@ if(!empty($_POST['submitted']))
 //debug($errors);
 include('inc/header.php');
 ?>
-    <section id="contact_form">
+    <section id="form_contact">
         <form action="" method="post" class="wrapform" novalidate>
-
-            <div class="info_box">
+            <div class="boxinfo_contact_bis">
                 <label for="nom"></label>
                 <input type="text" placeholder="Nom/Prenom*" id="nom" name="nom" value="<?=recupInputValue('nom');?>">
                 <span class="error"><?= viewError($errors,'nom'); ?></span>
             </div>
-
-            <div class="info_box">
+            <div class="boxinfo_contact">
                 <label for="email"></label>
                 <input type="email" placeholder="Email*" id="email" name="email" value="<?= recupInputValue('email'); ?>">
                 <span class="error"><?= viewError($errors,'email'); ?></span>
             </div>
-
-            <div class="info_box">
+            <div class="boxinfo_contact_bis">
                 <label for="phone"></label>
-                <input type="tel" placeholder="Numéro de téléphone" pattern="[0-9]{10}" maxlength="10" id="phone" name="phone" value="<?= recupInputValue('phone'); ?>">
+                <input type="tel" placeholder="Numéro de téléphone*" pattern="[0-9]{10}" maxlength="10" id="phone" name="phone" value="<?= recupInputValue('phone'); ?>">
                 <span class="error"><?= viewError($errors,'phone'); ?></span>
             </div>
-
-            <div class="info_box">
+            <div class="boxinfo_contact">
                 <label for="message"></label>
                 <textarea type="text" placeholder="Votre message...*" id="message" name="message" value=""></textarea>
                 <span class="error"><?= viewError($errors,'email'); ?></span>
             </div>
-
-            <div class="info_box_button">
+            <div class="button_type1">
                 <input type="submit" name="submitted" value="ENVOYER">
             </div>
             <p>Les champs avec * sont requis</p>
         </form>
-        </div>
     </section>
 
 
