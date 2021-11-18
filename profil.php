@@ -32,7 +32,7 @@ include('inc/header.php'); ?>
     <div class="wrap">
         <div class="info_profil">
             <div class="icon_profil">
-                <img src="asset/img/icon_profil.svg" alt="icone de profil">
+                <img src="asset/img/user_icon.svg" alt="icone de profil">
                 <h2><?php echo $_SESSION['user']['nom'] .' '. $_SESSION['user']['prenom'] ?></h2>
             </div>
 
