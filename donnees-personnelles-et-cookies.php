@@ -7,8 +7,8 @@ require('inc/request.php');
 include('inc/header.php'); ?>
 
 <section>
-    <div class="title-h1-donnees-personnelles-et-cookies">
-        <h2>Mentions légales</h2>
+    <div class="title-h2-donnees-personnelles-et-cookies">
+        <h2>Données personnelles et cookies</h2>
     </div>
     <div>
         <h3>Collecte de données</h3>
