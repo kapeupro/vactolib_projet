@@ -12,7 +12,8 @@ $query = $pdo->prepare($sql);
 $query->bindValue(':id',$id_session,PDO::PARAM_STR);
 $query->execute();
 $user= $query->fetch();
-debug($user);
+
+//debug($user);
 
 $_SESSION['user']=array(
     'id'=>$user['id'],
@@ -22,8 +23,8 @@ $_SESSION['user']=array(
     'tel'=>$user['portable'],
     'dateNaissance'=>$user['date_de_naissance']
 );
-//debug($_SESSION['user']);
 
+//debug($_SESSION);
 include('inc/header.php'); ?>
 <link rel="stylesheet" href="asset/css/style_user.css">
 
