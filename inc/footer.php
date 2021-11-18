@@ -22,8 +22,8 @@
         <div class="footer__donnees">
             <h3>Données</h3>
             <ul>
-                <li><a href="#">Données personnelles et cookies</a></li>
-                <li><a href="#">Mentions légal</a></li>
+                <li><a href="../donnees-personnelles-et-cookies.php">Données personnelles et cookies</a></li>
+                <li><a href="../mentionslegal.php">Mentions légal</a></li>
             </ul>
         </div>
         
