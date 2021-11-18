@@ -13,19 +13,19 @@ include('inc/header.php'); ?>
     <div id="carnet">
         <div class="wrap">
             <div id="container-carnet">
-                <div class="items-carnet-1">
+                <div class="items-carnet">
                         <h3>Nom du Certificat</h3>
                         <p class="nom-carnet">Pascal Benoit</p>
                         <p class="naissance">Né le</p>
                         <p class="date-vaccin"> Vaccin, le xx/xx/xx</p>
                 </div>
-                <div class="items-carnet-2">
+                <div class="items-carnet">
                         <h3>Nom du Certificat</h3>
                         <p class="nom-carnet">Pascal Benoit</p>
                         <p class="naissance">Né le</p>
                         <p class="date-vaccin"> Vaccin, le xx/xx/xx</p>
                 </div>
-                <div class="items-carnet-3">
+                <div class="items-carnet">
                         <h3>Nom du Certificat</h3>
                         <p class="nom-carnet">Pascal Benoit</p>
                         <p class="naissance">Né le</p>
@@ -34,13 +34,9 @@ include('inc/header.php'); ?>
             </div>
         </div>
     </div>
+    <div class="ajout-vaccin">
+            <a href=""><img src="asset/img/cta-ajout.svg">Ajouter un vaccin</a>
+    </div>
 </section>
-
-
-
-
-
-
-
 
 <?php include('inc/footer.php');
