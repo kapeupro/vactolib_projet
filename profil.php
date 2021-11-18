@@ -9,6 +9,8 @@ $query = $pdo->prepare($sql);
 $query->execute();
 $user= $query->fetch();
 
+debug($user);
+
 $_SESSION['user']=array(
     'email'=>$user['email'],
     'nom'=>$user['nom'],
@@ -16,8 +18,8 @@ $_SESSION['user']=array(
     'tel'=>$user['portable'],
     'dateNaissance'=>$user['date_de_naissance']
 );
-//debug($_SESSION['user']);
 
+//debug($_SESSION);
 include('inc/header.php'); ?>
 <link rel="stylesheet" href="asset/css/style_user.css">
 
