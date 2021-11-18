@@ -29,27 +29,28 @@ if(!empty($_SESSION)){
     include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style_user.css">
     <section>
-    <div class="container_accueil">
-    <div class="wrap">
-    <div class="items_accueil">
-    <div class="items_accueil_p">
-    <div class="p_items_a">
-    <?php if(!empty($user['prenom'])){ ?>
-        <p>Ravie de vous revoir <?php echo $_SESSION['user']['prenom']; ?> ! <br>
-            Avec nous, vos donnée sont protegées </p>
-    <?php } else { ?>
-        <p>Vactolib est content de vous revoir. <br>Avec nous, vos donnée sont protegées </p>
-    <?php } ?>
+        <div class="container_accueil">
+            <div class="wrap">
+                <div class="items_accueil">
+                    <div class="items_accueil_p">
+                        <div class="p_items_a">
+                            <?php if(!empty($user['prenom'])){ ?>
+                                <p>Ravie de vous revoir <?php echo $_SESSION['user']['prenom']; ?> ! <br>
+                                    Avec nous, vos donnée sont protegées </p>
+                            <?php } else { ?>
+                                <p>Vactolib est content de vous revoir. <br>Avec nous, vos donnée sont protegées </p>
+                            <?php } ?>
 
+                        </div>
+                    </div>
+
+                    <div class="items_groupe">
+                        <img src="asset/img/groupe.png">
+                    </div>
+                </div>
+            </div>
         </div>
-        </div>
-        <div class="items_groupe">
-            <img src="asset/img/groupe.png">
-        </div>
-        </div>
-        </div>
-        </div>
-        </section>
+    </section>
 
         <div class="separator"></div>
 

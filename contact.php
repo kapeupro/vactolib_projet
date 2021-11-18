@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include('inc/fonction.php');
 
 $errors=array();
@@ -20,7 +22,7 @@ if(!empty($_POST['submitted']))
         mail('vactolibsupport@gmail.com', 'Envoi depuis la page Contact', $_POST['message'], 'From: ' . $_POST['email']);
     }
 }
-//debug($errors);
+//debug($_SESSION);
 include('inc/header.php');
 ?>
     <section id="form_contact">
