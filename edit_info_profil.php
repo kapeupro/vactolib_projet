@@ -3,13 +3,15 @@ session_start();
 require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
-
+$id_session=$_SESSION['user']['id'];
 $errors = [];
-
-$sql = "SELECT * FROM vactolib_user";
+debug($_SESSION);
+$sql = "SELECT * FROM vactolib_user WHERE id=:id ";
 $query = $pdo->prepare($sql);
+$query->bindValue(':id',$id_session,PDO::PARAM_STR);
 $query->execute();
-$user = $query->fetch();
+$user= $query->fetch();
+debug($user);
 
 $_SESSION['user'] = array(
     'email' => $user['email'],
@@ -54,7 +56,7 @@ if(!empty($_POST['submitted'])) {
                 WHERE id = :id";
         $query = $pdo->prepare($sql);
         $query->bindValue(':email',$email,PDO::PARAM_STR);
-        $query->bindValue(':dateNaissance',$dateNaissance,PDO::PARAM_STR);
+        $query->bindValue(':dateNaissance',$dateNaissance,PDO::PARAM_INT);
         $query->bindValue(':tel',$tel,PDO::PARAM_INT);
         $query->bindValue(':password',$hashpassword,PDO::PARAM_STR);
         $query->bindValue(':id', $_SESSION['user']['id'], PDO::PARAM_INT);

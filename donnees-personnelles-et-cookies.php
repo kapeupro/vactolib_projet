@@ -1,12 +1,16 @@
 <?php
+session_start();
 
 require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
-
+debug($_SESSION);
 include('inc/header.php'); ?>
 
 <section>
+    <? if(!empty($_SESSION)){?>
+        <link rel="stylesheet" href="asset/css/style_user.css">
+   <? } else{ } ?>
     <div class="wrap">
         <div class="container-donnees-personnelles-et-cookies">
     <div id="title-h2-donnees-personnelles-et-cookies">

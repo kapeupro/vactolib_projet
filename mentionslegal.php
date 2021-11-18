@@ -1,12 +1,14 @@
 <?php
+session_start();
 
 require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
-
+debug($_SESSION);
 include('inc/header.php'); ?>
 
 <section>
+
     <div class="wrap">
         <div class="container-mentionslegal">
     <div id="title-h2-mentionslegal">
