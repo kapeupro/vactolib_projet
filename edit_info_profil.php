@@ -63,7 +63,6 @@ if(!empty($_POST['submitted'])) {
     }
 }
 
-
 //debug($_SESSION['user']);
 //debug($errors);
 
