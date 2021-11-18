@@ -7,6 +7,7 @@ require('inc/request.php');
 include('inc/header.php'); ?>
 
 <section>
+    <div class="wrap">
     <div class="title-h2-mentionslegal">
         <h2>Mentions légales</h2>
     </div>
@@ -86,6 +87,7 @@ include('inc/header.php'); ?>
     <div>
         <h3>Sources de financement</h3>
         <p>Le portail bonjour.tousanticovid.gouv.fr  est financé intégralement par le ministère des solidarités et de la santé et ne reçoit de ce fait aucun subside privé qui pourrait avoir potentiellement une influence sur son contenu.</p>
+    </div>
     </div>
 </section>
 

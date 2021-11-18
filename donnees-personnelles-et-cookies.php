@@ -7,6 +7,7 @@ require('inc/request.php');
 include('inc/header.php'); ?>
 
 <section>
+    <div class="wrap">
     <div class="title-h2-donnees-personnelles-et-cookies">
         <h2>Données personnelles et cookies</h2>
     </div>
@@ -47,6 +48,7 @@ include('inc/header.php'); ?>
             <li>recevoir les données que vous avez fournies et/ou demander de les transmettre à un autre responsable du traitement, si le traitement est fondé sur votre consentement ou sur un contrat et que le traitement est automatisé ;</li>
             <li>si vous résidez en France, définir le sort de vos données après votre mort.</li>
         </ul>
+    </div>
     </div>
 </section>
 <?php include('inc/footer.php');
