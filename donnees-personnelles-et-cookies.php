@@ -8,7 +8,7 @@ include('inc/header.php'); ?>
 
 <section>
     <div class="wrap">
-    <div class="title-h2-donnees-personnelles-et-cookies">
+    <div id="title-h2-donnees-personnelles-et-cookies">
         <h2>Données personnelles et cookies</h2>
     </div>
     <div class="items-1-donnees-personnelles-et-cookies">

@@ -426,5 +426,25 @@ a{
     transition: .5s
 }
 /*DONNES PERSONNELLES ET COOKIES*/
+#title-h2-donnees-personnelles-et-cookies {
+    display: flex;
+    justify-content: center;
 
+}
 /*MENTIONSLEGAL*/
+#title-h2-mentionslegal{
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    margin: 2rem;
+}
+.container-mentionslegal p , ol{
+    margin: 1rem;
+}
+.container-mentionslegal h3 {
+    font-size: 22px;
+}
+.items-1-mentionslegal {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
