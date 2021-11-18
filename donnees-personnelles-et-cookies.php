@@ -11,15 +11,15 @@ include('inc/header.php'); ?>
     <div class="title-h2-donnees-personnelles-et-cookies">
         <h2>Données personnelles et cookies</h2>
     </div>
-    <div>
+    <div class="items-1-donnees-personnelles-et-cookies">
         <h3>Collecte de données</h3>
         <p>Le présent site ne collecte pas de données personnelles.</p>
     </div>
-    <div>
+    <div class="items-2-donnees-personnelles-et-cookies">
         <h3>À propos des cookies</h3>
         <p>Lors de la consultation du site, plusieurs types de cookies sont déposés sur votre ordinateur, votre mobile ou votre tablette. Un "cookie" est une suite d'informations, généralement de petite taille et identifié par un nom, qui peut être transmis à votre navigateur par un site web sur lequel vous vous connectez. Votre navigateur web le conservera pendant une certaine durée, et le renverra au serveur web chaque fois que vous vous y re-connecterez.</p>
     </div>
-    <div>
+    <div class="items-3-donnees-personnelles-et-cookies">
         <h3>Cookies techniques</h3>
         <p>Nous devons utiliser ces cookies pour pouvoir faire fonctionner certaines pages web. C’est la raison pour laquelle ils ne nécessitent pas votre consentement.</p>
         <ul>
@@ -31,11 +31,11 @@ include('inc/header.php'); ?>
             <li>Type de cookie et durée : cookie interne persistant.</li>
         </ul>
     </div>
-    <div>
+    <div class="items-4-donnees-personnelles-et-cookies">
         <h3>Cookies de mesure d’audience</h3>
         <p>Notre site utilise une solution de mesure d'audience qui ne dépose pas de cookies tiers.</p>
     </div>
-    <div>
+    <div class="items-5-donnees-personnelles-et-cookies">
         <h3>Quels sont vos droits sur vos données et comment les exercer ?</h3>
         <p>Vous disposez des droits suivants en ce qui concerne l’utilisation de vos données personnelles :</p>
         <ul>
