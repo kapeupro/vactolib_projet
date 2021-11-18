@@ -139,7 +139,7 @@ a{
     flex-direction: row;
 }
 .separator {
-    background: url("../img/separateur_accueil_usrer.svg") no-repeat;
+    background: url("../img/separateur_accueil_user.svg") no-repeat;
     background-size: cover;
     height: 12rem;
     justify-content: center;

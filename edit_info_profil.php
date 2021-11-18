@@ -6,13 +6,13 @@ require('inc/fonction.php');
 require('inc/request.php');
 $id_session=$_SESSION['user']['id'];
 $errors = [];
-debug($_SESSION);
+
 $sql = "SELECT * FROM vactolib_user WHERE id=:id ";
 $query = $pdo->prepare($sql);
 $query->bindValue(':id',$id_session,PDO::PARAM_STR);
 $query->execute();
 $user= $query->fetch();
-debug($user);
+
 
 $_SESSION['user'] = array(
     'email' => $user['email'],
