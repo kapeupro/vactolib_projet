@@ -554,4 +554,8 @@ input[type=submit]{
  .ajout-vaccin a {
      display: flex;
      align-items: center;
+     color: black;
+ }
+ .ajout-vaccin img {
+     padding-right: 2rem;
  }
