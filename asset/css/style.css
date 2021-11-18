@@ -107,7 +107,7 @@ a{
     flex-flow:column nowrap;
     align-items: center;
 }
-#form textarea {resize: none;min-height: 50px; max-height: 150px; max-width: 350px}
+#register_form textarea {resize: none;min-height: 50px; max-height: 150px; max-width: 350px}
 #register_form input,textarea{
     background:white;
     border:solid 1px rgba(0,0,0,0);
@@ -323,7 +323,58 @@ a{
     color: white;
     transition: .5s
 }
-
+/*CONTACT*/
+#form_contact{
+    display: flex;
+    text-align: center;
+}
+#form_contact .wrapform{
+    max-width: 1040px;
+    width: 100%;
+    margin: 0 auto;
+}
+#form_contact .boxinfo_contact{
+    padding-top: 3rem;
+}
+#form_contact .boxinfo_contact input{
+    border-radius: 20px;
+    border-style: none;
+    background-color: var(--rose);
+    padding: 0.5rem;
+    width: 300px;
+}
+#form_contact .boxinfo_contact textarea{
+    border-style: none;
+    background-color: var(--rose);
+    padding: 0.5rem;
+    width: 400px;
+    height: 200px;
+    box-shadow: none;
+    resize: none;
+}
+#form_contact .boxinfo_contact_bis{
+    padding-top: 2rem;
+}
+#form_contact .boxinfo_contact_bis input {
+    border-radius: 20px;
+    border-style: none;
+    background-color: var(--rose);
+    padding: 0.5rem;
+    width: 200px;
+}
+::placeholder{
+    color: black;
+    padding: .5rem;
+}
+input[type=submit]{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1rem;
+}
+#form_contact p{
+    padding-top: 1rem;
+}
 /*WAVE*/
 
 #footer .footer__wave{
