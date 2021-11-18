@@ -31,15 +31,26 @@ a{
     margin: 0 auto;
     padding: 20px 0;
 }
-/*BOUTONS connexion/inscription*/
-.items_accueil a {
-    background: var(--rose);
+
+/*Button User*/
+.button_type1 {
     border-radius: 30px;
     width: 177px;
     height: 48px;
     text-align: center;
     padding-top: 0.7rem;
+    background: var(--rose);
+    box-shadow: 0px 1px 1px 3px var(--rose);
+    background-image: linear-gradient(0, #F2DFE6, #F2DFE6);
+    background-size: 0;
+    transition: 1s;
+    background-repeat: no-repeat;
 }
+
+.button_type1:hover {
+    background-size: 100%;
+}
+
 /*Input*/
 
 
@@ -258,6 +269,57 @@ a{
     align-content: center;
     text-align: center;
 }
+
+/*PAGE PROFIL*/
+#profil_container .wrap{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem 0;
+}
+#profil_container .wrap a{
+    color: black;
+    font-weight: bold;
+}
+#profil_container .wrap .info_profil{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+}
+#profil_container .wrap .info_profil .icon_profil{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+#profil_container .wrap .info_profil .box_items{
+    width: 35rem;
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: 0px 1px 4px 6px var(--bleu);
+}
+#profil_container .wrap .info_profil .box_items .title_item{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+#profil_container .wrap .info_profil .box_items .info_list{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 10rem;
+}
+
+#profil_container .wrap .illustration_profil{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 3rem;
+}
+
+
 /*FOOTER*/
 #footer{
     display: flex;

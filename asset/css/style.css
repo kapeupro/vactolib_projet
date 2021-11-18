@@ -26,7 +26,6 @@ a{
     max-width: 1040px;
     width: 100%;
     margin: 0 auto;
-    padding: 20px 0;
 }
 
 .wrap2{
@@ -63,6 +62,17 @@ a{
 
 .button_type1:hover {
     background-size: 100%;
+}
+
+.button_type2{
+    border-radius: 30px;
+    padding: .4rem .8rem;
+    text-align: center;
+    box-shadow: 0px 1px 1px 3px var(--bleu);
+    background-color: var(--bleu);
+}
+.button_type2:hover{
+    background-color: #F2DFE6;
 }
 
 /*Input*/
