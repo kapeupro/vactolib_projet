@@ -1,10 +1,11 @@
 <?php
 
 session_start();
+
 require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
-
+debug($_SESSION);
 function getUsers(){
     global $pdo;
     $sql="SELECT * FROM vactolib_user ORDER BY id DESC";
