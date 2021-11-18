@@ -9,15 +9,18 @@
         <div class="footer__logo">
             <a href="index.php"><img src="asset/img/logo_vactolib.png" alt="logo vactolib"></a>
         </div>
+        <?php if(!empty($_SESSION)){ ?>
+            <div class="footer__services">
+                <h3>Nos services</h3>
+                <ul>
+                    <li><a href="#">Mon carnet</a></li>
+                    <li><a href="#">Mon profil</a></li>
+                    <li><a href="#">Ajouter un vaccin</a></li>
+                </ul>
+            </div>
+        <?php } else { ?>
 
-        <div class="footer__services">
-            <h3>Nos services</h3>
-            <ul>
-                <li><a href="#">Mon carnet</a></li>
-                <li><a href="#">Mon profil</a></li>
-                <li><a href="#">Ajouter un vaccin</a></li>
-            </ul>
-        </div>
+        <?php } ?>
 
         <div class="footer__donnees">
             <h3>Données</h3>
