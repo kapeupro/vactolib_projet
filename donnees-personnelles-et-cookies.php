@@ -8,6 +8,7 @@ include('inc/header.php'); ?>
 
 <section>
     <div class="wrap">
+        <div class="container-donnees-personnelles-et-cookies">
     <div id="title-h2-donnees-personnelles-et-cookies">
         <h2>Données personnelles et cookies</h2>
     </div>
@@ -49,6 +50,7 @@ include('inc/header.php'); ?>
             <li>si vous résidez en France, définir le sort de vos données après votre mort.</li>
         </ul>
     </div>
+        </div>
     </div>
 </section>
 <?php include('inc/footer.php');
