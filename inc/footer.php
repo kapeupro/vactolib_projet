@@ -26,7 +26,7 @@
                 <li><a href="../mentionslegal.php">Mentions légal</a></li>
             </ul>
         </div>
-        
+
         <div class="footer__contact">
             <h3>Contact</h3>
             <ul>
