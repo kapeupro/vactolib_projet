@@ -309,7 +309,20 @@ a{
 #profil_container .wrap .info_profil .box_items .info_list{
     display: flex;
     flex-flow: row nowrap;
-    gap: 10rem;
+}
+
+/*FORMULAIRE EDIT*/
+#profil_container .wrap .info_profil .box_items .info_list form{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .5rem;
+}
+
+#profil_container .wrap .info_profil .box_items .info_list form .form_box_modif{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 6rem;
 }
 
 #profil_container .wrap .illustration_profil{

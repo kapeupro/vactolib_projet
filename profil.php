@@ -4,6 +4,20 @@ require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
 
+$sql = "SELECT * FROM vactolib_user";
+$query = $pdo->prepare($sql);
+$query->execute();
+$user= $query->fetch();
+
+$_SESSION['user']=array(
+    'email'=>$user['email'],
+    'nom'=>$user['nom'],
+    'prenom'=>$user['prenom'],
+    'tel'=>$user['portable'],
+    'dateNaissance'=>$user['date_de_naissance']
+);
+//debug($_SESSION['user']);
+
 include('inc/header.php'); ?>
 <link rel="stylesheet" href="asset/css/style_user.css">
 
@@ -12,30 +26,21 @@ include('inc/header.php'); ?>
         <div class="info_profil">
             <div class="icon_profil">
                 <img src="asset/img/icon_profil.svg" alt="icone de profil">
-                <h2>Nom Prenom</h2>
+                <h2><?php echo $_SESSION['user']['nom'] .' '. $_SESSION['user']['prenom'] ?></h2>
             </div>
 
             <div class="box_items">
                 <div class="title_item">
                     <h3>Informations :</h3>
-                    <a class="button_type2" href="#">edit</a>
+                    <a class="button_type2" href="edit_info_profil.php">edit</a>
                 </div>
 
                 <div class="info_list">
                     <ul>
-                        <li>Adresse : </li>
-                        <li>Code postal : </li>
-                        <li>Ville : </li>
-                        <li>Date de naissance : </li>
-                        <li>Lieu de naissance : </li>
-                    </ul>
-
-                    <ul>
-                        <li>Mot de passe : </li>
-                        <li>Mail : </li>
-                        <li>Tél : </li>
-                        <li>Nationalité : </li>
-                        <li>Sexe : </li>
+                        <li>Mail : <?php echo $_SESSION['user']['email'] ?></li>
+                        <li>Mot de passe : ******</li>
+                        <li>Date de naissance : <?php if(empty($_SESSION['user']['dateNaissance'])){echo "Non renseigné";}else{echo $_SESSION['user']['dateNaissance'];} ?></li>
+                        <li>Tél : <?php if(empty($_SESSION['user']['tel'])){echo "Non renseigné";}else{echo $_SESSION['user']['tel'];} ?></li>
                     </ul>
                 </div>
             </div>
