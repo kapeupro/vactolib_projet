@@ -46,6 +46,17 @@ $errors[$key]='Veuillez renseigner ce champ';
 return $errors;
 }
 
+function phoneNumberValidation($errors,$value,$key)
+{
+    if (!empty($value)) {
+        $regex = '#^0[6-7]{1}\d{8}$#';
+        if (!preg_match($regex, $value)) {
+            $errors[$key] = "Veuillez renseigner un numéro valide";
+        }
+    }
+    return $errors;
+}
+
 function cleanXss($key){
 return trim(strip_tags($_POST[$key]));
 }

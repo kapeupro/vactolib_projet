@@ -320,6 +320,24 @@ a{
 
 #profil_container .wrap .info_profil .box_items .info_list form .form_box_modif{
     display: flex;
+    flex-flow: column nowrap;
+}
+#profil_container .wrap .info_profil .box_items .info_list form .form_box_modif input[type="submit"]{
+    border-radius: 30px;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    background: var(--rose);
+}
+#profil_container .wrap .info_profil .box_items .info_list form .form_box_modif input[type="submit"]:hover{
+    cursor: pointer;
+    background: #F2DFE6;
+}
+#profil_container .wrap .info_profil .box_items .info_list form .form_box_modif .error{
+    color: red;
+}
+#profil_container .wrap .info_profil .box_items .info_list form .form_box_modif .form_box_input{
+    display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     gap: 6rem;
