@@ -5,21 +5,27 @@ session_start();
 require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
-debug($_SESSION);
-function getUsers(){
-    global $pdo;
-    $sql="SELECT * FROM vactolib_user ORDER BY id DESC";
-    $query = $pdo->prepare($sql);
-    $query->execute();
-    return $query->fetchAll();
-}
-
-//debug(getUsers());
-//debug($_SESSION);ED
 
 
 //PARTIE UTILISATEUR CONNECTED
 if(!empty($_SESSION)){
+
+    $id_session=$_SESSION['user']['id'];
+
+    $sql = "SELECT * FROM vactolib_user WHERE id=:id ";
+    $query = $pdo->prepare($sql);
+    $query->bindValue(':id',$id_session,PDO::PARAM_STR);
+    $query->execute();
+    $user= $query->fetch();
+
+    $_SESSION['user']=array(
+        'id'=>$user['id'],
+        'nom'=>$user['nom'],
+        'prenom'=>$user['prenom']
+    );
+
+//    debug($user);
+
     include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style_user.css">
     <section>
@@ -28,11 +34,13 @@ if(!empty($_SESSION)){
     <div class="items_accueil">
     <div class="items_accueil_p">
     <div class="p_items_a">
-    <?php if(!empty($_SESSION['prenom'])){ ?>
-        <p>Vactolib est content de vous revoir <?php echo $_SESSION['prenom']?>. <br>
+    <?php if(!empty($user['prenom'])){ ?>
+        <p>Ravie de vous revoir <?php echo $_SESSION['user']['prenom']; ?> ! <br>
             Avec nous, vos donnée sont protegées </p>
-    <?php } else ?>
+    <?php } else { ?>
         <p>Vactolib est content de vous revoir. <br>Avec nous, vos donnée sont protegées </p>
+    <?php } ?>
+
         </div>
         </div>
         <div class="items_groupe">

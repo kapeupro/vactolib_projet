@@ -64,7 +64,7 @@ if(!empty($_POST['submitted'])) {
     }
 }
 
-debug($_SESSION);
+//debug($_SESSION);
 //debug($errors);
 
 include('inc/header.php'); ?>
