@@ -511,3 +511,47 @@ input[type=submit]{
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+
+/*CARNET*/
+.title-carnet{
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+    font-size: 33px;
+}
+#container-carnet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.items-carnet {
+    background: var(--bleu);
+    border-radius: 20px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    width: 407px;
+    height: 164px;
+}
+.items-carnet h3 , p{
+    display: flex;
+    justify-content: center;
+}
+.items_p_carnet {
+    display: flex;
+}
+ .ajout-vaccin {
+     display: flex;
+     align-items: center;
+     justify-content: flex-end;
+     margin: 4rem;
+ }
+ .ajout-vaccin a {
+     display: flex;
+     align-items: center;
+ }

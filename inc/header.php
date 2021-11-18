@@ -23,7 +23,7 @@
         <nav>
             <ul class="nav_header">
                 <?php if(!empty($_SESSION)){ ?>
-                <li><a href="#">Mon Carnet</a></li>
+                <li><a href="moncarnet.php">Mon Carnet</a></li>
                 <li class="ligne_black"></li>
                 <li><a href="profil.php">Profil</a></li>
                 <li class="ligne_black"></li>
