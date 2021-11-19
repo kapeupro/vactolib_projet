@@ -14,6 +14,7 @@ if(!empty($_POST['submitted']))
 
     $errors=mailValidation($errors,$email,'email');
     $errors=textValidation($errors,$nom,'nom',2);
+    $errors=textValidation($errors,$phone,'phone',2);
     $errors=textValidation($errors,$message,'message',10,500);
 
 
