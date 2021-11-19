@@ -55,7 +55,7 @@ include('inc/header.php'); ?>
         </div>
     </div>
     <div class="ajout-vaccin">
-            <a href=""><img src="asset/img/cta-ajout.svg">Ajouter un vaccin</a>
+            <a href="ajouter.php"><img src="asset/img/cta-ajout.svg">Ajouter un vaccin</a>
     </div>
 </section>
 

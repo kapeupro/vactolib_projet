@@ -14,16 +14,6 @@ $query->execute();
 $user= $query->fetch();
 
 
-$_SESSION['user'] = array(
-    'email' => $user['email'],
-    'nom' => $user['nom'],
-    'prenom' => $user['prenom'],
-    'tel' => $user['portable'],
-    'dateNaissance' => $user['date_de_naissance'],
-    'mdp'=> $user['password'],
-    'id'=>$user['id']
-);
-
 if(!empty($_POST['submitted'])) {
     // Faille xss
     $email = cleanXss ('email');
@@ -40,7 +30,7 @@ if(!empty($_POST['submitted'])) {
             $errors['password'] = "Vous devez entrer votre ancien mot de passe";
         }
         if(!empty($_POST['password'])){
-            if(!password_verify($password, $_SESSION['user']['mdp'])){
+            if(!password_verify($password, $user['password'])){
                 $errors['password'] = "Mot de passe incorrect";
             }
         }
