@@ -29,7 +29,7 @@
                 <li class="ligne_black"></li>
                 <li><a href="logout.php">Déconnexion</a></li>
                 <?php } else { ?>
-                <li><a href="#">Vie privée</a></li>
+                <li><a href="vieprivee.php">Vie privée</a></li>
                 <li class="ligne_black"></li>
                 <li><a href="register.php">Inscription</a></li>
                 <li class="ligne_black"></li>
