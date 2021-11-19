@@ -5,7 +5,9 @@ require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
 
+
 $id_session=$_SESSION['user']['id'];
+$errors=[];
 
 $sql = "SELECT * FROM vactolib_user WHERE id=:id ";
 $query = $pdo->prepare($sql);
@@ -29,8 +31,20 @@ $query = $pdo->prepare($sql);
 $query->execute();
 $vaccins= $query->fetchAll();
 
-debug($vaccins);
+//debug($vaccins);
 
+if(!empty($_POST['submitted'])) {
+    // Faille xss
+    $vaccin = cleanXss('vaccin');
+
+    if (!empty($_POST["vaccin"]) and $_POST["vaccin"]!=''){
+
+
+    }else{
+        $errors['vaccin'] = "* Veuillez séléctionner un vaccin";
+    }
+}
+debug($errors);
 
 include('inc/header.php');
 ?>
@@ -41,17 +55,18 @@ include('inc/header.php');
         <h1>Ajout d'un vaccin</h1>
 
         <form action="" method="post">
-            <label for="vaccin">Selectionner un vaccin :</label>
-
             <select name="vaccin" id="vaccin">
-                <option value="">Selectionner</option>
+                <option value="">Selectionner un vaccin</option>
                 <?php
                 foreach($vaccins as $vaccin){ ?>
-                    <option value=""><?php echo $vaccin['nom_vaccin'] ?></option>
+                    <option name="option" id="option" value="option"><?php echo $vaccin['nom_vaccin'] ?></option>
                 <?php } ?>
             </select>
 
-            <input type="submit" name="submitted" id="submitted" value="Ajouter">
+            <div class="error_box">
+                <input class="button_type1" type="submit" name="submitted" id="submitted" value="Ajouter">
+                <span class="error"><?php viewError($errors, 'vaccin'); ?></span>
+            </div>
         </form>
     </div>
 </section>
