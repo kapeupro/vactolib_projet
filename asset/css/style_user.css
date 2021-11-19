@@ -354,7 +354,34 @@ a{
 #ajout_vaccin .wrap{
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
+    padding-top: 4rem;
+}
+#ajout_vaccin .wrap h1{
+    text-align: center;
+    font-size: 3rem;
+}
+#ajout_vaccin .wrap form{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+    padding: 3rem 0;
+    margin: 0 auto;
+}
+#ajout_vaccin .wrap form select{
+    border-radius: 10px;
+}
+
+#ajout_vaccin .wrap form .error_box{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .5rem;
+}
+#ajout_vaccin .wrap form .error_box .error{
+    color: red;
+}
+#ajout_vaccin .wrap form .button_type1{
+    margin: 0 auto;
+    padding: 0;
 }
 
 
