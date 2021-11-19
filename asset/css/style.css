@@ -380,6 +380,11 @@ input[type=submit]{
 #form_contact .button_type1{
     margin: 0 auto;
 }
+#form_contact span{
+    color: red;
+    display: flex;
+    flex-flow: column nowrap;
+}
 /*WAVE*/
 
 #footer .footer__wave{
