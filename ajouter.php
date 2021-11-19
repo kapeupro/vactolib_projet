@@ -5,8 +5,7 @@ require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
 
-debug($_POST);
-debug($_SESSION);
+$success=false;
 $id_session=$_SESSION['user']['id'];
 $vaccin_id=$_POST;
 $errors=[];
@@ -16,24 +15,23 @@ $query = $pdo->prepare($sql);
 $query->bindValue(':id',$id_session,PDO::PARAM_STR);
 $query->execute();
 $user= $query->fetch();
-debug($user);
 
 /*Requete pour aller chercher tout les vaccins*/
 $sql = "SELECT * FROM vactolib_vaccins";
 $query = $pdo->prepare($sql);
 $query->execute();
 $vaccins= $query->fetchAll();
-debug($vaccins);
 
 if(!empty($_POST['submitted'])) {
     // Faille xss
     $vaccin = cleanXss('vaccin');
     if (!empty($_POST["vaccin"]) and $_POST["vaccin"]!=''){
+        $success=true;
     }else{
         $errors['vaccin'] = "* Veuillez séléctionner un vaccin";
     }
 }
-    if(count($errors) == 0) {
+    if($success=true) {
     $sql = "INSERT INTO `vactolib_user_vaccins`(`user_id`, `vaccin_id`, `created_at` ) 
     VALUES (:user_id,:vaccin_id, NOW() )";
     $query = $pdo->prepare($sql);
@@ -60,7 +58,6 @@ include('inc/header.php');
                     <option value="<?php echo $vaccin['id'] ?> "><?php echo $vaccin['nom_vaccin'] ?></option>
                 <?php } ?>
             </select>
-
             <div class="error_box">
                 <input class="button_type1" type="submit" name="submitted" id="submitted" value="Ajouter">
                 <span class="error"><?php viewError($errors, 'vaccin'); ?></span>
