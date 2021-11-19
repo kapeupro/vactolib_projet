@@ -146,10 +146,10 @@ if(!empty($_SESSION)){
                         </div>
                         <div class="accueil_buttons_container">
                             <div class="button_type1">
-                                <a href="#">Inscription</a>
+                                <a href="register.php">Inscription</a>
                             </div>
                             <div class="button_type1">
-                                <a href="#">Connexion</a>
+                                <a href="login.php">Connexion</a>
                             </div>
                         </div>
 
