@@ -125,6 +125,7 @@ a{
     margin:1.2rem 0;
 }
 #register_form p{color:lightpink;font-size: .75rem;}
+#register_form label{padding:1rem;}
 .logo {display:flex;justify-content: center;margin:2rem;}
 
 
