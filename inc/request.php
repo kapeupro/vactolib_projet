@@ -33,7 +33,7 @@ function getUserVaccinsBySessionId($id_session){
     $query = $pdo->prepare($sql);
     $query->bindValue(':id',$id_session,PDO::PARAM_STR);
     $query->execute();
-    return $query->fetch();
+    return $query->fetchAll();
 }
 
 function getUserByToken($token){

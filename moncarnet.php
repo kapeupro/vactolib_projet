@@ -6,25 +6,25 @@ require('inc/fonction.php');
 require('inc/request.php');
 
 $id_session=$_SESSION['user']['id'];
-debug($_SESSION);
 
 $user=getUserBySessionId($id_session);
 $user_vaccins=getUserVaccinsBySessionId($id_session);
-debug($user);
-debug($user_vaccins);
 
-$_SESSION['user']=array(
-    'id'=>$user['id'],
-    'email'=>$user['email'],
-    'nom'=>$user['nom'],
-    'prenom'=>$user['prenom'],
-    'tel'=>$user['portable'],
-    'dateNaissance'=>$user['date_de_naissance']
-)
-
+$sqlleft = "SELECT vv.nom_vaccin, vuv.id
+        FROM vactolib_user_vaccins AS vuv
+        LEFT JOIN vactolib_vaccins AS vv
+        ON vv.id = vuv.vaccin_id
+        WHERE vuv.user_id = :id_session";
+$query = $pdo->prepare($sqlleft);
+$query->bindValue(':id_session',$id_session,PDO::PARAM_INT);
+$query->execute();
+$userVaccin = $query->fetchAll();
 
 
-;
+
+debug($userVaccin);
+
+
 include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style_user.css">
 <section>
@@ -34,12 +34,12 @@ include('inc/header.php'); ?>
     <div id="carnet">
         <div class="wrap">
             <div id="container-carnet">
-                <?php foreach ($user_vaccins as $user_vaccin) { ?>
+                <?php foreach ($user_vaccins as $user_vaccin){ ?>
                 <div class="items-carnet">
                         <h3>Nom du Certificat</h3>
                         <p class="nom-carnet"> <?php echo $_SESSION['user']['nom'];echo' ';echo $_SESSION['user']['prenom']  ?></p>
                         <p class="naissance">Né le  <?php echo $_SESSION['user']['dateNaissance']?></p>
-                        <p class="date-vaccin"> Vaccin, le xx/xx/xx</p>
+                        <p class="date-vaccin"> <?php  ?>, le xx/xx/xx</p>
                 </div>
                 <?php } ?>
             </div>

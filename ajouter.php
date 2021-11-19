@@ -26,7 +26,6 @@ if(!empty($_POST['submitted'])) {
     // Faille xss
     $vaccin = cleanXss('vaccin');
     if (!empty($_POST["vaccin"]) and $_POST["vaccin"]!=''){
-        $success=true;
     }else{
         $errors['vaccin'] = "* Veuillez séléctionner un vaccin";
     }
@@ -34,11 +33,10 @@ if(!empty($_POST['submitted'])) {
     $sql = "INSERT INTO `vactolib_user_vaccins`(`user_id`, `vaccin_id`, `created_at` ) 
     VALUES (:user_id,:vaccin_id, NOW() )";
     $query = $pdo->prepare($sql);
-    $query->bindValue(':user_id',$id_session,PDO::PARAM_STR);
+    $query->bindValue(':user_id',$id_session,PDO::PARAM_INT);
     $query->bindValue(':vaccin_id',$vaccin_id,PDO::PARAM_INT);
     $query->execute();
     $user_vaccins= $query->fetch();
-    debug($user_vaccins);
 }
 
 include('inc/header.php');
