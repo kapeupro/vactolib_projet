@@ -2,8 +2,11 @@
 
 require('inc/pdo.php');
 require('inc/fonction.php');
-
-
+$success=false;
+$token=urldecode($_GET['token']);
+//debug($token);
+//
+//debug(($_GET));
 $errors = [];
 if(!empty($_POST['submitted'])) {
     // Faille xss
@@ -13,14 +16,11 @@ if(!empty($_POST['submitted'])) {
     // Validation
 
     if(empty($errors['email'])) {
-        $sql = "SELECT * FROM vactolib_user WHERE id = :email";
+        $sql = "SELECT * FROM vactolib_user WHERE token=:token ";
         $query = $pdo->prepare($sql);
-        $query->bindValue(':id',$id,PDO::PARAM_STR);
+        $query->bindValue(':token',$token,PDO::PARAM_STR);
         $query->execute();
-        $verifPseudo = $query->fetch();
-        if(!empty($verifPseudo)) {
-            $errors['email'] = 'Vous avez déjà un compte avec cette adresse mail';
-        }
+        $user = $query->fetch();
     }
     // password
     if(!empty($password) || !empty($password2)) {
@@ -36,12 +36,13 @@ if(!empty($_POST['submitted'])) {
         // hashpassword
         $hashpassword = password_hash($password,PASSWORD_DEFAULT);
         // INSERT INTO
-        $sql = "UPDATE `vactolib_user` SET `password`=:password WHERE id=:id";
+        $sql = "UPDATE `vactolib_user` SET `password`=:password WHERE token=:token";
         $query = $pdo->prepare($sql);
         $query->bindValue(':password',$hashpassword,PDO::PARAM_STR);
+        $query->bindValue(':token',$token,PDO::PARAM_STR);
         $query->execute();
         // redirection
-        die('oui good');
+        $success=true;
     }
 }
 ?>
@@ -54,6 +55,12 @@ if(!empty($_POST['submitted'])) {
     <div class="img_float2"></div>
     <div class="img_float3"></div>
     <div class="wrap2">
+        <?php if($success==true) { ?>
+            <div class="info_box">
+                <h2>Mot de passe mis à jour avec succès</h2>
+                <a href="index.php">Retour à l'acceuil</a>
+            </div>
+        <?php  } else { ?>
         <form action="" method="post" class="wrapform" novalidate>
 
             <div class="info_box">
@@ -71,5 +78,6 @@ if(!empty($_POST['submitted'])) {
             </div>
             <p>Les champs avec * sont requis</p>
         </form>
+        <?php  }?>
     </div>
 </section>
