@@ -40,6 +40,11 @@ if(!empty($_SESSION)){
                             <?php } else { ?>
                                 <p>Vactolib est content de vous revoir. <br>Avec nous, vos donnée sont protegées </p>
                             <?php } ?>
+                            <div class="accueil_buttons_container">
+                                <div class="button_type1">
+                                    <a href="moncarnet.php">Mon Carnet</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="items_groupe">
