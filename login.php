@@ -66,7 +66,7 @@ if(!empty($_POST['submitted'])) {
                     <input type="submit" name="submitted" value="ENVOYER">
                 </div>
                 <div>
-                  <?php  echo'<a href="missingpassword.php">Mot de passe oublié ?</a>'?>
+                  <?php  echo'<a href="mailmissingpassword.php">Mot de passe oublié ?</a>'?>
                 </div>
 
             </form>
