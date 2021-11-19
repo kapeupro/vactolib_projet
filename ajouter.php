@@ -6,12 +6,13 @@ require('inc/fonction.php');
 require('inc/request.php');
 
 
+$id_vaccin = $_POST;
 $id_session=$_SESSION['user']['id'];
 $errors=[];
 
 $sql = "SELECT * FROM vactolib_user WHERE id=:id ";
 $query = $pdo->prepare($sql);
-$query->bindValue(':id',$id_session,PDO::PARAM_STR);
+$query->bindValue(':id',$id_session,PDO::PARAM_INT);
 $query->execute();
 $user= $query->fetch();
 
@@ -26,26 +27,14 @@ debug($vaccins);
 
 if(!empty($_POST['submitted'])) {
 
-
+    $sql = "INSERT INTO vactolib_user_vaccins (user_id, vaccin_id) 
+            VALUES (:user_id,:vaccin_id)";
+    $query = $pdo->prepare($sql);
+    $query->bindValue(':user_id',$id_session,PDO::PARAM_INT);
+    $query->bindValue(':vaccin_id', $id_vaccin,PDO::PARAM_INT);
+    $query->execute();
+    debug($_POST);
 }
-//    // Faille xss
-//    $vaccin = cleanXss('option');
-//
-//    if(!empty($_POST['option']) and $_POST['option']!= Null){
-//        debug($vaccin);
-//
-//        $sql = "INSERT INTO vactolib_user_vaccins (user_id, vaccin_id, created_at)
-//            VALUES (:id_user,:id_vaccin,NOW())";
-//        $query = $pdo->prepare($sql);
-//        $query->bindValue(':id_user',$id_session,PDO::PARAM_INT);
-//        $query->bindValue(':id_vaccin',$vaccin['id'],PDO::PARAM_INT);
-//        $query->execute();
-//
-//    }else{
-//        $errors['vaccin'] = "Veuillez séléctionner un vaccin";
-//    }
-//}
-////debug($_POST['option']);
 
 include('inc/header.php');
 ?>
@@ -60,7 +49,7 @@ include('inc/header.php');
                 <option value="">Selectionner un vaccin</option>
                 <?php
                 foreach($vaccins as $vaccin){ ?>
-                    <option name="option" id="option" value="option"> <?php echo $vaccin['nom_vaccin'] ?></option>
+                    <option value="<?php echo $vaccin['id'] ?>"><?php echo $vaccin['nom_vaccin'] ?></option>
                 <?php } ?>
             </select>
 
