@@ -15,15 +15,6 @@ $query->bindValue(':id',$id_session,PDO::PARAM_STR);
 $query->execute();
 $user= $query->fetch();
 
-$_SESSION['user']=array(
-    'id'=>$user['id'],
-    'email'=>$user['email'],
-    'nom'=>$user['nom'],
-    'prenom'=>$user['prenom'],
-    'tel'=>$user['portable'],
-    'dateNaissance'=>$user['date_de_naissance']
-);
-
 /*Requete pour aller chercher tout les vaccins*/
 
 $sql = "SELECT * FROM vactolib_vaccins";
@@ -31,20 +22,30 @@ $query = $pdo->prepare($sql);
 $query->execute();
 $vaccins= $query->fetchAll();
 
-//debug($vaccins);
+debug($vaccins);
 
 if(!empty($_POST['submitted'])) {
-    // Faille xss
-    $vaccin = cleanXss('vaccin');
-
-    if (!empty($_POST["vaccin"]) and $_POST["vaccin"]!=''){
 
 
-    }else{
-        $errors['vaccin'] = "* Veuillez séléctionner un vaccin";
-    }
 }
-debug($errors);
+//    // Faille xss
+//    $vaccin = cleanXss('option');
+//
+//    if(!empty($_POST['option']) and $_POST['option']!= Null){
+//        debug($vaccin);
+//
+//        $sql = "INSERT INTO vactolib_user_vaccins (user_id, vaccin_id, created_at)
+//            VALUES (:id_user,:id_vaccin,NOW())";
+//        $query = $pdo->prepare($sql);
+//        $query->bindValue(':id_user',$id_session,PDO::PARAM_INT);
+//        $query->bindValue(':id_vaccin',$vaccin['id'],PDO::PARAM_INT);
+//        $query->execute();
+//
+//    }else{
+//        $errors['vaccin'] = "Veuillez séléctionner un vaccin";
+//    }
+//}
+////debug($_POST['option']);
 
 include('inc/header.php');
 ?>
@@ -59,7 +60,7 @@ include('inc/header.php');
                 <option value="">Selectionner un vaccin</option>
                 <?php
                 foreach($vaccins as $vaccin){ ?>
-                    <option name="option" id="option" value="option"><?php echo $vaccin['nom_vaccin'] ?></option>
+                    <option name="option" id="option" value="option"> <?php echo $vaccin['nom_vaccin'] ?></option>
                 <?php } ?>
             </select>
 

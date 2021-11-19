@@ -183,12 +183,7 @@ a{
     width: 45%;
 }
 .items_accueil a {
-    background: var(--rose);
-    border-radius: 30px;
-    width: 177px;
-    height: 48px;
-    text-align: center;
-    padding-top: 0.7rem;
+    padding: .7rem 1.5rem ;
 }
 /*Section STATS BIS*/
 #stats_chiffre .wrap{
