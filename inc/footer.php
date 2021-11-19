@@ -13,8 +13,8 @@
             <div class="footer__services">
                 <h3>Nos services</h3>
                 <ul>
-                    <li><a href="#">Mon carnet</a></li>
-                    <li><a href="#">Mon profil</a></li>
+                    <li><a href="moncarnet.php">Mon carnet</a></li>
+                    <li><a href="profil.php">Mon profil</a></li>
                     <li><a href="#">Ajouter un vaccin</a></li>
                 </ul>
             </div>
