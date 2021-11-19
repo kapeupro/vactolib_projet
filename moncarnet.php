@@ -7,12 +7,11 @@ require('inc/request.php');
 
 $id_session=$_SESSION['user']['id'];
 debug($_SESSION);
-$sql = "SELECT * FROM vactolib_user WHERE id=:id ";
-$query = $pdo->prepare($sql);
-$query->bindValue(':id',$id_session,PDO::PARAM_STR);
-$query->execute();
-$user= $query->fetch();
+
+$user=getUserBySessionId($id_session);
+$user_vaccins=getUserVaccinsBySessionId($id_session);
 debug($user);
+debug($user_vaccins);
 
 $_SESSION['user']=array(
     'id'=>$user['id'],
@@ -21,7 +20,11 @@ $_SESSION['user']=array(
     'prenom'=>$user['prenom'],
     'tel'=>$user['portable'],
     'dateNaissance'=>$user['date_de_naissance']
-);
+)
+
+
+
+;
 include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style_user.css">
 <section>
@@ -31,26 +34,14 @@ include('inc/header.php'); ?>
     <div id="carnet">
         <div class="wrap">
             <div id="container-carnet">
+                <?php foreach ($user_vaccins as $user_vaccin) { ?>
                 <div class="items-carnet">
                         <h3>Nom du Certificat</h3>
                         <p class="nom-carnet"> <?php echo $_SESSION['user']['nom'];echo' ';echo $_SESSION['user']['prenom']  ?></p>
                         <p class="naissance">Né le  <?php echo $_SESSION['user']['dateNaissance']?></p>
                         <p class="date-vaccin"> Vaccin, le xx/xx/xx</p>
                 </div>
-                <div class="items-carnet">
-                    <div class="items-carnet">
-                        <h3>Nom du Certificat</h3>
-                        <p class="nom-carnet"> <?php echo $_SESSION['user']['nom'];echo' ';echo $_SESSION['user']['prenom'] ?></p>
-                        <p class="naissance">Né le  <?php echo $_SESSION['user']['dateNaissance']?></p>
-                        <p class="date-vaccin"> Vaccin, le xx/xx/xx</p>
-                    </div>
-                </div>
-                <div class="items-carnet">
-                    <h3>Nom du Certificat</h3>
-                    <p class="nom-carnet"> <?php echo $_SESSION['user']['nom'];echo' ';echo $_SESSION['user']['prenom']  ?></p>
-                    <p class="naissance">Né le  <?php echo $_SESSION['user']['dateNaissance']?></p>
-                    <p class="date-vaccin"> Vaccin, le xx/xx/xx</p>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </div>
