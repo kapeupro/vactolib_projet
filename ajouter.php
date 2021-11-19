@@ -5,9 +5,11 @@ require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
 
-$success=false;
+
 $id_session=$_SESSION['user']['id'];
 $vaccin_id=$_POST;
+debug($_POST);
+debug($vaccin_id);
 $errors=[];
 
 $sql = "SELECT * FROM vactolib_user WHERE id=:id ";
@@ -25,6 +27,7 @@ $vaccins= $query->fetchAll();
 if(!empty($_POST['submitted'])) {
     // Faille xss
     $vaccin = cleanXss('vaccin');
+//    $date   = cleanXss('date');
     if (!empty($_POST["vaccin"]) and $_POST["vaccin"]!=''){
         $success=true;
     }else{
