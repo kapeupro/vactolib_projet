@@ -350,6 +350,13 @@ a{
     gap: 3rem;
 }
 
+/*PAGE AJOUT VACCIN*/
+#ajout_vaccin .wrap{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
 
 /*FOOTER*/
 #footer{
