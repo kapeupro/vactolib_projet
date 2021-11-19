@@ -20,7 +20,7 @@ function getUser(){
 }
 function getUserBySessionId($id_session){
     global $pdo;
-    $sql = "SELECT * FROM vactolib_user WHERE id=:id ";
+    $sql = "SELECT * FROM vactolib_user WHERE id=:id";
     $query = $pdo->prepare($sql);
     $query->bindValue(':id',$id_session,PDO::PARAM_STR);
     $query->execute();

@@ -20,10 +20,8 @@ $query->bindValue(':id_session',$id_session,PDO::PARAM_INT);
 $query->execute();
 $userVaccin = $query->fetchAll();
 
-
-
+$i = 0;
 debug($userVaccin);
-
 
 include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style_user.css">
@@ -37,11 +35,11 @@ include('inc/header.php'); ?>
                 <?php foreach ($user_vaccins as $user_vaccin){ ?>
                 <div class="items-carnet">
                         <h3>Nom du Certificat</h3>
-                        <p class="nom-carnet"> <?php echo $_SESSION['user']['nom'];echo' ';echo $_SESSION['user']['prenom']  ?></p>
+                        <p class="nom-carnet"> <?php echo $_SESSION['user']['nom'];echo' ';echo $_SESSION['user']['prenom'] ?></p>
                         <p class="naissance">Né le  <?php echo $_SESSION['user']['dateNaissance']?></p>
-                        <p class="date-vaccin"> <?php  ?>, le xx/xx/xx</p>
+                        <p class="date-vaccin"> <?php echo $userVaccin[$i]['nom_vaccin']; ?>, le xx/xx/xx</p>
                 </div>
-                <?php } ?>
+                <?php $i++; } ?>
             </div>
         </div>
     </div>
