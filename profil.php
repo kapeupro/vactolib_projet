@@ -55,15 +55,13 @@ include('inc/header.php'); ?>
             <div class="box_items">
                 <div class="title_item">
                     <h3>Mes rendez-vous :</h3>
-                    <a class="button_type2" href="#">edit</a>
                 </div>
 
                 <div class="info_rdv">
                     <ul>
-                        <li>Prochains rendez-vous : </li>
-                        <li>Dernier rendez-vous : </li>
-                        <li>Médecin traitant : </li>
-                        <li>Rappel : </li>
+                        <li>Dernier vaccin : </li>
+                        <li>Fait le : </li>
+                        <li>Rappel le : </li>
                     </ul>
                 </div>
             </div>
