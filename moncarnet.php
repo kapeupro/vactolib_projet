@@ -34,7 +34,7 @@ include('inc/header.php'); ?>
             <div id="container-carnet">
                 <?php foreach ($user_vaccins as $user_vaccin){ ?>
                 <div class="items-carnet">
-                        <h3>Nom du Certificat</h3>
+                        <h3>Vaccination <?php echo $userVaccin[$i]['nom_vaccin']; ?></h3>
                         <p class="nom-carnet"> <?php echo $_SESSION['user']['nom'];echo' ';echo $_SESSION['user']['prenom'] ?></p>
                         <p class="naissance">Né le  <?php echo $_SESSION['user']['dateNaissance']?></p>
                         <p class="date-vaccin"> <?php echo $userVaccin[$i]['nom_vaccin']; ?>, le xx/xx/xx</p>
