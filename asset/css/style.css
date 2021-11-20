@@ -563,6 +563,22 @@ input[type=submit]{
     display: flex;
 }
 
+/*CARNET VIDE*/
+.carnet_vide{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+    text-align: center;
+}
+.carnet_vide a{
+    color: black;
+    font-weight: bold;
+}
+.carnet_vide .button_type2{
+    width: 11rem;
+    margin: 0 auto;
+}
+
 /*SECTION DETAIL VACCIN*/
 #vaccin_detail{
     padding: 2rem 0;

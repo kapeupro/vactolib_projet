@@ -23,13 +23,22 @@ $userVaccin = $query->fetchAll();
 //initialisation d'un compteur pour la boucle foreach
 $i = 0;
 
-
 include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style_user.css">
 <section>
     <div class="title-carnet">
         <h2>Mon Carnet</h2>
     </div>
+
+    <?php if(empty($userVaccin)) { ?>
+            <div class="carnet_vide">
+                <p>Nous n'avons aucun vaccin à afficher ...</p>
+                <a class="button_type2" href="ajouter.php">Ajouter un vaccin ?</a>
+            </div>
+    <?php } else { ?>
+
+
+
     <div id="carnet">
         <div class="wrap">
             <div id="container-carnet">
@@ -44,9 +53,12 @@ include('inc/header.php'); ?>
             </div>
         </div>
     </div>
+
     <div class="ajout-vaccin">
             <a href="ajouter.php"><img src="asset/img/cta-ajout.svg">Ajouter un vaccin</a>
     </div>
+
+    <?php } ?>
 </section>
 
 <?php include('inc/footer.php');
