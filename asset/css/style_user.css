@@ -13,7 +13,7 @@ a{
 }
 :root {
     --bleu : #e8f6fc;
-    --rose :#E8F6FC ;
+    --rose :#F2DFE6 ;
     --vert_clair : #E3EDF1;
     --noir : #000000;
     --gris : #8d8989;
@@ -49,6 +49,14 @@ a{
 
 .button_type1:hover {
     background-size: 100%;
+}
+
+.button_type2{
+    border-radius: 30px;
+    margin-top: .5rem;
+    padding: .2rem .8rem;
+    text-align: center;
+    box-shadow: 0px 1px 1px 3px var(--rose);
 }
 
 /*Input*/
@@ -106,7 +114,7 @@ a{
     opacity: 70%;
 }
 #container_header {
-    background: var(--rose);
+    background: var(--bleu);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -322,7 +330,7 @@ a{
     width: 80px;
     height: 30px;
     text-align: center;
-    background: var(--rose);
+    background: var(--bleu);
 }
 #profil_container .wrap .info_profil .box_items .info_list form .form_box_modif input[type="submit"]:hover{
     cursor: pointer;

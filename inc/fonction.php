@@ -14,6 +14,14 @@ return '';
 }
 return date($format,strtotime($data));
 }
+function dateFormatWithoutHour($data, string $format = 'd/m/Y') : string
+{
+    if (strtotime($data) != NULL) {
+        return date($format, strtotime($data));
+    } else {
+        return '';
+    }
+}
 
 function selectValidation($errors,$value,$key){
 if(empty($value)) {
@@ -86,3 +94,12 @@ function generateRandomString($length = 10) {
 }
 
 
+function getVaccinById($id)
+{
+    global $pdo;
+    $sql = "SELECT * FROM vactolib_vaccins WHERE id = :id";
+    $query = $pdo->prepare($sql);
+    $query->bindValue(':id', $id, PDO::PARAM_INT);
+    $query->execute();
+    return $query->fetch();
+}

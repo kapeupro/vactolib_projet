@@ -10,7 +10,7 @@ $id_session=$_SESSION['user']['id'];
 $user=getUserBySessionId($id_session);
 $user_vaccins=getUserVaccinsBySessionId($id_session);
 
-$sqlleft = "SELECT vv.nom_vaccin, vuv.id
+$sqlleft = "SELECT vv.nom_vaccin, vv.laboratoire, vv.id ,vuv.vaccin_date
         FROM vactolib_user_vaccins AS vuv
         LEFT JOIN vactolib_vaccins AS vv
         ON vv.id = vuv.vaccin_id
@@ -20,8 +20,9 @@ $query->bindValue(':id_session',$id_session,PDO::PARAM_INT);
 $query->execute();
 $userVaccin = $query->fetchAll();
 
+//initialisation d'un compteur pour la boucle foreach
 $i = 0;
-debug($userVaccin);
+
 
 include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style_user.css">
@@ -35,9 +36,9 @@ include('inc/header.php'); ?>
                 <?php foreach ($user_vaccins as $user_vaccin){ ?>
                 <div class="items-carnet">
                         <h3>Vaccination <?php echo $userVaccin[$i]['nom_vaccin']; ?></h3>
-                        <p class="nom-carnet"> <?php echo $_SESSION['user']['nom'];echo' ';echo $_SESSION['user']['prenom'] ?></p>
-                        <p class="naissance">Né le  <?php echo $_SESSION['user']['dateNaissance']?></p>
-                        <p class="date-vaccin"> <?php echo $userVaccin[$i]['nom_vaccin']; ?>, le xx/xx/xx</p>
+                        <p> <?php echo $_SESSION['user']['nom'];echo' ';echo $_SESSION['user']['prenom'] ?></p>
+                        <p><?php echo $userVaccin[$i]['laboratoire'] ?> fait le <?php echo dateFormatWithoutHour($userVaccin[$i]['vaccin_date'], 'd/m/Y') ?></p>
+                        <a class="button_type2" href="detail.php?id=<?php echo $userVaccin[$i]['id']; ?> "> En savoir plus </a>
                 </div>
                 <?php $i++; } ?>
             </div>

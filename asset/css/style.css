@@ -542,19 +542,43 @@ input[type=submit]{
     border-radius: 20px;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    flex-direction: column;
+    flex-flow: column nowrap;
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 407px;
     height: 164px;
 }
-.items-carnet h3 , p{
+
+
+.items-carnet h3 , .items-carnet p{
     display: flex;
     justify-content: center;
+}
+.items-carnet a{
+    color: black;
+    font-weight: bold;
 }
 .items_p_carnet {
     display: flex;
 }
+
+/*SECTION DETAIL VACCIN*/
+#vaccin_detail{
+    padding: 2rem 0;
+}
+#vaccin_detail .wrap{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+}
+#vaccin_detail .wrap .vaccin_info{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+
+/*AJOUT VACCIN*/
  .ajout-vaccin {
      display: flex;
      align-items: center;
