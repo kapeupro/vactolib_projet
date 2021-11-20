@@ -7,9 +7,9 @@ require('inc/request.php');
 
 
 $id_session=$_SESSION['user']['id'];
-$vaccin_id=$_POST;
-debug($_POST);
+$vaccin_id= $_POST;
 debug($vaccin_id);
+
 $errors=[];
 
 $sql = "SELECT * FROM vactolib_user WHERE id=:id ";
@@ -27,19 +27,21 @@ $vaccins= $query->fetchAll();
 if(!empty($_POST['submitted'])) {
     // Faille xss
     $vaccin = cleanXss('vaccin');
-//    $date   = cleanXss('date');
-    if (!empty($_POST["vaccin"]) and $_POST["vaccin"]!=''){
+
+    if (!empty($_POST["vaccin"])){
     }else{
         $errors['vaccin'] = "* Veuillez séléctionner un vaccin";
     }
 
-    $sql = "INSERT INTO `vactolib_user_vaccins`(`user_id`, `vaccin_id`, `created_at` ) 
+    if(count($errors) == 0){
+        $sql = "INSERT INTO `vactolib_user_vaccins`(`user_id`, `vaccin_id`, `created_at` ) 
     VALUES (:user_id,:vaccin_id, NOW() )";
-    $query = $pdo->prepare($sql);
-    $query->bindValue(':user_id',$id_session,PDO::PARAM_INT);
-    $query->bindValue(':vaccin_id',$vaccin_id,PDO::PARAM_INT);
-    $query->execute();
-    $user_vaccins= $query->fetch();
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':user_id',$id_session,PDO::PARAM_INT);
+        $query->bindValue(':vaccin_id',$vaccin_id,PDO::PARAM_INT);
+        $query->execute();
+        $user_vaccins= $query->fetch();
+    }
 }
 
 include('inc/header.php');
