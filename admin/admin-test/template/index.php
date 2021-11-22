@@ -74,7 +74,7 @@ $allVaccins= $query->fetch();
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="index.php">
                         <i class="icon-grid menu-icon"></i>
                         <span class="menu-title">Dashboard</span>
                     </a>
@@ -98,7 +98,7 @@ $allVaccins= $query->fetch();
                     </a>
                     <div class="collapse" id="tables">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Basic table</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.php">Liste tables</a></li>
                         </ul>
                     </div>
                 </li>
