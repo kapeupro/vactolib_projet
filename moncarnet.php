@@ -16,12 +16,12 @@ $sqlleft = "SELECT vv.nom_vaccin, vv.laboratoire, vv.id ,vuv.vaccin_date
         FROM vactolib_user_vaccins AS vuv
         LEFT JOIN vactolib_vaccins AS vv
         ON vv.id = vuv.vaccin_id
-        WHERE vuv.user_id = :id_session ORDER BY id DESC";
+        WHERE vuv.user_id = :id_session ORDER BY created_at DESC";
 $query = $pdo->prepare($sqlleft);
 $query->bindValue(':id_session',$id_session,PDO::PARAM_INT);
 $query->execute();
 $userVaccin = $query->fetchAll();
-
+debug($userVaccin);
 //initialisation d'un compteur pour la boucle foreach
 $i = 0;
 
