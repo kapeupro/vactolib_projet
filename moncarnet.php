@@ -10,6 +10,8 @@ $id_session=$_SESSION['user']['id'];
 $user=getUserBySessionId($id_session);
 $user_vaccins=getUserVaccinsBySessionId($id_session);
 
+
+
 $sqlleft = "SELECT vv.nom_vaccin, vv.laboratoire, vv.id ,vuv.vaccin_date
         FROM vactolib_user_vaccins AS vuv
         LEFT JOIN vactolib_vaccins AS vv
