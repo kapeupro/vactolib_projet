@@ -139,7 +139,7 @@ if ($_SESSION['user']['status']=='admin'){
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Nos utilisateurs</h4>
-                                <a href="#" type="button" class="btn btn-primary float-right">Modifier</a>
+                                <a href="modif_user.php" type="button" class="btn btn-primary float-right">Modifier</a>
                                 <div class="table-responsive pt-3">
                                     <table class="table table-dark">
                                         <thead>
@@ -203,7 +203,7 @@ if ($_SESSION['user']['status']=='admin'){
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Nos vaccins</h4>
-                                <a href="#" type="button" class="btn btn-primary float-right">Modifier</a>
+                                <a href="modif_vaccins.php" type="button" class="btn btn-primary float-right">Modifier</a>
                                 <div class="table-responsive pt-3">
                                     <table class="table table-bordered">
                                         <thead>
