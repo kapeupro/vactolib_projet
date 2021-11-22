@@ -65,7 +65,7 @@ include('inc/header.php');
                 </div>
             </form>
             <?php if (!empty($_POST)) { ?>
-            <div class="success_message" style="text-align: center">
+            <div class="success_message" style="text-align: center;color:lightgreen">
                 <h2>Votre vaccin à bien été ajouté à votre carnet</h2>
             </div>
            <?php } else{} ?>
