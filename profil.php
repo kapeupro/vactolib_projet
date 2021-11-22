@@ -21,7 +21,9 @@ $_SESSION['user']=array(
     'nom'=>$user['nom'],
     'prenom'=>$user['prenom'],
     'tel'=>$user['portable'],
+    'status'=>$user['status'],
     'dateNaissance'=>$user['date_de_naissance']
+
 );
 
 //debug($_SESSION);
