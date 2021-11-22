@@ -34,7 +34,7 @@ if(!empty($_POST['submitted'])) {
 
     if(count($errors) == 0){
         $sql = "INSERT INTO `vactolib_user_vaccins`(`user_id`, `vaccin_id`, `created_at` ) 
-    VALUES (:user_id,:vaccin_id, NOW() )";
+    VALUES (:user_id,:vaccin_id, NOW())";
         $query = $pdo->prepare($sql);
         $query->bindValue(':user_id',$id_session,PDO::PARAM_INT);
         $query->bindValue(':vaccin_id',$vaccin_id,PDO::PARAM_INT);
