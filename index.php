@@ -25,8 +25,8 @@ if(!empty($_SESSION)){
         'status'=>$user['status'],
     );
 
-    debug($user);
-    debug($_SESSION);
+//    debug($user);
+//    debug($_SESSION);
 
     include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style_user.css">
