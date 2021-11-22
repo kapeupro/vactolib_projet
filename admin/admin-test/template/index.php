@@ -16,7 +16,14 @@ $sql = "SELECT COUNT(*) AS resultAjout FROM vactolib_user_vaccins ";
 $query = $pdo->prepare($sql);
 $query->execute();
 $allAjout= $query->fetch();
+
+// Recup tous les vaccin
+$sql = "SELECT COUNT(*) AS resultVaccin FROM vactolib_vaccins ";
+$query = $pdo->prepare($sql);
+$query->execute();
+$allVaccins= $query->fetch();
 ?>
+
 
 
 <!DOCTYPE html>
@@ -146,7 +153,7 @@ $allAjout= $query->fetch();
                                 <div class="card card-dark-blue">
                                     <div class="card-body">
                                         <p class="mb-4">Nos vaccins</p>
-                                        <p class="fs-30 mb-2">nombre vaccins</p>
+                                        <p class="fs-30 mb-2"><?php echo $allVaccins['resultVaccin'] ?></p>
                                     </div>
                                 </div>
                             </div>
