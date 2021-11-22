@@ -201,20 +201,24 @@ a{
     gap: 2rem;
 }
 #stats_chiffre .tache1{
-    background: url("../img/tache1.svg") no-repeat;
-    background-size: cover;
+    background: center /contain no-repeat url("../img/tache1.svg");
+    background-size: 100%;
+    width: 23.33333%;
 }
 #stats_chiffre .tache2{
     background: url("../img/tache2.svg") no-repeat;
-    background-size: cover;
+    background-size: 100%;
+    width: 23.33333%;
 }
 #stats_chiffre .tache3{
     background: url("../img/tache3.svg") no-repeat;
-    background-size: cover;
+    background-size: 100%;
+    width: 23.33333%;
 }
 #stats_chiffre .tache4{
     background: url("../img/tache4.svg") no-repeat;
-    background-size: cover;
+    background-size: 100%;
+    width: 23.33333%;
 }
 #stats_chiffre div{}
 #stats_chiffre p{
