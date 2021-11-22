@@ -607,15 +607,16 @@ input[type=submit]{
      display: flex;
      align-items: center;
      justify-content: flex-end;
-     margin: 4rem;
+     margin-right: 15rem;
  }
  .ajout-vaccin a {
      display: flex;
      align-items: center;
+     font-weight: bold;
      color: black;
  }
  .ajout-vaccin img {
-     padding-right: 2rem;
+     padding-right: 1rem;
  }
 
  /*VIE PRIVEE*/
