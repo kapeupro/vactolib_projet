@@ -194,36 +194,8 @@ a{
     padding: .7rem 1.5rem ;
 }
 /*Section STATS BIS*/
-#stats_chiffre .wrap{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    gap: 2rem;
-}
-#stats_chiffre .tache1{
-    background: center /contain no-repeat url("../img/tache1.svg");
-    background-size: 100%;
-    width: 23.33333%;
-}
-#stats_chiffre .tache2{
-    background: url("../img/tache2.svg") no-repeat;
-    background-size: 100%;
-    width: 23.33333%;
-}
-#stats_chiffre .tache3{
-    background: url("../img/tache3.svg") no-repeat;
-    background-size: 100%;
-    width: 23.33333%;
-}
-#stats_chiffre .tache4{
-    background: url("../img/tache4.svg") no-repeat;
-    background-size: 100%;
-    width: 23.33333%;
-}
-#stats_chiffre div{}
-#stats_chiffre p{
-    padding: 5rem;
-}
+
+
 /*Donnes_secure*/
 .container_secure{
     background-color: var(--bleu);
