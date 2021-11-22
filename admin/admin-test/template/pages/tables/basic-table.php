@@ -5,6 +5,7 @@ require('../../../../../inc/pdo.php');
 require('../../../../../inc/fonction.php');
 require('../../../../../inc/request.php');
 
+if ($_SESSION['user']['status']==)
 ?>
 
 <!DOCTYPE html>
@@ -245,6 +246,9 @@ require('../../../../../inc/request.php');
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        <?php foreach ($admins as $admin){
+
+                                        } ?>
                                         <tr>
                                             <td>Jacob</td>
                                             <td>53275531</td>
