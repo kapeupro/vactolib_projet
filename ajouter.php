@@ -5,10 +5,9 @@ require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
 
-
 $id_session=$_SESSION['user']['id'];
-
 $errors=[];
+debug($_POST);
 
 $sql = "SELECT * FROM vactolib_user WHERE id=:id ";
 $query = $pdo->prepare($sql);
@@ -65,6 +64,11 @@ include('inc/header.php');
                     <span class="error"><?php viewError($errors, 'vaccin'); ?></span>
                 </div>
             </form>
+            <?php if (!empty($_POST)) { ?>
+            <div class="success_message" style="text-align: center;color:lightgreen">
+                <h2>Votre vaccin à bien été ajouté à votre carnet</h2>
+            </div>
+           <?php } else{} ?>
         </div>
     </section>
 
