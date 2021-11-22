@@ -22,9 +22,15 @@ if ($_SESSION['user']['status']=='admin'){
     $query->execute();
     $users = $query->fetchAll();
 
+    //Recuperer tous les vaccins
+    $sql = "SELECT * FROM vactolib_vaccins ";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    $vaccins = $query->fetchAll();
 
     $countAdmin = 0;
     $countAllUsers = 0;
+    $countAllVaccins = 0;
 ?>
 
 <!DOCTYPE html>
@@ -354,108 +360,42 @@ if ($_SESSION['user']['status']=='admin'){
                                         <thead>
                                         <tr>
                                             <th>
-                                                #
+                                                #id
                                             </th>
                                             <th>
-                                                First name
+                                                Nom du vaccin
                                             </th>
                                             <th>
-                                                Product
+                                                Laboratoire
                                             </th>
                                             <th>
-                                                Amount
+                                                Description
                                             </th>
                                             <th>
-                                                Deadline
+                                                Rappel entre deux doses (jours)
                                             </th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr class="table-info">
-                                            <td>
-                                                1
-                                            </td>
-                                            <td>
-                                                Herman Beck
-                                            </td>
-                                            <td>
-                                                Photoshop
-                                            </td>
-                                            <td>
-                                                $ 77.99
-                                            </td>
-                                            <td>
-                                                May 15, 2015
-                                            </td>
-                                        </tr>
-                                        <tr class="table-warning">
-                                            <td>
-                                                2
-                                            </td>
-                                            <td>
-                                                Messsy Adam
-                                            </td>
-                                            <td>
-                                                Flash
-                                            </td>
-                                            <td>
-                                                $245.30
-                                            </td>
-                                            <td>
-                                                July 1, 2015
-                                            </td>
-                                        </tr>
-                                        <tr class="table-danger">
-                                            <td>
-                                                3
-                                            </td>
-                                            <td>
-                                                John Richards
-                                            </td>
-                                            <td>
-                                                Premeire
-                                            </td>
-                                            <td>
-                                                $138.00
-                                            </td>
-                                            <td>
-                                                Apr 12, 2015
-                                            </td>
-                                        </tr>
-                                        <tr class="table-success">
-                                            <td>
-                                                4
-                                            </td>
-                                            <td>
-                                                Peter Meggik
-                                            </td>
-                                            <td>
-                                                After effects
-                                            </td>
-                                            <td>
-                                                $ 77.99
-                                            </td>
-                                            <td>
-                                                May 15, 2015
-                                            </td>
-                                        </tr>
+                                        <?php foreach($vaccins as $vaccin){ ?>
                                         <tr class="table-primary">
                                             <td>
-                                                5
+                                                <?php echo $vaccins[$countAllVaccins]['id']; ?>
                                             </td>
                                             <td>
-                                                Edward
+                                                <?php echo $vaccins[$countAllVaccins]['nom_vaccin']; ?>
                                             </td>
                                             <td>
-                                                Illustrator
+                                                <?php echo $vaccins[$countAllVaccins]['laboratoire']; ?>
                                             </td>
                                             <td>
-                                                $ 160.25
+                                                <?php echo $vaccins[$countAllVaccins]['description']; ?>
                                             </td>
                                             <td>
-                                                May 03, 2015
+                                                <?php echo $vaccins[$countAllVaccins]['rappel']; ?>
                                             </td>
                                         </tr>
+                                        <?php $countAllVaccins++; } ?>
                                         </tbody>
                                     </table>
                                 </div>
