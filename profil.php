@@ -13,7 +13,7 @@ $query->bindValue(':id',$id_session,PDO::PARAM_STR);
 $query->execute();
 $user= $query->fetch();
 
-$sqlleft = "SELECT vv.nom_vaccin, vv.laboratoire, vv.id ,vuv.vaccin_date
+$sqlleft = "SELECT vv.nom_vaccin, vv.laboratoire, vv.id ,vuv.created_at
         FROM vactolib_user_vaccins AS vuv
         LEFT JOIN vactolib_vaccins AS vv
         ON vv.id = vuv.vaccin_id
@@ -73,7 +73,7 @@ include('inc/header.php'); ?>
                 <div class="info_rdv">
                     <ul>
                         <li>Dernier vaccin : <?php if(!empty($userVaccin)) {echo $userVaccin['nom_vaccin'];} else{ echo'Aucun vaccin n\'a été enregistré'; } ?></li>
-                        <li>Ajouté le :<?php if(!empty($userVaccin)) {echo date($userVaccin['created_at']);} else{  } ?> </li>
+                        <li>Ajouté le : <?php if(!empty($userVaccin)) { echo dateFormatWithoutHour($userVaccin['created_at']); } ?> </li>
                         <li>Rappel le : </li>
                     </ul>
                 </div>
