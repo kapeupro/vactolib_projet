@@ -37,6 +37,14 @@ if(!empty($_SESSION)) {
     );
 
 
+    $_SESSION['user']=array(
+        'id'=>$user['id'],
+        'nom'=>$user['nom'],
+        'prenom'=>$user['prenom'],
+        'status'=>$user['status'],
+    );
+
+
     include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style_user.css">
     <section>

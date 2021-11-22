@@ -28,7 +28,10 @@
                 <li><a href="profil.php">Profil</a></li>
                 <li class="ligne_black"></li>
                 <li><a href="logout.php">Déconnexion</a></li>
-                <?php } else { ?>
+                <?php  if($_SESSION['user']['status']=='admin') { ?>
+                <li class="ligne_black"></li>
+                <li><a href="admin/admin-test/template/index.html">Admin</a></li>
+                <?php } } else { ?>
                 <li><a href="vieprivee.php">Vie privée</a></li>
                 <li class="ligne_black"></li>
                 <li><a href="register.php">Inscription</a></li>
