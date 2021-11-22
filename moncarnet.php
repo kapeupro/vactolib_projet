@@ -89,6 +89,7 @@ include('inc/header.php'); ?>
                         <p> <?php echo $_SESSION['user']['nom'];echo' ';echo $_SESSION['user']['prenom'] ?></p>
                         <p><?php echo $userVaccin[$i]['laboratoire'] ?> fait le <?php echo dateFormatWithoutHour($userVaccin[$i]['vaccin_date'], 'd/m/Y') ?></p>
                         <a class="button_type2" href="detail.php?id=<?php echo $userVaccin[$i]['id']; ?> "> En savoir plus </a>
+                        <a class="button_type2" href="delete.php?id=<?php echo $userVaccin[$i]['id'] ?>"> Supprimer</a>
                 </div>
                 <?php $i++; } ?>
             </div>
