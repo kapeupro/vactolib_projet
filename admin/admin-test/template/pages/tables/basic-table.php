@@ -5,6 +5,26 @@ require('../../../../../inc/pdo.php');
 require('../../../../../inc/fonction.php');
 require('../../../../../inc/request.php');
 
+
+
+if ($_SESSION['user']['status']=='admin'){
+
+    //Recuperer les admins
+
+    $sql = "SELECT * FROM vactolib_user WHERE status = 'admin' ";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    $admins= $query->fetchAll();
+
+    //Recuperer tous les utilisateurs
+    $sql = "SELECT * FROM vactolib_user ";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    $users = $query->fetchAll();
+
+
+    $countAdmin = 0;
+    $countAllUsers = 0;
 ?>
 
 <!DOCTYPE html>
@@ -230,7 +250,7 @@ require('../../../../../inc/request.php');
         <div class="main-panel">
             <div class="content-wrapper">
                 <div class="row">
-                    <div class="col-lg-6 grid-margin stretch-card">
+                    <div class="col-lg-7 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Table des administrateurs</h4>
@@ -242,16 +262,19 @@ require('../../../../../inc/request.php');
                                             <th>Prénom</th>
                                             <th>Email</th>
                                             <th>Portable</th>
+                                            <th>Status</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <td>Jacob</td>
-                                            <td>53275531</td>
-                                            <td>12 May 2017</td>
-                                            <td>Portable</td>
-                                            <td><label class="badge badge-danger">Admin</label></td>
-                                        </tr>
+                                        <?php foreach($admins as $admin){ ?>
+                                            <tr>
+                                                <td><?php echo $admins[$countAdmin]['nom']; ?></td>
+                                                <td><?php echo $admins[$countAdmin]['prenom']; ?></td>
+                                                <td><?php echo $admins[$countAdmin]['email']; ?></td>
+                                                <td><?php echo $admins[$countAdmin]['portable']; ?></td>
+                                                <td><label class="badge badge-danger">Admin</label></td>
+                                            </tr>
+                                        <?php $countAdmin++; } ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -268,118 +291,54 @@ require('../../../../../inc/request.php');
                                         <thead>
                                         <tr>
                                             <th>
-                                                #
+                                                #id
                                             </th>
                                             <th>
-                                                First name
+                                                Nom
                                             </th>
                                             <th>
-                                                Amount
+                                                Prénom
                                             </th>
                                             <th>
-                                                Deadline
+                                                Email
+                                            </th>
+                                            <th>
+                                                N°
+                                            </th>
+                                            <th>
+                                                Crée le
+                                            </th>
+                                            <th>
+                                                Status
                                             </th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <td>
-                                                1
-                                            </td>
-                                            <td>
-                                                Herman Beck
-                                            </td>
-                                            <td>
-                                                $ 77.99
-                                            </td>
-                                            <td>
-                                                May 15, 2015
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                2
-                                            </td>
-                                            <td>
-                                                Messsy Adam
-                                            </td>
-                                            <td>
-                                                $245.30
-                                            </td>
-                                            <td>
-                                                July 1, 2015
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                3
-                                            </td>
-                                            <td>
-                                                John Richards
-                                            </td>
-                                            <td>
-                                                $138.00
-                                            </td>
-                                            <td>
-                                                Apr 12, 2015
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                4
-                                            </td>
-                                            <td>
-                                                Peter Meggik
-                                            </td>
-                                            <td>
-                                                $ 77.99
-                                            </td>
-                                            <td>
-                                                May 15, 2015
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                5
-                                            </td>
-                                            <td>
-                                                Edward
-                                            </td>
-                                            <td>
-                                                $ 160.25
-                                            </td>
-                                            <td>
-                                                May 03, 2015
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                6
-                                            </td>
-                                            <td>
-                                                John Doe
-                                            </td>
-                                            <td>
-                                                $ 123.21
-                                            </td>
-                                            <td>
-                                                April 05, 2015
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                7
-                                            </td>
-                                            <td>
-                                                Henry Tom
-                                            </td>
-                                            <td>
-                                                $ 150.00
-                                            </td>
-                                            <td>
-                                                June 16, 2015
-                                            </td>
-                                        </tr>
+                                        <?php foreach ($users as $user){ ?>
+                                            <tr>
+                                                <td>
+                                                    <?php echo $users[$countAllUsers]['id']?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $users[$countAllUsers]['nom']?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $users[$countAllUsers]['prenom']?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $users[$countAllUsers]['email']?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $users[$countAllUsers]['portable']?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $users[$countAllUsers]['created_at']?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $users[$countAllUsers]['status']?>
+                                                </td>
+                                            </tr>
+                                       <?php $countAllUsers++; } ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -537,3 +496,4 @@ require('../../../../../inc/request.php');
 </body>
 
 </html>
+<?php } else{die('403');} ?>
