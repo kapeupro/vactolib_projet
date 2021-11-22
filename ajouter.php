@@ -7,8 +7,6 @@ require('inc/request.php');
 
 
 $id_session=$_SESSION['user']['id'];
-$vaccin_id= $_POST;
-debug($vaccin_id);
 
 $errors=[];
 
@@ -24,11 +22,13 @@ $query = $pdo->prepare($sql);
 $query->execute();
 $vaccins= $query->fetchAll();
 
+
 if(!empty($_POST['submitted'])) {
     // Faille xss
     $vaccin = cleanXss('vaccin');
+    $vaccin_id= $_POST['vaccin'];
 
-    if (!empty($_POST["vaccin"])){
+    if (!empty($_POST['vaccin'])){
     }else{
         $errors['vaccin'] = "* Veuillez séléctionner un vaccin";
     }
