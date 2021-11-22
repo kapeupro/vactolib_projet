@@ -21,10 +21,12 @@ if(!empty($_SESSION)){
     $_SESSION['user']=array(
         'id'=>$user['id'],
         'nom'=>$user['nom'],
-        'prenom'=>$user['prenom']
+        'prenom'=>$user['prenom'],
+        'status'=>$user['status'],
     );
 
-//    debug($user);
+    debug($user);
+    debug($_SESSION);
 
     include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style_user.css">
