@@ -17,7 +17,11 @@ $user_vaccins=getUserVaccinsBySessionId($id_session);
 if(!empty($_GET['id']) && is_numeric($_GET['id'])){
     $id=$_GET['id'];
     if (!empty($user_vaccins)){
-        $sql =""
+        $sql ="DELETE vv.nom_vaccin, vv.laboratoire, vv.id ,vuv.vaccin_date
+        FROM vactolib_user_vaccins AS vuv
+        LEFT JOIN vactolib_vaccins AS vv
+        ON vv.id = vuv.vaccin_id
+        WHERE id=:id";
         $query = $pdo->prepare($sql);
         $query ->bindValue(':id',$id,PDO::PARAM_INT);
         $query->execute();
