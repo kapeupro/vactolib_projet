@@ -6,17 +6,36 @@ require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
 
+// Recup tout les vaccins pour affichage stats
+$sql = "SELECT COUNT(*) AS resultUsers FROM vactolib_user ";
+$query = $pdo->prepare($sql);
+$query->execute();
+$allUsers= $query->fetch();
+
+
+// Recup tout les ajout dans carnet pour affichage stats
+$sql = "SELECT COUNT(*) AS resultAjout FROM vactolib_user_vaccins ";
+$query = $pdo->prepare($sql);
+$query->execute();
+$allAjout= $query->fetch();
 
 //PARTIE UTILISATEUR CONNECTED
-if(!empty($_SESSION)){
+if(!empty($_SESSION)) {
 
-    $id_session=$_SESSION['user']['id'];
+    $id_session = $_SESSION['user']['id'];
 
     $sql = "SELECT * FROM vactolib_user WHERE id=:id ";
     $query = $pdo->prepare($sql);
-    $query->bindValue(':id',$id_session,PDO::PARAM_STR);
+    $query->bindValue(':id', $id_session, PDO::PARAM_STR);
     $query->execute();
-    $user= $query->fetch();
+    $user = $query->fetch();
+
+    $_SESSION['user'] = array(
+        'id' => $user['id'],
+        'nom' => $user['nom'],
+        'prenom' => $user['prenom']
+    );
+
 
     $_SESSION['user']=array(
         'id'=>$user['id'],
@@ -25,8 +44,6 @@ if(!empty($_SESSION)){
         'status'=>$user['status'],
     );
 
-    debug($user);
-    debug($_SESSION);
 
     include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style_user.css">
@@ -103,17 +120,28 @@ if(!empty($_SESSION)){
 
     <section id="stats_chiffre">
         <div class="wrap">
-            <div class="tache1">
-                <p>Vactolib c'est...</p>
+            <div class="tache_box tache1">
+                <div class="tache_para">
+                    <p>Vactolib c'est...</p>
+                </div>
+
             </div>
-            <div class="tache2">
-                <p>30 millions de patients</p>
+            <div class="tache_box tache2">
+                <div class="tache_para">
+                    <p><?php echo $allUsers['resultUsers'] ?></p>
+                    <p>utilisateurs inscrits </p>
+                </div>
             </div>
-            <div class="tache3">
-                <p>150 00 personnels de santé</p>
+            <div class="tache_box tache3">
+                <div class="tache_para">
+                    <p><?php echo $allAjout['resultAjout']?></p>
+                    <p>vaccins ajouter dans leur carnets</p>
+                </div>
             </div>
-            <div class="tache4">
-                <p>98% d'avis positifs</p>
+            <div class="tache_box tache4">
+                <div class="tache_para">
+                    <p>98% d'avis positifs</p>
+                </div>
             </div>
         </div>
     </section>
@@ -209,17 +237,28 @@ if(!empty($_SESSION)){
 
     <section id="stats_chiffre">
         <div class="wrap">
-            <div class="tache1">
-                <p>Vactolib c'est...</p>
+            <div class="tache_box tache1">
+                <div class="tache_para">
+                    <p>Vactolib c'est...</p>
+                </div>
+
             </div>
-            <div class="tache2">
-                <p>30 millions de patients</p>
+            <div class="tache_box tache2">
+                <div class="tache_para">
+                    <p><?php echo $allUsers['resultUsers'] ?></p>
+                    <p>utilisateurs inscrits </p>
+                </div>
             </div>
-            <div class="tache3">
-                <p>150 00 personnels de santé</p>
+            <div class="tache_box tache3">
+                <div class="tache_para">
+                    <p><?php echo $allAjout['resultAjout']?></p>
+                    <p>vaccins ajouter dans leur carnets</p>
+                </div>
             </div>
-            <div class="tache4">
-                <p>98% d'avis positifs</p>
+            <div class="tache_box tache4">
+                <div class="tache_para">
+                    <p>98% d'avis positifs</p>
+                </div>
             </div>
         </div>
     </section>

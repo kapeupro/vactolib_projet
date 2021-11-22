@@ -231,33 +231,33 @@ a{
 
 #stats_chiffre .tache1{
     background: center /contain no-repeat url("../img/tache1.svg");
-    background-size: 100%;
-    width: 23.33333%;
 }
 #stats_chiffre .tache2{
     background: url("../img/tache2.svg") no-repeat;
-    background-size: 100%;
-    width: 23.33333%;
 }
 #stats_chiffre .tache3{
     background: url("../img/tache3.svg") no-repeat;
-    background-size: 100%;
-    width: 23.33333%;
 }
 #stats_chiffre .tache4{
     background: url("../img/tache4.svg") no-repeat;
-    background-size: 100%;
-    width: 23.33333%;
+
 }
 
-#stats_chiffre div{}
-#stats_chiffre p{
-    padding: 5rem;
+#stats_chiffre .tache_box{
+background-size: 100%;
+width: 23.33333%;
 }
-.tache2-p{
-    padding: 4rem;
+
+#stats_chiffre .tache_box .tache_para{
+    padding: 4.5rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    font-weight: bold;
 }
-/*Donnes_secure*/
+
+
 #donnes_secure{
     margin: 4rem 0;
 }
