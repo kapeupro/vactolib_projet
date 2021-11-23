@@ -26,11 +26,13 @@ a{text-decoration: none;}
 }
 .container_accueil .wrap .accueil_buttons_container a{color: black;font-size: 18px;}
 .button_type1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 30px;
     width: 177px;
     height: 48px;
     text-align: center;
-    padding-top: 0.7rem;
     background: var(--rose);
     box-shadow: 0px 1px 1px 3px var(--rose);
     background-image: linear-gradient(0, white, white);
@@ -234,13 +236,13 @@ a{text-decoration: none;}
     border-style: none;
     background-color: var(--rose);
     padding: 0.5rem;
-    width: 300px;
+    width: 350px;
 }
 #form_contact .boxinfo_contact textarea{
     border-style: none;
     background-color: var(--rose);
     padding: 0.5rem;
-    width: 400px;
+    width: 350px;
     height: 200px;
     box-shadow: none;
     resize: none;
@@ -251,7 +253,7 @@ a{text-decoration: none;}
     border-style: none;
     background-color: var(--rose);
     padding: 0.5rem;
-    width: 200px;
+    width: 350px;
 }
 ::placeholder{color: black;padding: .5rem;}
 input[type=submit]{
@@ -266,6 +268,13 @@ input[type=submit]{
     color: red;
     display: flex;
     flex-flow: column nowrap;
+}
+.title_contact {
+    display: flex;
+    justify-content: center;
+    font-size: 28px;
+    margin: 1rem;
+    padding: 1rem;
 }
 
 /*WAVE*/

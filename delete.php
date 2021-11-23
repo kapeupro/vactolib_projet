@@ -32,5 +32,5 @@ if(!empty($_GET['id']) && is_numeric($_GET['id'])){
     }
 }
 else {
-die('404');
+    die('404');
 }

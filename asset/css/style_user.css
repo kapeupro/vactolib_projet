@@ -38,11 +38,13 @@ a{text-decoration: none;}
 }
 .button_type2{
     border-radius: 30px;
-    margin-top: .5rem;
-    padding: .2rem .8rem;
+    width: 75px;
+    height: 40px;
     text-align: center;
+    padding-top: 0.7rem;
+    background: var(--bleu);
     box-shadow: 0px 1px 1px 3px var(--bleu);
-    background-image: linear-gradient(0, white, white);
+    background-image: linear-gradient(0, #e8f6fc, #ffffff);
     background-size: 0;
     transition: 1s;
     background-repeat: no-repeat;
