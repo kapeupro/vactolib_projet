@@ -39,38 +39,38 @@ if(!empty($_POST['submitted'])) {
     }
 }
 ?>
-    <link rel="stylesheet" href="asset/css/style.css">
-    <div class="logo">
-        <a href="index.php"><img src="asset/img/logo_vactolib.png" alt="logo vactolib"></a>
+<link rel="stylesheet" href="asset/css/style.css">
+<div class="logo">
+    <a href="index.php"><img src="asset/img/logo_vactolib.png" alt="logo vactolib"></a>
+</div>
+<section id="register_form">
+    <div class="img_float1"></div>
+    <div class="img_float2"></div>
+    <div class="img_float3"></div>
+    <div class="wrap2">
+        <form action="" method="post" class="wrapform" novalidate>
+
+            <div class="info_box">
+                <label for="login"></label>
+                <input type="text" placeholder="Mail" id="login" name="login" value="<?= recupInputValue('login'); ?>">
+                <span class="error"><?= viewError($errors,'login'); ?></span>
+            </div>
+
+            <div class="info_box">
+                <label for="password"></label>
+                <input type="password" placeholder="Mot de passe" id="password" name="password" value="">
+                <span class="error"><?= viewError($errors,'password'); ?></span>
+            </div>
+
+            <div class="info_box_button">
+                <input type="submit" name="submitted" value="ENVOYER">
+            </div>
+            <div>
+                <?php  echo'<a href="mailmissingpassword.php">Mot de passe oublié ?</a>'?>
+            </div>
+
+        </form>
     </div>
-    <section id="register_form">
-        <div class="img_float1"></div>
-        <div class="img_float2"></div>
-        <div class="img_float3"></div>
-        <div class="wrap2">
-            <form action="" method="post" class="wrapform" novalidate>
-
-                <div class="info_box">
-                    <label for="login"></label>
-                    <input type="text" placeholder="Mail" id="login" name="login" value="<?= recupInputValue('login'); ?>">
-                    <span class="error"><?= viewError($errors,'login'); ?></span>
-                </div>
-
-                <div class="info_box">
-                    <label for="password"></label>
-                    <input type="password" placeholder="Mot de passe" id="password" name="password" value="">
-                    <span class="error"><?= viewError($errors,'password'); ?></span>
-                </div>
-
-                <div class="info_box_button">
-                    <input type="submit" name="submitted" value="ENVOYER">
-                </div>
-                <div>
-                  <?php  echo'<a href="mailmissingpassword.php">Mot de passe oublié ?</a>'?>
-                </div>
-
-            </form>
-        </div>
-    </section>
+</section>
 
 

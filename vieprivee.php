@@ -38,54 +38,54 @@ include('inc/header.php'); ?>
                 </div>
                 <div class="image_vieprivee_1">
                     <a href="https://www.o2switch.fr/">
-                    <img src="asset/img/bacllogo.png" alt="o2switch">
+                        <img src="asset/img/bacllogo.png" alt="o2switch">
                     </a>
                 </div>
             </div>
 
 
-                <div class="container_vieprivee_1">
-                    <div class="items_vie_1">
-                        <h3>Un code Open Source et auditable par tous</h3>
-                        <p>Les protocoles de l'application, développés avec les équipes d'Inria, sont publics. Ils permettent de comprendre comment l'application fonctionne,
-                            quelles sont les données échangées et de les confronter à la communauté scientifique pour identifier les éventuelles failles.
-                            Vous pouvez ainsi vérifier que les engagements pris sur la protection des données personnelles sont respectés.</p>
-                    </div>
-                    <div class="image_vieprivee_2">
-                        <a href="https://bitbucket.org/">
-                        <img src="asset/img/Bitbucket_Logo_350x140.png" alt="Bitbucket">
-                        </a>
-                    </div>
+            <div class="container_vieprivee_1">
+                <div class="items_vie_1">
+                    <h3>Un code Open Source et auditable par tous</h3>
+                    <p>Les protocoles de l'application, développés avec les équipes d'Inria, sont publics. Ils permettent de comprendre comment l'application fonctionne,
+                        quelles sont les données échangées et de les confronter à la communauté scientifique pour identifier les éventuelles failles.
+                        Vous pouvez ainsi vérifier que les engagements pris sur la protection des données personnelles sont respectés.</p>
                 </div>
+                <div class="image_vieprivee_2">
+                    <a href="https://bitbucket.org/">
+                        <img src="asset/img/Bitbucket_Logo_350x140.png" alt="Bitbucket">
+                    </a>
+                </div>
+            </div>
 
-                    <div class="container_vieprivee_2">
-                        <div class="items_vie_2">
-                            <h3>Sécurité des données personnelles</h3>
-                            <p>L’Agence nationale de la sécurité des systèmes d’information (ANSSI) est associée au développement de l'application, afin de contrôler la robustesse du système.
-                                Les principaux choix techniques, opérationnels et son architecture centralisée la protègent ainsi d’un risque de cyber-attaque. Il s'agit du meilleur
-                                compromis entre les exigences de sécurité et de respect des libertés individuelles.</p>
-                        </div>
-                        <div class="image_vieprivee_1">
-                            <a href="https://www.ssi.gouv.fr/">
-                                <img src="asset/img/Anssi.png" alt="logo Anssi">
-                            </a>
-                        </div>
-                    </div>
+            <div class="container_vieprivee_2">
+                <div class="items_vie_2">
+                    <h3>Sécurité des données personnelles</h3>
+                    <p>L’Agence nationale de la sécurité des systèmes d’information (ANSSI) est associée au développement de l'application, afin de contrôler la robustesse du système.
+                        Les principaux choix techniques, opérationnels et son architecture centralisée la protègent ainsi d’un risque de cyber-attaque. Il s'agit du meilleur
+                        compromis entre les exigences de sécurité et de respect des libertés individuelles.</p>
+                </div>
+                <div class="image_vieprivee_1">
+                    <a href="https://www.ssi.gouv.fr/">
+                        <img src="asset/img/Anssi.png" alt="logo Anssi">
+                    </a>
+                </div>
+            </div>
 
-                        <div class="container_vieprivee_1">
-                            <div class="items_vie_1">
-                                <h3>Cadre juridique</h3>
-                                <p>Le Gouvernement a toujours posé l’exigence de la conformité de l’application au cadre réglementaire français et européen, hors état d’urgence sanitaire.
-                                    Son développement s’est par ailleurs accompagné d’un dialogue très étroit avec l’ensemble des parties prenantes, au premier rang desquelles le Parlement
-                                    et la Commission Nationale Informatique et Libertés (CNIL).</p>
-                            </div>
-                            <div class="image_vieprivee_2">
-                                <a href="https://www.cnil.fr/fr">
-                                    <img src="asset/img/2560px-Commission_nationale_de_l27informatique_et_des_libertC3A9s_28logo29.png" alt="CNIL">
-                                </a>
-                            </div>
-                        </div>
-                        </div>
+            <div class="container_vieprivee_1">
+                <div class="items_vie_1">
+                    <h3>Cadre juridique</h3>
+                    <p>Le Gouvernement a toujours posé l’exigence de la conformité de l’application au cadre réglementaire français et européen, hors état d’urgence sanitaire.
+                        Son développement s’est par ailleurs accompagné d’un dialogue très étroit avec l’ensemble des parties prenantes, au premier rang desquelles le Parlement
+                        et la Commission Nationale Informatique et Libertés (CNIL).</p>
+                </div>
+                <div class="image_vieprivee_2">
+                    <a href="https://www.cnil.fr/fr">
+                        <img src="asset/img/2560px-Commission_nationale_de_l27informatique_et_des_libertC3A9s_28logo29.png" alt="CNIL">
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 
 <?php include('inc/footer.php');

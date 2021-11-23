@@ -61,23 +61,23 @@ if(!empty($_POST['submitted'])) {
                 <a href="index.php">Retour à l'acceuil</a>
             </div>
         <?php  } else { ?>
-        <form action="" method="post" class="wrapform" novalidate>
+            <form action="" method="post" class="wrapform" novalidate>
 
-            <div class="info_box">
-                <label for="password"></label>
-                <input type="password" placeholder="Nouveau mot de passe" id="password" name="password" value="">
-                <span class="error"><?= viewError($errors,'password'); ?></span>
-            </div>
-            <div class="info_box">
-                <label for="password2"></label>
-                <input type="password" placeholder="Confirmer Mot de passe" id="password2" name="password2" value="">
-            </div>
+                <div class="info_box">
+                    <label for="password"></label>
+                    <input type="password" placeholder="Nouveau mot de passe" id="password" name="password" value="">
+                    <span class="error"><?= viewError($errors,'password'); ?></span>
+                </div>
+                <div class="info_box">
+                    <label for="password2"></label>
+                    <input type="password" placeholder="Confirmer Mot de passe" id="password2" name="password2" value="">
+                </div>
 
-            <div class="info_box_button">
-                <input type="submit" name="submitted" value="ENVOYER">
-            </div>
-            <p>Les champs avec * sont requis</p>
-        </form>
+                <div class="info_box_button">
+                    <input type="submit" name="submitted" value="ENVOYER">
+                </div>
+                <p>Les champs avec * sont requis</p>
+            </form>
         <?php  }?>
     </div>
 </section>
