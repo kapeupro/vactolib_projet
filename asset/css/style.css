@@ -28,6 +28,7 @@ a{text-decoration: none;}
 .button_type1 {
     display: flex;
     justify-content: center;
+    align-items: center;
     border-radius: 30px;
     width: 177px;
     height: 48px;
