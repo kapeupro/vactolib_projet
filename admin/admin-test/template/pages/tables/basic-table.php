@@ -272,7 +272,7 @@ if ($_SESSION['user']['status']=='admin'){
                                                 </div>
                                             </td>
                                             <td>
-                                                <a href="modif_vaccins.php">Modifier</a>
+                                                <a href="modif_vaccins.php?id=<?= $vaccins[$countAllVaccins]['id'] ?>">Modifier</a>
                                             </td>
                                             <td>
                                                 <a href="delete_vaccin.php?id=<?= $vaccins[$countAllVaccins]['id'] ?>">Supprimer</a>

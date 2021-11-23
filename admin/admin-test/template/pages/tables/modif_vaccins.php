@@ -5,7 +5,47 @@ require('../../../../../inc/pdo.php');
 require('../../../../../inc/fonction.php');
 require('../../../../../inc/request.php');
 
+$errors = array();
 
+if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
+    $id = $_GET['id'];
+    $vaccin = getVaccinById($id);
+
+    if(!empty($vaccin)){
+        if(!empty($_POST['submitted'])){
+
+            $name = clearXSS('name');
+            $laboratoire = clearXSS('laboratoire');
+            $rappel = clearXSS('rappel');
+            $description = clearXSS('description');
+
+
+            $errors = textValidation($errors, $name, 'name', 3, 255);
+            $errors = textValidation($errors, $laboratoire, 'laboratoire', 3, 50);
+            $errors = textValidation($errors, $description, 'description', 3, 450);
+            $errors = intValidation($errors, $rappel, 'rappel');
+
+            if(count($errors) == 0){
+
+                $sql = "UPDATE vactolib_vaccins
+                SET nom_vaccin = :name, laboratoire = :laboratoire, description = :description, rappel = :rappel
+                WHERE id = :id";
+                $query = $pdo->prepare($sql);
+                $query->bindValue(':name', $name, PDO::PARAM_STR);
+                $query->bindValue(':laboratoire', $laboratoire, PDO::PARAM_STR);
+                $query->bindValue(':description', $description, PDO::PARAM_STR);
+                $query->bindValue(':rappel', $rappel, PDO::PARAM_INT);
+                $query->bindValue(':id', $id, PDO::PARAM_INT);
+                $query ->execute();
+//                header('Location: index.php');
+                echo "OK";
+            }else{
+                die('404');
+            }
+        }
+    }
+}
+debug($vaccin);
 
 if ($_SESSION['user']['status']=='admin'){
     ?>
@@ -35,10 +75,10 @@ if ($_SESSION['user']['status']=='admin'){
     <div class="container-scroller">
         <!-- partial:../../partials/_navbar.html -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo mr-5" href="../../../index.php"><img src="../../../../../asset/img/logo_vactolib.svg" class="mr-2" alt="logo"/></a>
-                <a class="navbar-brand brand-logo-mini" href="../../../index.php"><img src="../../../../../asset/img/logo_vactolib.svg" alt="logo"/></a>
-            </div>
+<!--            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">-->
+<!--                <a class="navbar-brand brand-logo mr-5" href="../../../index.php"><img src="../../../../../asset/img/logo_vactolib.svg" class="mr-2" alt="logo"/></a>-->
+<!--                <a class="navbar-brand brand-logo-mini" href="../../../index.php"><img src="../../../../../asset/img/logo_vactolib.svg" alt="logo"/></a>-->
+<!--            </div>-->
         </nav>
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
@@ -90,20 +130,23 @@ if ($_SESSION['user']['status']=='admin'){
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="formGroupExampleInput" class="form-label">Nom vaccin :</label>
-                                                    <input type="text" class="form-control" name="Name" autocomplete="off" id="Name" placeholder="Nom vaccin">
+                                                    <label for="formGroupExampleInput" class="form-label">Nom du vaccin :</label>
+                                                    <input type="text" class="form-control" name="name" value="<?php echo $vaccin['nom_vaccin']; ?>" id="Name" placeholder="Nom vaccin">
+                                                    <span class="error"><?php viewError($errors, 'name'); ?></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="formGroupExampleInput" class="form-label">Laboratoire :</label>
-                                                    <input type="text" class="form-control" name="laboratoire" autocomplete="off" id="laboratoire" placeholder="laboratoire">
+                                                    <input type="text" class="form-control" name="laboratoire" value="<?php echo $vaccin['laboratoire']; ?>" id="laboratoire" placeholder="laboratoire">
+                                                    <span class="error"><?php viewError($errors, 'laboratoire'); ?></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="formGroupExampleInput" class="form-label">Nombre de jours avant rappel :</label>
-                                                    <input type="text" class="form-control" name="rappel" autocomplete="off" id="rappel" placeholder="rappel">
+                                                    <input type="text" class="form-control" name="rappel" value="<?php echo $vaccin['rappel']; ?>" id="rappel" placeholder="rappel">
+                                                    <span class="error"><?php viewError($errors, 'rappel'); ?></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -111,13 +154,14 @@ if ($_SESSION['user']['status']=='admin'){
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label for="formGroupExampleInput" class="form-label">Description :</label>
-                                                    <textarea class="form-control textarea" rows="4" name="Description" id="Description" placeholder="Description"></textarea>
+                                                    <textarea class="form-control textarea" rows="4" name="description" id="Description" placeholder="Description"><?php echo $vaccin['description']; ?></textarea>
+                                                    <span class="error"><?php viewError($errors, 'description'); ?></span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <a href="modif_vaccins.php" type="button" class="btn btn-primary float-right">Modifier</a>
+                                                <input type="submit" name="submitted" type="button" class="btn btn-primary float-right" value="Modifier">
                                             </div>
                                         </div>
                                     </form>
