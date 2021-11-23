@@ -33,46 +33,48 @@ $query->bindValue(':id_session',$id_session,PDO::PARAM_INT);
 $query->execute();
 $userVaccin = $query->fetchAll();
 
+//debug($userVaccin);
 //initialisation d'un compteur pour la boucle foreach
 $i = 0;
 
 include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style_user.css">
-<section>
-    <div class="title-carnet">
-        <h2>Mon Carnet</h2>
-    </div>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <section>
+        <div class="title-carnet">
+            <h2>Mon Carnet</h2>
+        </div>
 
-    <?php if(empty($userVaccin)) { ?>
+        <?php if(empty($userVaccin)) { ?>
             <div class="carnet_vide">
                 <p>Nous n'avons aucun vaccin à afficher ...</p>
                 <a class="button_type2" href="ajouter.php">Ajouter un vaccin ?</a>
             </div>
-    <?php } else { ?>
+        <?php } else { ?>
 
-    <div id="carnet">
-        <div class="wrap">
-            <div id="container-carnet">
-                <?php foreach ($user_vaccins as $user_vaccin){ ?>
-                <div class="items-carnet">
-                        <h3>Vaccination <?php echo $userVaccin[$i]['nom_vaccin']; ?></h3>
-                        <p> <?php echo $_SESSION['user']['nom'];echo' ';echo $_SESSION['user']['prenom'] ?></p>
-                        <p><?php echo $userVaccin[$i]['laboratoire'] ?> fait le <?php echo dateFormatWithoutHour($userVaccin[$i]['vaccin_date'], 'd/m/Y') ?></p>
-                        <a class="button_type2" href="detail.php?id=<?php echo $userVaccin[$i]['id']; ?> "> En savoir plus </a>
-                        <a class="button_type2" href="delete.php?id=<?php echo $userVaccin[$i]['id'] ?>"> Supprimer</a>
+            <div id="carnet">
+                <div class="wrap">
+                    <div id="container-carnet">
+                        <?php foreach ($user_vaccins as $user_vaccin){ ?>
+                            <div class="items-carnet">
+                                <h3>Vaccination <?php echo $userVaccin[$i]['nom_vaccin']; ?></h3>
+                                <p> <?php echo $_SESSION['user']['nom'];echo' ';echo $_SESSION['user']['prenom'] ?></p>
+                                <p><?php echo $userVaccin[$i]['laboratoire'] ?> fait le <?php echo dateFormatWithoutHour($userVaccin[$i]['vaccin_date'], 'd/m/Y') ?></p>
+                                <a class="button_type2" href="detail.php?id=<?php echo $userVaccin[$i]['id']; ?> "> En savoir plus </a>
+                                <a class="button_type2" href="delete.php?id=<?php echo $userVaccin[$i]['id'] ?>"> Supprimer</a>
+                            </div>
+                            <?php $i++; } ?>
+                    </div>
                 </div>
-                <?php $i++; } ?>
             </div>
-        </div>
-    </div>
 
-    <div class="ajout-vaccin">
-            <a href="ajouter.php"><img src="asset/img/cta-ajout.svg">Ajouter un vaccin</a>
-    </div>
-   <?php echo $paginator ?>
-    <?php } ?>
+            <div class="ajout-vaccin">
+                <a href="ajouter.php"><img src="asset/img/cta-ajout.svg">Ajouter un vaccin</a>
+            </div>
+            <?php echo $paginator ?>
+        <?php } ?>
 
 
-</section>
+    </section>
 
 <?php include('inc/footer.php');

@@ -52,7 +52,7 @@ if ($_SESSION['user']['status']=='admin'){
     <!-- inject:css -->
     <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
     <!-- endinject -->
-    <link rel="shortcut icon" href="../../../../../asset/img/logo_vactolib.svg" />
+    <link rel="shortcut icon" href="../../images/vactolib_coeur.svg" />
 </head>
 
 <body>
