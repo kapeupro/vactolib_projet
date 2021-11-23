@@ -104,5 +104,24 @@ function generateRandomString($length = 10) {
     return $randomString;
 }
 
+function getVaccinBySearch($search)
+{
+    global $pdo;
+    $sql = "SELECT * FROM vactolib_vaccins WHERE nom_vaccin LIKE :search OR laboratoire LIKE :search";
+    $query = $pdo->prepare($sql);
+    $query->bindValue(':search','%'.$search.'%',PDO::PARAM_STR);
+    $query->execute();
+    return $query->fetchAll();
+}
+
+function getUserBySearch($search)
+{
+    global $pdo;
+    $sql = "SELECT * FROM vactolib_user WHERE nom LIKE :search OR prenom LIKE :search";
+    $query = $pdo->prepare($sql);
+    $query->bindValue(':search','%'.$search.'%',PDO::PARAM_STR);
+    $query->execute();
+    return $query->fetchAll();
+}
 
 

@@ -64,6 +64,7 @@ if ($_SESSION['user']['status']=='admin'){
             <a class="navbar-brand brand-logo-mini" href="../../../index.php"><img src="../../../../../asset/img/logo_vactolib.svg" alt="logo"/></a>
         </div>
     </nav>
+
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -100,6 +101,7 @@ if ($_SESSION['user']['status']=='admin'){
                 </li>
             </ul>
         </nav>
+
         <!-- partial -->
         <div class="main-panel">
             <div class="content-wrapper">
@@ -140,9 +142,21 @@ if ($_SESSION['user']['status']=='admin'){
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Nos utilisateurs</h4>
-                                <a href="modif_user.php" type="button" class="btn btn-primary float-right">Modifier</a>
+                                <a href="ajout_user.php" type="button" class="btn btn-primary float-right">Ajouter Utilisateur</a>
+
                                 <div class="table-responsive pt-3">
                                     <table class="table table-dark">
+                                        <!-- BARRE DE RECHERCHE -->
+
+                                        <form action="search_user.php" method="get">
+                                            <div>
+                                                <div class="col d-flex flex-row py-3 justify-content-end">
+                                                    <input type="search" class="form-control mr-2 col-5" id="datatable-search-input" placeholder="Rechercher ..." name="search" value="<?php if(!empty($_GET['search'])) {echo $_GET['search'];} ?>">
+                                                    <input class=" btn btn-primary" type="submit" class="form-control col-1">
+                                                </div>
+                                            </div>
+                                        </form>
+
                                         <thead>
                                         <tr>
                                             <th>
@@ -216,8 +230,20 @@ if ($_SESSION['user']['status']=='admin'){
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Nos vaccins</h4>
+                                <a href="ajout_vaccin.php" type="button" class="mr-3 btn btn-primary float-right">Ajouter Vaccin</a>
                                 <div class="table-responsive pt-3">
                                     <table class="table table-bordered">
+
+                                        <!-- BARRE DE RECHERCHE -->
+                                        <form action="search_vaccin.php" method="get">
+                                            <div>
+                                                <div class="col d-flex flex-row py-3 justify-content-end">
+                                                    <input type="search" class="form-control mr-2 col-5" id="datatable-search-input" placeholder="Rechercher ..." name="search" value="<?php if(!empty($_GET['search'])) {echo $_GET['search'];} ?>">
+                                                    <input class=" btn btn-primary" type="submit" class="form-control col-1">
+                                                </div>
+                                            </div>
+                                        </form>
+
                                         <thead>
                                         <tr>
                                             <th>

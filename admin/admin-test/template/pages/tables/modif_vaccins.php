@@ -9,8 +9,8 @@ $errors = [];
 if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
     $id = $_GET['id'];
     $vaccin = getVaccinById($id);
-}
 
+}
     if(!empty($vaccin)){
         if(!empty($_POST['submitted'])){
 
@@ -118,7 +118,7 @@ if ($_SESSION['user']['status']=='admin'){
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">Modification/Ajout vaccins</h4>
+                                    <h4 class="card-title">Modification vaccins</h4>
                                     <!-- FORMULAIRE DE MODIFICATION -->
 
                                     <form method="post" role="form" id="contact-form" class="contact-form">
