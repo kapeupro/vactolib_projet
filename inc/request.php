@@ -53,3 +53,4 @@ function getVaccinById($id)
     $query->execute();
     return $query->fetch();
 }
+

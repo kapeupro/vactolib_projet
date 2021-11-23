@@ -31,6 +31,7 @@ if ($_SESSION['user']['status']=='admin'){
     $countAdmin = 0;
     $countAllUsers = 0;
     $countAllVaccins = 0;
+
 ?>
 
 <!DOCTYPE html>
@@ -59,8 +60,8 @@ if ($_SESSION['user']['status']=='admin'){
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-            <a class="navbar-brand brand-logo mr-5" href="../../index.php"><img src="../../../../../asset/img/logo_vactolib.svg" class="mr-2" alt="logo"/></a>
-            <a class="navbar-brand brand-logo-mini" href="../../index.php"><img src="../../../../../asset/img/logo_vactolib.svg" alt="logo"/></a>
+            <a class="navbar-brand brand-logo mr-5" href="../../../index.php"><img src="../../../../../asset/img/logo_vactolib.svg" class="mr-2" alt="logo"/></a>
+            <a class="navbar-brand brand-logo-mini" href="../../../index.php"><img src="../../../../../asset/img/logo_vactolib.svg" alt="logo"/></a>
         </div>
     </nav>
     <!-- partial -->
@@ -139,7 +140,7 @@ if ($_SESSION['user']['status']=='admin'){
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Nos utilisateurs</h4>
-                                <a href="#" type="button" class="btn btn-primary float-right">Modifier</a>
+                                <a href="modif_user.php" type="button" class="btn btn-primary float-right">Modifier</a>
                                 <div class="table-responsive pt-3">
                                     <table class="table table-dark">
                                         <thead>
@@ -164,6 +165,12 @@ if ($_SESSION['user']['status']=='admin'){
                                             </th>
                                             <th>
                                                 Status
+                                            </th>
+                                            <th>
+                                                Modif.
+                                            </th>
+                                            <th>
+                                                Suppr.
                                             </th>
                                         </tr>
                                         </thead>
@@ -191,6 +198,12 @@ if ($_SESSION['user']['status']=='admin'){
                                                 <td>
                                                     <?php echo $users[$countAllUsers]['status']?>
                                                 </td>
+                                                <td>
+                                                    <a href="#">Modifier</a>
+                                                </td>
+                                                <td>
+                                                    <a href="delete_user.php?id=<?= $users[$countAllUsers]['id'] ?>">Supprimer</a>
+                                                </td>
                                             </tr>
                                        <?php $countAllUsers++; } ?>
                                         </tbody>
@@ -203,7 +216,6 @@ if ($_SESSION['user']['status']=='admin'){
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Nos vaccins</h4>
-                                <a href="#" type="button" class="btn btn-primary float-right">Modifier</a>
                                 <div class="table-responsive pt-3">
                                     <table class="table table-bordered">
                                         <thead>
@@ -223,35 +235,47 @@ if ($_SESSION['user']['status']=='admin'){
                                             <th>
                                                 Rappel
                                             </th>
+                                            <th>
+                                                Modif.
+                                            </th>
+                                            <th>
+                                                Suppr.
+                                            </th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <?php foreach($vaccins as $vaccin){ ?>
                                         <tr class="table-primary">
                                             <td>
-                                                <div style="width:50px; overflow:hidden;">
+                                                <div style="width:2rem; overflow:hidden;">
                                                     <?php echo $vaccins[$countAllVaccins]['id']; ?>
                                                 </div>
                                             </td>
                                             <td>
-                                                <div style="width:250px; overflow:hidden;">
+                                                <div style="width:8rem; overflow:hidden;">
                                                     <?php echo $vaccins[$countAllVaccins]['nom_vaccin']; ?>
                                                 </div>
                                             </td>
                                             <td>
-                                                <div style="width:250px; overflow:hidden;">
+                                                <div style="width:10rem; overflow:hidden;">
                                                     <?php echo $vaccins[$countAllVaccins]['laboratoire']; ?>
                                                 </div>
                                             </td>
                                             <td>
-                                                <div style="width:300px; overflow:hidden;">
+                                                <div style="width:10rem; overflow:hidden;">
                                                     <?php echo $vaccins[$countAllVaccins]['description']; ?>
                                                 </div>
                                             </td>
                                             <td>
-                                                <div style="width:50px; overflow:hidden;">
+                                                <div style="width:2rem; overflow:hidden;">
                                                     <?php echo $vaccins[$countAllVaccins]['rappel']; ?>
                                                 </div>
+                                            </td>
+                                            <td>
+                                                <a href="modif_vaccins.php?id=<?= $vaccins[$countAllVaccins]['id'] ?>">Modifier</a>
+                                            </td>
+                                            <td>
+                                                <a href="delete_vaccin.php?id=<?= $vaccins[$countAllVaccins]['id'] ?>">Supprimer</a>
                                             </td>
                                         </tr>
                                         <?php $countAllVaccins++; } ?>
@@ -268,7 +292,6 @@ if ($_SESSION['user']['status']=='admin'){
             <footer class="footer">
                 <div class="d-sm-flex justify-content-center justify-content-sm-between">
                     <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
-                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
                 </div>
             </footer>
             <!-- partial -->
