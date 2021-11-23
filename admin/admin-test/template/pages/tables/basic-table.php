@@ -5,9 +5,6 @@ require('../../../../../inc/pdo.php');
 require('../../../../../inc/fonction.php');
 require('../../../../../inc/request.php');
 
-if ($_SESSION['user']['status']==)
-
-
 if ($_SESSION['user']['status']=='admin'){
 
     //Recuperer les admins
@@ -56,7 +53,6 @@ if ($_SESSION['user']['status']=='admin'){
                                         </tr>
                                         </thead>
                                         <tbody>
-<<<<<<< HEAD
                                         <?php foreach ($admins as $admin){
 
                                         } ?>
@@ -67,7 +63,6 @@ if ($_SESSION['user']['status']=='admin'){
                                             <td>Portable</td>
                                             <td><label class="badge badge-danger">Admin</label></td>
                                         </tr>
-=======
                                         <?php foreach($admins as $admin){ ?>
                                             <tr>
                                                 <td><?php echo $admins[$countAdmin]['nom']; ?></td>
@@ -77,7 +72,6 @@ if ($_SESSION['user']['status']=='admin'){
                                                 <td><label class="badge badge-danger">Admin</label></td>
                                             </tr>
                                         <?php $countAdmin++; } ?>
->>>>>>> b473c9ef8efba157281b6b18ee6b79f9c7ad2511
                                         </tbody>
                                     </table>
                                 </div>
