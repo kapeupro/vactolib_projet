@@ -44,10 +44,9 @@ return $errors;
 }
 
 function intValidation($errors, $value, $key){
-    if(!empty($value)){
-        if (filter_var($key, FILTER_VALIDATE_INT)) {
-        } else {
-            $errors[$key]="Veuillez renseigner un entier";
+    if (!empty($value)) {
+        if (!is_int($key)){
+            $errors[$key] = "Veuillez renseigner un entier";
         }
     }
     return $errors;
