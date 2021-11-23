@@ -22,7 +22,7 @@ if(!empty($_POST['submitted'])){
 
     $sql = "INSERT INTO vactolib_vaccins
     (nom_vaccin, laboratoire, description, rappel)
-    VALUES (:nom_vaccin, :laboratoire, :description, :rappel";
+    VALUES (:nom_vaccin, :laboratoire, :description, :rappel)";
     $query = $pdo->prepare($sql);
     $query->bindValue(':nom_vaccin', $nom_vaccin, PDO::PARAM_STR);
     $query->bindValue(':laboratoire', $laboratoire, PDO::PARAM_STR);
