@@ -620,15 +620,41 @@ input[type=submit]{
  }
 
  /*VIE PRIVEE*/
-.container_vieprivee {
+.container_vieprivee_1 {
     display: flex;
+    justify-content: center;
+}
+.container_vieprivee_2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+.title_vieprivee {
+    padding: 4rem;
 }
 .title_vieprivee h2{
     display: flex;
     justify-content: center;
+    font-size: 28px;
 }
-.image_vieprivee_1 {
-    background: #0cd1e8;
-    width: 200px;
-    height: 200px;
+.items_vie_1 , .image_vieprivee_2 {
+    width: 45%;
+    padding: 1rem;
+}
+.items_vie_2 , .image_vieprivee_1 {
+    width: 45%;
+    padding: 1rem;
+}
+.container_vieprivee_1 , .container_vieprivee_2 {
+    padding: 4rem;
+    justify-content: space-between;
+    margin: 2rem;
+    align-items: center;
+}
+.image_vieprivee_1 img{
+    width: 100%;
+}
+
+.image_vieprivee_2 img{
+    width: 100%;
 }

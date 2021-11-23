@@ -1,4 +1,4 @@
-git <?php
+<?php
 
 //Tous les raccourcis pour les requests !
 
