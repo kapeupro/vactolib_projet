@@ -202,7 +202,7 @@ if ($_SESSION['user']['status']=='admin'){
                                                     <a href="#">Modifier</a>
                                                 </td>
                                                 <td>
-                                                    <a href="delete.php?id=<?= $users[$countAllUsers]['id'] ?>">Supprimer</a>
+                                                    <a href="delete_user.php?id=<?= $users[$countAllUsers]['id'] ?>">Supprimer</a>
                                                 </td>
                                             </tr>
                                        <?php $countAllUsers++; } ?>
