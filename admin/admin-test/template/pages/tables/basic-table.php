@@ -216,7 +216,6 @@ if ($_SESSION['user']['status']=='admin'){
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Nos vaccins</h4>
-                                <a href="modif_vaccins.php" type="button" class="btn btn-primary float-right">Modifier</a>
                                 <div class="table-responsive pt-3">
                                     <table class="table table-bordered">
                                         <thead>
@@ -273,7 +272,7 @@ if ($_SESSION['user']['status']=='admin'){
                                                 </div>
                                             </td>
                                             <td>
-                                                <a href="#">Modifier</a>
+                                                <a href="modif_vaccins.php">Modifier</a>
                                             </td>
                                             <td>
                                                 <a href="delete_vaccin.php?id=<?= $vaccins[$countAllVaccins]['id'] ?>">Supprimer</a>

@@ -86,6 +86,41 @@ if ($_SESSION['user']['status']=='admin'){
                                     <h4 class="card-title">Modification/Ajout vaccins</h4>
                                     <!-- FORMULAIRE DE MODIFICATION -->
 
+                                    <form role="form" id="contact-form" class="contact-form">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="formGroupExampleInput" class="form-label">Nom vaccin :</label>
+                                                    <input type="text" class="form-control" name="Name" autocomplete="off" id="Name" placeholder="Nom vaccin">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="formGroupExampleInput" class="form-label">Laboratoire :</label>
+                                                    <input type="text" class="form-control" name="laboratoire" autocomplete="off" id="laboratoire" placeholder="laboratoire">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="formGroupExampleInput" class="form-label">Nombre de jours avant rappel :</label>
+                                                    <input type="text" class="form-control" name="rappel" autocomplete="off" id="rappel" placeholder="rappel">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="formGroupExampleInput" class="form-label">Description :</label>
+                                                    <textarea class="form-control textarea" rows="4" name="Description" id="Description" placeholder="Description"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <a href="modif_vaccins.php" type="button" class="btn btn-primary float-right">Modifier</a>
+                                            </div>
+                                        </div>
+                                    </form>
 
                                 </div>
                             </div>
