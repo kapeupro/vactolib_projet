@@ -7,15 +7,14 @@ require('../../../../../inc/request.php');
 
 if(!empty($_GET['id']) && is_numeric($_GET['id'])){
     $id = $_GET['id'];
-    $user = getVaccinById($id);
+    $vaccin = getVaccinById($id);
 
-    if (!empty($user)){
+    if (!empty($vaccin)){
         $sql = "DELETE FROM vactolib_vaccins WHERE id = :id";
         $query = $pdo->prepare($sql);
         $query->bindValue(':id', $id, PDO::PARAM_INT);
         $query ->execute();
-//        header('Location: basic-table.php');
-        echo "ok";
+        header('Location: basic-table.php');
     }else{
         die('404');
     }
