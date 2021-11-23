@@ -236,35 +236,47 @@ if ($_SESSION['user']['status']=='admin'){
                                             <th>
                                                 Rappel
                                             </th>
+                                            <th>
+                                                Modif.
+                                            </th>
+                                            <th>
+                                                Suppr.
+                                            </th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <?php foreach($vaccins as $vaccin){ ?>
                                         <tr class="table-primary">
                                             <td>
-                                                <div style="width:50px; overflow:hidden;">
+                                                <div style="width:2rem; overflow:hidden;">
                                                     <?php echo $vaccins[$countAllVaccins]['id']; ?>
                                                 </div>
                                             </td>
                                             <td>
-                                                <div style="width:250px; overflow:hidden;">
+                                                <div style="width:8rem; overflow:hidden;">
                                                     <?php echo $vaccins[$countAllVaccins]['nom_vaccin']; ?>
                                                 </div>
                                             </td>
                                             <td>
-                                                <div style="width:250px; overflow:hidden;">
+                                                <div style="width:10rem; overflow:hidden;">
                                                     <?php echo $vaccins[$countAllVaccins]['laboratoire']; ?>
                                                 </div>
                                             </td>
                                             <td>
-                                                <div style="width:300px; overflow:hidden;">
+                                                <div style="width:10rem; overflow:hidden;">
                                                     <?php echo $vaccins[$countAllVaccins]['description']; ?>
                                                 </div>
                                             </td>
                                             <td>
-                                                <div style="width:50px; overflow:hidden;">
+                                                <div style="width:2rem; overflow:hidden;">
                                                     <?php echo $vaccins[$countAllVaccins]['rappel']; ?>
                                                 </div>
+                                            </td>
+                                            <td>
+                                                <a href="#">Modifier</a>
+                                            </td>
+                                            <td>
+                                                <a href="delete_vaccin.php">Supprimer</a>
                                             </td>
                                         </tr>
                                         <?php $countAllVaccins++; } ?>
