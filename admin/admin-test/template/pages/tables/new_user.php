@@ -14,15 +14,16 @@ if(!empty($_POST['submitted'])){
 
     $errors = textValidation($errors, $nom, 'nom', 3, 255);
     $errors = textValidation($errors, $prenom, 'prenom', 3, 255);
-    $errors = textValidation($errors, $email, 'email', 3, 255);
-    $errors = textValidation($password, $password, 'password',8, 255);
+    $errors = mailValidation($errors, $email, 'email');
+    $errors = textValidation($errors, $password, 'password',8, 255);
+
 
 
     if(count($errors) == 0){
 
         $sql = "INSERT INTO vactolib_user
-    (nom,prenom, email, password)
-    VALUES (:nom, :prenom, :email, :password)";
+        (nom,prenom, email, password)
+        VALUES (:nom, :prenom, :email, :password)";
         $query = $pdo->prepare($sql);
         $query->bindValue(':nom', $nom, PDO::PARAM_STR);
         $query->bindValue(':prenom', $prenom, PDO::PARAM_STR);
@@ -75,7 +76,7 @@ include('../../inc/header.php'); ?>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="formGroupExampleInput" class="form-label">Mot de Passe :</label>
-                                            <input type="text" class="form-control" name="password" value="<?php recupInputValue('password') ?>" id="password" placeholder="password">
+                                                <input type="text" class="form-control" name="password" value="<?php recupInputValue('password') ?>" id="password" placeholder="password">
                                             <span class="text-danger"><?php viewError($errors, 'password'); ?></span>
                                         </div>
                                     </div>
