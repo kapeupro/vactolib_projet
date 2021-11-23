@@ -22,8 +22,7 @@ if(!empty($_POST['submitted'])){
 
     $sql = "INSERT INTO vactolib_vaccins
     (nom_vaccin, laboratoire, description, rappel)
-    VALUES (:nom_vaccin, :laboratoire, :description, :rappel
-    VALUES (:nom, :laboratoire, :description, :rappel)";
+    VALUES (:nom_vaccin, :laboratoire, :description, :rappel)";
     $query = $pdo->prepare($sql);
     $query->bindValue(':nom', $nom, PDO::PARAM_STR);
     $query->bindValue(':laboratoire', $laboratoire, PDO::PARAM_STR);
@@ -95,4 +94,6 @@ include('../../inc/header.php'); ?>
             </div>
         </div>
     </div>
+
+
 <?php include('../../inc/footer.php'); } else{die('403');} ?>
