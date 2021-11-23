@@ -50,6 +50,7 @@ function intValidation($errors, $value, $key){
             $errors[$key]="Veuillez renseigner un entier";
         }
     }
+    return $errors;
 }
 
 
