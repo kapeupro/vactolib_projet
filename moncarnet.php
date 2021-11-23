@@ -38,6 +38,7 @@ $i = 0;
 
 include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style_user.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <section>
     <div class="title-carnet">
         <h2>Mon Carnet</h2>
