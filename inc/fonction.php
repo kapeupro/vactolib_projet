@@ -43,6 +43,7 @@ $errors[$key]='Veuillez renseigner ce champ';
 return $errors;
 }
 
+
 function intValidation($errors, $value, $key){
     if (!empty($value)) {
         if (!is_int($key)){
