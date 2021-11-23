@@ -43,6 +43,16 @@ $errors[$key]='Veuillez renseigner ce champ';
 return $errors;
 }
 
+function intValidation($errors, $value, $key){
+    if(!empty($value)){
+        if (filter_var($key, FILTER_VALIDATE_INT)) {
+        } else {
+            $errors[$key]="Veuillez renseigner un entier";
+        }
+    }
+}
+
+
 function mailValidation($errors,$value,$key){
 if(!empty($value)){
 if (filter_var($value, FILTER_VALIDATE_EMAIL)==false) {
