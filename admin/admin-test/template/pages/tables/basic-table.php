@@ -163,7 +163,7 @@ if ($_SESSION['user']['status']=='admin'){
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Nos vaccins</h4>
-                                <a href="ajout_vaccin.php" type="button" class="mr-3 btn btn-primary float-right">Ajouter Vaccin</a>
+                                <a href="new_vaccin.php" type="button" class="mr-3 btn btn-primary float-right">Ajouter Vaccin</a>
                                 <div class="table-responsive pt-3">
                                     <table class="table table-bordered">
 

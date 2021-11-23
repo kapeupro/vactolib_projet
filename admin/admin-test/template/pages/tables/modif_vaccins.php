@@ -23,7 +23,7 @@ if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
             $errors = textValidation($errors, $name, 'name', 3, 255);
             $errors = textValidation($errors, $laboratoire, 'laboratoire', 3, 50);
             $errors = textValidation($errors, $description, 'description', 3, 450);
-            $errors = intValidation($errors, $rappel, 'rappel');
+            $errors = textValidation($errors, $rappel, 'rappel', 1, 11);
 
             if(count($errors) == 0){
                 $sql = "UPDATE vactolib_vaccins

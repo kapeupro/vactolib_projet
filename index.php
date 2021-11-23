@@ -58,7 +58,7 @@ if(!empty($_SESSION)) {
                             <?php } ?>
 
                             <div>
-                                <a class="button_type1" href="moncarnet.php">Mon Carnet</a>
+                                <a class="button_type1" href="moncarnet.php?page=1">Mon Carnet</a>
                             </div>
                         </div>
                     </div>
