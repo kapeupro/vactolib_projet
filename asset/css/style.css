@@ -50,6 +50,7 @@ a{text-decoration: none;}
     background-size: 0;
     transition: 1s;
     background-repeat: no-repeat;
+    width: 40%;
 }
 .button_type2:hover{background-size: 100%;}
 

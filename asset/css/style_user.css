@@ -38,7 +38,7 @@ a{text-decoration: none;}
 }
 .button_type2{
     border-radius: 30px;
-    width: 75px;
+    width: 40%;
     height: 40px;
     text-align: center;
     padding-top: 0.7rem;
@@ -310,11 +310,15 @@ a{text-decoration: none;}
 #ajout_vaccin .wrap form{
     display: flex;
     flex-flow: row nowrap;
+    justify-content: center;
     gap: 1rem;
     padding: 3rem 0;
     margin: 0 auto;
 }
-#ajout_vaccin .wrap form select{border-radius: 10px;}
+#ajout_vaccin .wrap form select{
+    border-radius: 10px;
+    width: 35%;
+}
 #ajout_vaccin .wrap form .error_box{
     display: flex;
     flex-flow: column nowrap;
