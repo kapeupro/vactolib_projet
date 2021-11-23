@@ -31,6 +31,7 @@ if ($_SESSION['user']['status']=='admin'){
     $countAdmin = 0;
     $countAllUsers = 0;
     $countAllVaccins = 0;
+
 ?>
 
 <!DOCTYPE html>
@@ -165,6 +166,12 @@ if ($_SESSION['user']['status']=='admin'){
                                             <th>
                                                 Status
                                             </th>
+                                            <th>
+                                                Modif.
+                                            </th>
+                                            <th>
+                                                Suppr.
+                                            </th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -190,6 +197,12 @@ if ($_SESSION['user']['status']=='admin'){
                                                 </td>
                                                 <td>
                                                     <?php echo $users[$countAllUsers]['status']?>
+                                                </td>
+                                                <td>
+                                                    <a href="#">Modifier</a>
+                                                </td>
+                                                <td>
+                                                    <a href="delete.php?id=<?= $users[$countAllUsers]['id'] ?>">Supprimer</a>
                                                 </td>
                                             </tr>
                                        <?php $countAllUsers++; } ?>
