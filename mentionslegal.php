@@ -8,7 +8,7 @@ require('inc/request.php');
 include('inc/header.php'); ?>
 
 <section>
-
+    <?php if(!empty($_SESSION)){ echo'<link rel="stylesheet" href="asset/css/style_user.css">';} else {} ?>
     <div class="wrap">
         <div class="container-mentionslegal">
     <div id="title-h2-mentionslegal">

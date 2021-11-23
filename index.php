@@ -30,12 +30,6 @@ if(!empty($_SESSION)) {
     $query->execute();
     $user = $query->fetch();
 
-    $_SESSION['user'] = array(
-        'id' => $user['id'],
-        'nom' => $user['nom'],
-        'prenom' => $user['prenom']
-    );
-
 
     $_SESSION['user']=array(
         'id'=>$user['id'],
