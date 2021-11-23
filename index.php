@@ -76,7 +76,7 @@ if(!empty($_SESSION)) {
         <div class="wrap">
             <div class="tache"></div>
             <div class="title">
-                <h2>Pourquoi prendre Vactolib ?</h2>
+                <h2>Merci d'avoir choisi Vactolib !</h2>
             </div>
             <ul class="boxs">
                 <li>
@@ -132,7 +132,7 @@ if(!empty($_SESSION)) {
             <div class="tache_box tache3">
                 <div class="tache_para">
                     <p><?php echo $allAjout['resultAjout']?></p>
-                    <p>vaccins ajouter dans leur carnets</p>
+                    <p>vaccins ajoutés dans leur carnets</p>
                 </div>
             </div>
             <div class="tache_box tache4">

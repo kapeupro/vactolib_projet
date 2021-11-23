@@ -17,7 +17,7 @@ if(!empty($_POST['submitted'])) {
     $query->bindValue(':login',$login,PDO::PARAM_STR);
     $query->execute();
     $user= $query->fetch();
-    debug($user);
+//    debug($user);
     if(empty($user)) {
         $errors['login'] = 'Email invalide';
     } else {
@@ -63,7 +63,7 @@ if(!empty($_POST['submitted'])) {
             </div>
 
             <div class="info_box_button">
-                <input type="submit" name="submitted" value="ENVOYER">
+                <input type="submit" name="submitted" value="SE CONNECTER">
             </div>
             <div>
                 <?php  echo'<a href="mailmissingpassword.php">Mot de passe oublié ?</a>'?>
