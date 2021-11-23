@@ -56,8 +56,13 @@ a{
     margin-top: .5rem;
     padding: .2rem .8rem;
     text-align: center;
-    box-shadow: 0px 1px 1px 3px var(--rose);
+    box-shadow: 0px 1px 1px 3px var(--bleu);
+    background-image: linear-gradient(0, white, white);
+    background-size: 0;
+    transition: 1s;
+    background-repeat: no-repeat;
 }
+.button_type2:hover{background-size: 100%;}
 
 /*Input*/
 
@@ -74,7 +79,7 @@ a{
     width:35%;
     padding:2rem 0;
     -webkit-box-shadow: 0px 1px 14px 23px ;
-    box-shadow: 0px 1px 14px 23px #F2DFE6;
+    box-shadow: 0px 1px 14px 23px #e8f6fc;
 }
 #register_form .info_box{padding:1rem;}
 #register_form .error{color:red;}
@@ -272,7 +277,6 @@ a{
     align-items: center;
     gap: 1rem;
 }
-
 #profil_container .wrap .info_profil .box_items{
     width: 35rem;
     border-radius: 14px;
@@ -289,14 +293,12 @@ a{
     display: flex;
     flex-flow: row nowrap;
 }
-
 /*FORMULAIRE EDIT*/
 #profil_container .wrap .info_profil .box_items .info_list form{
     display: flex;
     flex-flow: column nowrap;
     gap: .5rem;
 }
-
 #profil_container .wrap .info_profil .box_items .info_list form .form_box_modif{
     display: flex;
     flex-flow: column nowrap;
@@ -310,7 +312,7 @@ a{
 }
 #profil_container .wrap .info_profil .box_items .info_list form .form_box_modif input[type="submit"]:hover{
     cursor: pointer;
-    background: #F2DFE6;
+    background: var(--bleu);
 }
 #profil_container .wrap .info_profil .box_items .info_list form .form_box_modif .error{
     color: red;
@@ -321,14 +323,12 @@ a{
     justify-content: space-between;
     gap: 6rem;
 }
-
 #profil_container .wrap .illustration_profil{
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     gap: 3rem;
 }
-
 /*PAGE AJOUT VACCIN*/
 #ajout_vaccin .wrap{
     display: flex;
@@ -346,23 +346,14 @@ a{
     padding: 3rem 0;
     margin: 0 auto;
 }
-#ajout_vaccin .wrap form select{
-    border-radius: 10px;
-}
-
+#ajout_vaccin .wrap form select{border-radius: 10px;}
 #ajout_vaccin .wrap form .error_box{
     display: flex;
     flex-flow: column nowrap;
     gap: .5rem;
 }
-#ajout_vaccin .wrap form .error_box .error{
-    color: red;
-}
-#ajout_vaccin .wrap form .button_type1{
-    margin: 0 auto;
-    padding: 0;
-}
-
+#ajout_vaccin .wrap form .error_box .error{color: red;}
+#ajout_vaccin .wrap form .button_type1{margin: 0 auto;padding: 0;}
 
 /*FOOTER*/
 #footer{
@@ -375,19 +366,11 @@ a{
     overflow: hidden;
     color: var(--noir);
 }
-#footer h3{
-    padding-bottom: 1rem;
-    font-size: 23px;
-}
-#footer a{
-    color: var(--noir);
-}
-#footer a:hover{
-    color: #f6a2f6;
-}
+#footer h3{padding-bottom: 1rem;font-size: 23px;}
+#footer a{color: var(--noir);}
+#footer a:hover{color: var(--bleu);}
 
 /*WAVE*/
-
 #footer .footer__wave{
     height: 45%;
     width:100%;
@@ -411,20 +394,12 @@ a{
     opacity: 1;
 }
 @keyframes wave {
-    0% {
-        margin-left: 0;
-    }
-    100% {
-        margin-left: -1600px;
-    }
+    0% {margin-left: 0;}
+    100% {margin-left: -1600px;}
 }
 @keyframes swell {
-    0%, 100% {
-        transform: translate3d(0,-25px,0);
-    }
-    50% {
-        transform: translate3d(0,5px,0);
-    }
+    0%, 100% {transform: translate3d(0,-25px,0);}
+    50% {transform: translate3d(0,5px,0);}
 }
 #footer .footer__container{
     display: flex;
@@ -437,14 +412,8 @@ a{
     flex-flow: column nowrap;
     gap: .5rem;
 }
-
-#footer .footer__logo{
-    width: 25%;
-}
-#footer .footer__logo img{
-    width: 100%;
-}
-
+#footer .footer__logo{width: 25%;}
+#footer .footer__logo img{width: 100%;}
 #footer .footer__separation{
     width: 90%;
     height: 2px;
@@ -452,7 +421,6 @@ a{
     margin: 0 auto;
     z-index: 1;
 }
-
 #footer .footer__copyright{
     z-index: 1;
     display: flex;
@@ -470,12 +438,6 @@ a{
     font-size: 1.5rem;
     color: var(--noir);
 }
-#footer .footer__copyright ul li i.fa-facebook-square:hover{
-    color: #21529C;
-}
-#footer .footer__copyright ul li i.fa-twitter-square:hover{
-    color: #46C6FA;
-}
-#footer .footer__copyright ul li i.fa-instagram:hover{
-    color: #F7288B;
-}
+#footer .footer__copyright ul li i.fa-facebook-square:hover{color: #21529C;}
+#footer .footer__copyright ul li i.fa-twitter-square:hover{color: #46C6FA;}
+#footer .footer__copyright ul li i.fa-instagram:hover{color: #F7288B;}
