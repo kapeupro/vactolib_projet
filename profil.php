@@ -24,7 +24,7 @@ $query->execute();
 $userVaccin = $query->fetch();
 
 //debug($user);
-debug($userVaccin);
+//debug($userVaccin);
 
 $_SESSION['user']=array(
     'id'=>$user['id'],
