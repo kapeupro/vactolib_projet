@@ -32,7 +32,7 @@ $query = $pdo->prepare($sqlleft);
 $query->bindValue(':id_session',$id_session,PDO::PARAM_INT);
 $query->execute();
 $userVaccin = $query->fetchAll();
-debug($userVaccin);
+//debug($userVaccin);
 //initialisation d'un compteur pour la boucle foreach
 $i = 0;
 
