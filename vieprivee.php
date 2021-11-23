@@ -37,7 +37,9 @@ include('inc/header.php'); ?>
                         peuvent accéder à vos certificats avec l’application TAC Verif. Seule l'authenticité de signature du certificat est alors vérifiée par un serveur dédié d'IN Groupe (Imprimerie Nationale).</p>
                 </div>
                 <div class="image_vieprivee_1">
+                    <a href="https://www.o2switch.fr/">
                     <img src="asset/img/bacllogo.png" alt="o2switch">
+                    </a>
                 </div>
             </div>
 
@@ -50,7 +52,9 @@ include('inc/header.php'); ?>
                             Vous pouvez ainsi vérifier que les engagements pris sur la protection des données personnelles sont respectés.</p>
                     </div>
                     <div class="image_vieprivee_2">
+                        <a href="https://bitbucket.org/">
                         <img src="asset/img/Bitbucket_Logo_350x140.png" alt="Bitbucket">
+                        </a>
                     </div>
                 </div>
 
@@ -62,7 +66,9 @@ include('inc/header.php'); ?>
                                 compromis entre les exigences de sécurité et de respect des libertés individuelles.</p>
                         </div>
                         <div class="image_vieprivee_1">
-                            <img src="asset/img/Anssi.png" alt="logo Anssi">
+                            <a href="https://www.ssi.gouv.fr/">
+                                <img src="asset/img/Anssi.png" alt="logo Anssi">
+                            </a>
                         </div>
                     </div>
 
@@ -74,7 +80,9 @@ include('inc/header.php'); ?>
                                     et la Commission Nationale Informatique et Libertés (CNIL).</p>
                             </div>
                             <div class="image_vieprivee_2">
-                                <img src="asset/img/2560px-Commission_nationale_de_l27informatique_et_des_libertC3A9s_28logo29.png" alt="CNIL">
+                                <a href="https://www.cnil.fr/fr">
+                                    <img src="asset/img/2560px-Commission_nationale_de_l27informatique_et_des_libertC3A9s_28logo29.png" alt="CNIL">
+                                </a>
                             </div>
                         </div>
                         </div>
