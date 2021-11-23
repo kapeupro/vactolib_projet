@@ -75,7 +75,7 @@ if ($_SESSION['user']['status']=='admin'){
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Nos utilisateurs</h4>
-                                <a href="ajout_user.php" type="button" class="mr-3 btn btn-primary float-right">Ajouter Utilisateur</a>
+                                <a href="new_user.php" type="button" class="mr-3 btn btn-primary float-right">Ajouter Utilisateur</a>
 
                                 <div class="table-responsive pt-3">
                                     <table class="table table-dark">
@@ -246,5 +246,6 @@ if ($_SESSION['user']['status']=='admin'){
                     </div>
                 </div>
             </div>
+        </div>
 
 <?php include('../../inc/footer.php'); } else{die('403');} ?>

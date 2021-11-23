@@ -110,5 +110,6 @@ if ($_SESSION['user']['status']=='admin'){
                         </div>
                     </div>
                 </div>
+            </div>
 
 <?php include('../../inc/footer.php'); } else{die('403');} ?>
