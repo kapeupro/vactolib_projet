@@ -26,6 +26,7 @@ if(!empty($_POST['submitted']))
 //debug($_SESSION);
 include('inc/header.php');
 ?>
+<?php if(!empty($_SESSION)){ echo'<link rel="stylesheet" href="asset/css/style_user.css">';} else {} ?>
     <section id="form_contact">
         <form action="" method="post" class="wrapform" novalidate>
             <div class="boxinfo_contact_bis">

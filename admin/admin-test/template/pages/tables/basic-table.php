@@ -53,7 +53,7 @@ if ($_SESSION['user']['status']=='admin'){
     <!-- inject:css -->
     <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
     <!-- endinject -->
-    <link rel="shortcut icon" href="../../../../../asset/img/logo_vactolib.svg" />
+    <link rel="shortcut icon" href="../../images/vactolib_coeur.svg" />
 </head>
 
 <body>
@@ -213,7 +213,7 @@ if ($_SESSION['user']['status']=='admin'){
                                                     <?php echo $users[$countAllUsers]['status']?>
                                                 </td>
                                                 <td>
-                                                    <a href="#">Modifier</a>
+                                                    <a href="modif_user.php?id=<?= $users[$countAllUsers]['id'] ?>">Modifier</a>
                                                 </td>
                                                 <td>
                                                     <a href="delete_user.php?id=<?= $users[$countAllUsers]['id'] ?>">Supprimer</a>
