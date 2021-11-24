@@ -330,6 +330,7 @@ input[type=submit]{
 }
 #footer .footer__logo{width: 25%;}
 #footer .footer__logo img{width: 100%;}
+#footer .footer__logo img:hover{opacity: 70%;transition: .5s;}
 #footer .footer__separation{
     width: 90%;
     height: 2px;
