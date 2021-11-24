@@ -59,6 +59,8 @@ include('inc/header.php');
                         <option value="<?php echo $vaccin['id'] ?> "><?php echo $vaccin['nom_vaccin'] ?></option>
                     <?php } ?>
                 </select>
+                <label for="date">Date de l'injection :</label>
+                <input type="date" name="date_vaccin">
                 <div class="error_box">
                     <input class="button_type1" type="submit" name="submitted" id="submitted" value="Ajouter">
                     <span class="error"><?php viewError($errors, 'vaccin'); ?></span>

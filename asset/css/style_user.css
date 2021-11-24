@@ -309,15 +309,19 @@ a{text-decoration: none;}
 }
 #ajout_vaccin .wrap form{
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: center;
+    margin: 0 auto;
     gap: 1rem;
     padding: 3rem 0;
-    margin: 0 auto;
+    width: 30%;
+
 }
-#ajout_vaccin .wrap form select{
+#ajout_vaccin .wrap form select, #ajout_vaccin .wrap form input, #ajout_vaccin .wrap form label{
     border-radius: 10px;
-    width: 35%;
+    width: 100%;
+    padding: .7rem;
+
 }
 #ajout_vaccin .wrap form .error_box{
     display: flex;
