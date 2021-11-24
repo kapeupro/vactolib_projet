@@ -102,4 +102,5 @@ if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
             </div>
 
 
-<?php include('../../inc/footer.php'); } else{die('403');} ?>
+<?php include('../../inc/footer.php'); } else{header("Location: 403.php");
+    die();} ?>

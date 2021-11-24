@@ -19,7 +19,18 @@ if ($_SESSION['user']['status']=='admin') {
         } else {
             die('404');
         }
+
+        if (!empty($vaccin)) {
+            $sql = "DELETE FROM vactolib_vaccins WHERE id = :id";
+            $query = $pdo->prepare($sql);
+            $query->bindValue(':id', $id, PDO::PARAM_INT);
+            $query->execute();
+            header('Location: basic-table.php');
+        } else {
+            header("Location: 404.php");
+            die();
+        }
+    } else {
+        die('403');
     }
-}else{
-    die('403');
 }

@@ -114,4 +114,5 @@ include('../../inc/header.php');
                 </div>
             </div>
 
-<?php include('../../inc/footer.php'); } else{die('403');} ?>
+<?php include('../../inc/footer.php'); } else{header("Location: 403.php");
+    die();} ?>

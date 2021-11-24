@@ -5,8 +5,6 @@ require('../../../../../inc/pdo.php');
 require('../../../../../inc/fonction.php');
 require('../../../../../inc/request.php');
 
-
-
 if ($_SESSION['user']['status']=='admin'){
 
     //Recuperer les admins
@@ -55,6 +53,16 @@ if ($_SESSION['user']['status']=='admin'){
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        <?php foreach ($admins as $admin){
+
+                                        } ?>
+                                        <tr>
+                                            <td>Jacob</td>
+                                            <td>53275531</td>
+                                            <td>12 May 2017</td>
+                                            <td>Portable</td>
+                                            <td><label class="badge badge-danger">Admin</label></td>
+                                        </tr>
                                         <?php foreach($admins as $admin){ ?>
                                             <tr>
                                                 <td><?php echo $admins[$countAdmin]['nom']; ?></td>
@@ -247,4 +255,5 @@ if ($_SESSION['user']['status']=='admin'){
             </div>
         </div>
 
-<?php include('../../inc/footer.php'); } else{die('403');} ?>
+<?php include('../../inc/footer.php'); } else{header("Location: 403.php");
+    die();} ?>
