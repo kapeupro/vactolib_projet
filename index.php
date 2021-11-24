@@ -26,16 +26,9 @@ if(!empty($_SESSION)) {
     $query->execute();
     $user = $query->fetch();
 
-    $_SESSION['user']=array(
-        'id'=>$user['id'],
-        'nom'=>$user['nom'],
-        'prenom'=>$user['prenom'],
-        'status'=>$user['status'],
-    );
 
     debug($user);
-    debug($allAjout);
-
+    debug($_SESSION);
 
     include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style_user.css">
@@ -46,7 +39,7 @@ if(!empty($_SESSION)) {
                     <div class="items_accueil_p">
                         <div class="p_items_a">
                             <?php if(!empty($user['prenom'])){ ?>
-                                <p>Ravie de vous revoir <?php echo $_SESSION['user']['prenom']; ?> ! <br>
+                                <p>Ravie de vous revoir <?php echo $user['prenom']; ?> ! <br>
                                     Avec nous, vos donnée sont protegées </p>
                             <?php } else { ?>
                                 <p>Vactolib est content de vous revoir. <br>Avec nous, vos donnée sont protegées </p>

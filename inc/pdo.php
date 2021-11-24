@@ -10,11 +10,3 @@ try {
 } catch (PDOException $e) {
     echo 'Erreur de connexion : ' . $e->getMessage();
 }
-
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> d3989380a833832ab9e816b7f739a231be24840a

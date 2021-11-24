@@ -27,6 +27,7 @@ if(!empty($_POST['submitted'])) {
     // Faille xss
     $vaccin = cleanXss('vaccin');
     $vaccin_id= $_POST['vaccin'];
+    $date= $_POST['vaccin'];
 
     if (!empty($_POST['vaccin'])){
     }else{
@@ -34,11 +35,12 @@ if(!empty($_POST['submitted'])) {
     }
 
     if(count($errors) == 0){
-        $sql = "INSERT INTO `vactolib_user_vaccins`(`user_id`, `vaccin_id`, `created_at` ) 
-    VALUES (:user_id,:vaccin_id, NOW() )";
+        $sql = "INSERT INTO `vactolib_user_vaccins`(`user_id`, `vaccin_id`, `vaccin_date` ,`created_at` ) 
+    VALUES (:user_id,:vaccin_id,:date ,NOW() )";
         $query = $pdo->prepare($sql);
         $query->bindValue(':user_id',$id_session,PDO::PARAM_INT);
         $query->bindValue(':vaccin_id',$vaccin_id,PDO::PARAM_INT);
+        $query->bindValue(':date',$date,PDO::PARAM_INT);
         $query->execute();
         $user_vaccins= $query->fetch();
         $success=true;
@@ -61,8 +63,10 @@ include('inc/header.php');
                         <option value="<?php echo $vaccin['id'] ?> "><?php echo $vaccin['nom_vaccin'] ?></option>
                     <?php } ?>
                 </select>
+
                 <label for="date">Date de l'injection :</label>
-                <input type="date" name="date_vaccin">
+                <input type="date" name="date" id="date">
+
                 <div class="error_box">
                     <input class="button_type1" type="submit" name="submitted" id="submitted" value="Ajouter">
                     <span class="error"><?php viewError($errors, 'vaccin'); ?></span>

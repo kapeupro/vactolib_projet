@@ -4,7 +4,9 @@ require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
 verifUserConnected();
+    debug($_SESSION);
 $id_session=$_SESSION['user']['id'];
+
 
 $sql = "SELECT * FROM vactolib_user WHERE id=:id ";
 $query = $pdo->prepare($sql);
@@ -12,6 +14,9 @@ $query->bindValue(':id',$id_session,PDO::PARAM_STR);
 $query->execute();
 $user= $query->fetch();
 debug($user);
+
+
+
 $sqlleft = "SELECT vv.nom_vaccin, vv.laboratoire, vv.id ,vuv.created_at
         FROM vactolib_user_vaccins AS vuv
         LEFT JOIN vactolib_vaccins AS vv
@@ -23,7 +28,6 @@ $query->execute();
 $userVaccin = $query->fetch();
 
 
-//debug($_SESSION);
 include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style_user.css">
 
@@ -45,8 +49,8 @@ include('inc/header.php'); ?>
                         <ul>
                             <li>Mail : <?php echo $user['email'] ?></li>
                             <li>Mot de passe : ******</li>
-                            <li>Date de naissance : <?php if(empty($user['dateNaissance'])){echo "Non renseigné";}else{echo $user['dateNaissance'];} ?></li>
-                            <li>Tél : <?php if(empty($user['tel'])){echo "Non renseigné";}else{echo $user['tel'];} ?></li>
+                            <li>Date de naissance : <?php if(empty($user['date_de_naissance'])){echo "Non renseigné";}else{echo $user['date_de_naissance'];} ?></li>
+                            <li>Tél : +33 <?php if(empty($user['portable'])){echo "Non renseigné";}else{echo $user['portable'];} ?></li>
                         </ul>
                     </div>
                 </div>
@@ -59,8 +63,10 @@ include('inc/header.php'); ?>
                     <div class="info_rdv">
                         <ul>
                             <li>Dernier vaccin : <?php if(!empty($userVaccin)) {echo $userVaccin['nom_vaccin'];} else{ echo'Aucun vaccin n\'a été enregistré'; } ?></li>
+                            <?php if (!empty($userVaccin)){ ?>
                             <li>Ajouté le : <?php if(!empty($userVaccin)) { echo dateFormatWithoutHour($userVaccin['created_at']); } ?> </li>
                             <li>Rappel le : </li>
+                            <?php } ?>
                         </ul>
                     </div>
                 </div>
@@ -74,7 +80,6 @@ include('inc/header.php'); ?>
                 <div class="button_type1">
                     <a href="moncarnet.php?page=1">Mon carnet</a>
                 </div>
-
             </div>
         </div>
     </section>

@@ -25,9 +25,7 @@ if(!empty($_POST['submitted'])) {
             $_SESSION['user']=array(
                 'id'    =>$user['id'],
                 'email' =>$user['email'],
-                'nom'=>$user['nom'],
-                'prenom'=>$user['prenom'],
-                'role'=>$user['role'],
+                'status'=>$user['status'],
                 'ip'     =>$_SERVER['REMOTE_ADDR'],//::1
             );
         }else {

@@ -11,6 +11,7 @@ function getUserById($id){
     return $query->fetch();
 }
 
+
 function getUser(){
     global $pdo;
     $sql="SELECT * FROM vactolib_user";
