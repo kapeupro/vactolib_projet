@@ -59,6 +59,15 @@
 
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 760px */
 @media screen and (max-width: 768px) {
+    #container_header .nav_header{
+        flex-flow: column nowrap;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    #container_header .nav_header .ligne_black{
+        height: 2px;
+        width: 10rem;
+    }
     .container_accueil{
         display: flex;
         margin: 4rem;
@@ -129,13 +138,17 @@
 }
 
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 425px */
-@media screen and (max-width: 425px) {
-
+@media screen and (max-width: 610px) {
+    #profil_container .wrap .info_profil .box_items{
+        width: 25rem;
+    }
 }
 
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 375px */
-@media screen and (max-width: 375px) {
-
+@media screen and (max-width: 440px) {
+    #profil_container .wrap .info_profil .box_items{
+        width: 18rem;
+    }
 }
 
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 325px */
