@@ -320,7 +320,7 @@ input[type=submit]{
 #footer .footer__container{
     display: flex;
     justify-content: space-between;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     z-index: 1;
 }
 #footer .footer__container ul{

@@ -26,7 +26,7 @@ $userVaccin = $query->fetch();
 
 
 include('inc/header.php'); ?>
-    <link rel="stylesheet" href="asset/css/style_user.css">
+
 
     <section id="profil_container">
         <div class="wrap">
