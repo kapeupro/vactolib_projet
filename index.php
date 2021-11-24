@@ -14,7 +14,7 @@ $allUsers= $query->fetch();
 
 
 // Recup tout les ajout dans carnet pour affichage stats
-$sql = "SELECT COUNT(*) AS resultAjout FROM vactolib_user_vaccins ";
+$sql = "SELECT COUNT(*) AS resultAjout FROM vactolib_vaccins ";
 $query = $pdo->prepare($sql);
 $query->execute();
 $allAjout= $query->fetch();
@@ -132,7 +132,7 @@ if(!empty($_SESSION)) {
             <div class="tache_box tache3">
                 <div class="tache_para">
                     <p><?php echo $allAjout['resultAjout']?></p>
-                    <p>vaccins ajouter dans leur carnets</p>
+                    <p>vaccins en base de donnée</p>
                 </div>
             </div>
             <div class="tache_box tache4">
@@ -249,7 +249,7 @@ if(!empty($_SESSION)) {
             <div class="tache_box tache3">
                 <div class="tache_para">
                     <p><?php echo $allAjout['resultAjout']?></p>
-                    <p>vaccins ajouter dans leur carnets</p>
+                    <p>vaccins en base de donnée</p>
                 </div>
             </div>
             <div class="tache_box tache4">
