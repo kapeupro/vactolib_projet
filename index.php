@@ -10,7 +10,7 @@ $query = $pdo->prepare($sql);
 $query->execute();
 $allUsers= $query->fetch();
 // Recup tout les ajouts dans carnet pour affichage stats
-$sql = "SELECT COUNT(*) AS resultAjout FROM vactolib_user_vaccins ";
+$sql = "SELECT COUNT(*) AS resultAjout FROM vactolib_vaccins ";
 $query = $pdo->prepare($sql);
 $query->execute();
 $allAjout= $query->fetch();
@@ -34,7 +34,7 @@ if(!empty($_SESSION)) {
     );
 
     debug($user);
-    debug($_SESSION);
+    debug($allAjout);
 
 
     include('inc/header.php'); ?>
@@ -119,19 +119,20 @@ if(!empty($_SESSION)) {
             </div>
             <div class="tache_box tache2">
                 <div class="tache_para">
-                    <p><?php echo $allUsers['resultUsers'] ?></p>
+                    <p class="data"><?php echo $allUsers['resultUsers'] ?></p>
                     <p>utilisateurs inscrits </p>
                 </div>
             </div>
             <div class="tache_box tache3">
                 <div class="tache_para">
-                    <p><?php echo $allAjout['resultAjout']?></p>
-                    <p>vaccins ajoutés dans leur carnets</p>
+                    <p class="data"><?php echo $allAjout['resultAjout']?></p>
+                    <p>vaccins en base de donnée</p>
                 </div>
             </div>
             <div class="tache_box tache4">
                 <div class="tache_para">
-                    <p>98% d'avis positifs</p>
+                    <p class="data">98%</p>
+                    <p>d'avis positifs</p>
                 </div>
             </div>
         </div>

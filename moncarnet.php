@@ -25,6 +25,7 @@ $user_vaccins = getVaccins($itemsPerPage, $offset, $id_session);
 
 $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
 
+debug($user_vaccins);
 //initialisation d'un compteur pour la boucle foreach
 $i = 0;
 
@@ -52,7 +53,7 @@ include('inc/header.php'); ?>
                                 <p> <?php echo $_SESSION['user']['nom'];echo' ';echo $_SESSION['user']['prenom'] ?></p>
                                 <p><?php echo $user_vaccins[$i]['laboratoire'] ?> fait le <?php echo dateFormatWithoutHour($user_vaccins[$i]['vaccin_date'], 'd/m/Y') ?></p>
                                 <a class="button_type2" href="detail.php?id=<?php echo $user_vaccins[$i]['id']; ?> "> En savoir plus </a>
-                                <a class="button_type2" href="delete.php?id=<?php echo $user_vaccins[$i]['id'] ?>"> Supprimer</a>
+                                <a class="button_type2" href="delete.php?id=<?php echo $user_vaccins[$i]['id'] ?>"> Supprimer </a>
                             </div>
                             <?php $i++; } ?>
                     </div>
