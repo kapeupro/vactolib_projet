@@ -74,6 +74,13 @@ a{text-decoration: none;}
     padding:0.2rem;
     display: flex;
     flex-flow: column nowrap;
+    color:lightgreen;
+    text-align: center;
+    margin:0 1rem;
+}
+#register_form .info_box a{
+    margin-top:1rem;
+    text-decoration: none;
 }
 #register_form .error{color:red;text-align: center;padding-top:1rem;}
 #register_form ::placeholder{color:black;}
@@ -277,6 +284,7 @@ input[type=submit]{
     display: flex;
     flex-flow: column nowrap;
 }
+
 .title_contact {
     display: flex;
     justify-content: center;

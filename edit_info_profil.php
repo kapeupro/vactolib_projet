@@ -8,12 +8,9 @@ verifUserConnected();
 $id_session=$_SESSION['user']['id'];
 $errors = [];
 
-$sql = "SELECT * FROM vactolib_user WHERE id=:id ";
-$query = $pdo->prepare($sql);
-$query->bindValue(':id',$id_session,PDO::PARAM_STR);
-$query->execute();
-$user= $query->fetch();
-debug($user);
+
+$user= getUserBySessionId($id_session);
+
 
 if(!empty($_POST['submitted'])) {
     // Faille xss
@@ -41,11 +38,7 @@ if(!empty($_POST['submitted'])) {
     }
 
     if(empty($errors['email'])) {
-        $sql = "SELECT * FROM vactolib_user WHERE email = :email";
-        $query = $pdo->prepare($sql);
-        $query->bindValue(':email',$email,PDO::PARAM_STR);
-        $query->execute();
-        $verifPseudo = $query->fetch();
+        $verifPseudo = verifUserByEmail($email);
         if(!empty($verifPseudo)) {
             if ($verifPseudo['email']!==$user['email'])
             $errors['email'] = 'Un compte existe déjà sur cette adresse email';

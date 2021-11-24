@@ -7,15 +7,7 @@ verifUserConnected();
     debug($_SESSION);
 $id_session=$_SESSION['user']['id'];
 
-
-$sql = "SELECT * FROM vactolib_user WHERE id=:id ";
-$query = $pdo->prepare($sql);
-$query->bindValue(':id',$id_session,PDO::PARAM_STR);
-$query->execute();
-$user= $query->fetch();
-debug($user);
-
-
+$user= getUserBySessionId($id_session);
 
 $sqlleft = "SELECT vv.nom_vaccin, vv.laboratoire, vv.id ,vuv.created_at
         FROM vactolib_user_vaccins AS vuv

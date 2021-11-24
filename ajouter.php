@@ -10,17 +10,10 @@ $id_session=$_SESSION['user']['id'];
 $errors=[];
 debug($_POST);
 
-$sql = "SELECT * FROM vactolib_user WHERE id=:id ";
-$query = $pdo->prepare($sql);
-$query->bindValue(':id',$id_session,PDO::PARAM_STR);
-$query->execute();
-$user= $query->fetch();
+$user= getUserById($id_session);
 
 /*Requete pour aller chercher tout les vaccins*/
-$sql = "SELECT * FROM vactolib_vaccins";
-$query = $pdo->prepare($sql);
-$query->execute();
-$vaccins= $query->fetchAll();
+$vaccins=recupVaccins();
 
 
 if(!empty($_POST['submitted'])) {

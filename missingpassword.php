@@ -2,12 +2,17 @@
 
 require('inc/pdo.php');
 require('inc/fonction.php');
+require('inc/request.php');
 verifUserAlreadyConnected();
 $success=false;
 $token=urldecode($_GET['token']);
-//debug($token);
-//
-//debug(($_GET));
+$email=urldecode($_GET['email']);
+$user=getUserResetPassword($email,$token);
+
+if(empty($user)){
+    header('Location: index.php');
+}
+
 $errors = [];
 if(!empty($_POST['submitted'])) {
     // Faille xss

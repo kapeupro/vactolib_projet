@@ -22,8 +22,8 @@ if(!empty($_POST['submitted'])) {
         }
     }
     if(count($errors) == 0) {
-//        mail($_POST['email'], 'Reinitialisation de votre mot de passe', 'Si vous n\'êtes pas à l\'origine de cette demande, vous pouvez l\'ignorer. Veuillez cliquez sur ce lien pour choisir un nouveau mot de passe : lien/resetpassword?state=confirmed&token= ', 'From: vactolibsupport@gmail.com ');
-        echo'Reception du lien qui emmène sur : <a href="missingpassword.php?token='.urldecode($verifPseudo['token']).'&mail='.urldecode($verifPseudo['email']).'">Cette page</a>';
+//        mail($_POST['email'], 'Reinitialisation de votre mot de passe', 'Si vous n\'êtes pas à l\'origine de cette demande, vous pouvez l\'ignorer. Veuillez cliquez sur ce lien pour choisir un nouveau mot de passe : lien/resetpassword?state=confirmed&token= ', 'From: theofradin@outlook.com ');
+        echo'Reception du lien qui emmène sur : <a href="missingpassword.php?token='.urldecode($verifPseudo['token']).'&email='.urldecode($verifPseudo['email']).'">Cette page</a>';
     }
 }
 ?>
@@ -53,4 +53,3 @@ if(!empty($_POST['submitted'])) {
     </section>
 
 
-<?php
