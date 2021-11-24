@@ -5,7 +5,7 @@ require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
 require('vendor/autoload.php');
-verifUserConnected();
+
 use JasonGrimes\Paginator;
 
 $id_session = $_SESSION['user']['id'];
@@ -13,23 +13,23 @@ $id_session = $_SESSION['user']['id'];
 // PAGINATION
 $currentPage = 1;
 $itemsPerPage = 2;
-$totalItems = countAllVaccinUser();
-$urlPattern = '?page=(:num)';
 
 if(!empty($_GET['page']) && is_numeric($_GET['page'])) {
     $currentPage = $_GET['page'];
     $offset = ($currentPage - 1) * $itemsPerPage;
 
-$user_vaccins = getVaccins($itemsPerPage, $offset, $id_session);
-}
+$totalItems = countAllVaccinUser();
+$urlPattern = '?page=(:num)';
 
+$user_vaccins = getVaccins($itemsPerPage, $offset, $id_session);
 $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
+}
 
 //initialisation d'un compteur pour la boucle foreach
 $i = 0;
 
 include('inc/header.php'); ?>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="asset/css/style_user.css">
     <section>
         <div class="title-carnet">
@@ -64,7 +64,7 @@ include('inc/header.php'); ?>
             </div>
         <?php } ?>
 
-        <div class="text-center">
+        <div class="pagination">
             <?php echo $paginator; ?>
         </div>
 
