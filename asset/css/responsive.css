@@ -8,7 +8,12 @@
 @media screen and (max-width: 1110px) {
     .container_accueil{
         display: flex;
-        margin: 4rem;
+    }
+    #profil_container .wrap{
+        flex-flow: column nowrap;
+    }
+    #profil_container .wrap img{
+        display: none;
     }
     #stats {
         display: flex;
@@ -45,7 +50,6 @@
     }
     footer {
         display: flex;
-
     }
 }
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 990px */
@@ -55,6 +59,15 @@
 
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 760px */
 @media screen and (max-width: 768px) {
+    #container_header .nav_header{
+        flex-flow: column nowrap;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    #container_header .nav_header .ligne_black{
+        height: 2px;
+        width: 10rem;
+    }
     .container_accueil{
         display: flex;
         margin: 4rem;
@@ -107,16 +120,35 @@
         background: center url(../img/tache4.svg) no-repeat;
         width: 45%;
     }
+
+    #footer .footer__container{
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+    }
+    #footer .footer__copyright{
+        flex-flow: column nowrap;
+        text-align: center;
+    }
+    #footer .footer__logo img{
+        display: none;
+    }
 }
 
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 425px */
-@media screen and (max-width: 425px) {
-
+@media screen and (max-width: 610px) {
+    #profil_container .wrap .info_profil .box_items{
+        width: 25rem;
+    }
 }
 
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 375px */
-@media screen and (max-width: 375px) {
-
+@media screen and (max-width: 440px) {
+    #profil_container .wrap .info_profil .box_items{
+        width: 18rem;
+    }
 }
 
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 325px */
