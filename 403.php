@@ -11,4 +11,3 @@
         <p data-p="NOT FOUND">NOT FOUND</p>
     </div>
 </div>
-<div id="particles-js"></div>

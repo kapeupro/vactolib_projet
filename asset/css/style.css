@@ -553,7 +553,7 @@ input[type=submit]{
     -webkit-text-fill-color: transparent;
     background-size: 400%;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.25);
-    animation: animateTextBackground 10s ease-in-out infinite; }
+    animation: animateTextBackground 5s ease-in-out infinite; }
 .error-page h1 + p {
     color: #d6d6d6;
     font-size: 8vh;
