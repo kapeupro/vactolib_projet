@@ -32,6 +32,13 @@
     .tache_box .tache1 {
         background-size: 50%;
     }
+    #container_header {
+        flex-flow: column nowrap;
+    }
+    #container_header .logo_vactolib a{
+        display: flex;
+        justify-content: center;
+    }
     footer {
         display: flex;
 

@@ -13,17 +13,17 @@ $id_session = $_SESSION['user']['id'];
 // PAGINATION
 $currentPage = 1;
 $itemsPerPage = 2;
+$totalItems = countAllVaccinUser();
+$urlPattern = '?page=(:num)';
+
 
 if(!empty($_GET['page']) && is_numeric($_GET['page'])) {
     $currentPage = $_GET['page'];
     $offset = ($currentPage - 1) * $itemsPerPage;
-
-$totalItems = countAllVaccinUser();
-$urlPattern = '?page=(:num)';
+}
 
 $user_vaccins = getVaccins($itemsPerPage, $offset, $id_session);
 $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
-}
 
 //initialisation d'un compteur pour la boucle foreach
 $i = 0;
