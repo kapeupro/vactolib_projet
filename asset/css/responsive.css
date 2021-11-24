@@ -5,7 +5,7 @@
     font-family: 'Nunito', sans-serif;
 }
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 1100px */
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1110px) {
     .container_accueil{
         display: flex;
         margin: 4rem;
@@ -65,14 +65,8 @@
     .items_accueil {
         display: flex;
     }
-    .items_groupe img {
-        display: none;
-    }
     .items_groupe{
-        width: 0%;
-    }
-    .items_accueil_p {
-        display: flex;
+        display: none;
     }
     .separator {
         background-size: cover;
