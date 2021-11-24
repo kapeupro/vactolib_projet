@@ -1,9 +1,10 @@
 <?php
 session_start();
+
 require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
-verifUserConnected();
+
 $id_session=$_SESSION['user']['id'];
 
 $sql = "SELECT * FROM vactolib_user WHERE id=:id ";
@@ -11,7 +12,7 @@ $query = $pdo->prepare($sql);
 $query->bindValue(':id',$id_session,PDO::PARAM_STR);
 $query->execute();
 $user= $query->fetch();
-
+debug($user);
 $sqlleft = "SELECT vv.nom_vaccin, vv.laboratoire, vv.id ,vuv.created_at
         FROM vactolib_user_vaccins AS vuv
         LEFT JOIN vactolib_vaccins AS vv
@@ -21,9 +22,8 @@ $query = $pdo->prepare($sqlleft);
 $query->bindValue(':id_session',$id_session,PDO::PARAM_INT);
 $query->execute();
 $userVaccin = $query->fetch();
-verifUserConnected();
+
 //debug($user);
-//debug($_SESSION);
 //debug($userVaccin);
 
 $_SESSION['user']=array(
@@ -33,9 +33,7 @@ $_SESSION['user']=array(
     'prenom'=>$user['prenom'],
     'tel'=>$user['portable'],
     'status'=>$user['status'],
-    'dateNaissance'=>$user['date_de_naissance']
-
-);
+    'dateNaissance'=>$user['date_de_naissance']);
 
 //debug($_SESSION);
 include('inc/header.php'); ?>
@@ -46,7 +44,7 @@ include('inc/header.php'); ?>
             <div class="info_profil">
                 <div class="icon_profil">
                     <img src="asset/img/user_icon.svg" alt="icone de profil">
-                    <h2><?php echo $_SESSION['user']['nom'] .' '. $_SESSION['user']['prenom'] ?></h2>
+                    <h2><?php echo $user['nom'] .' '. $user['prenom'] ?></h2>
                 </div>
 
                 <div class="box_items">
@@ -57,10 +55,10 @@ include('inc/header.php'); ?>
 
                     <div class="info_list">
                         <ul>
-                            <li>Mail : <?php echo $_SESSION['user']['email'] ?></li>
+                            <li>Mail : <?php echo $user['email'] ?></li>
                             <li>Mot de passe : ******</li>
-                            <li>Date de naissance : <?php if(empty($_SESSION['user']['dateNaissance'])){echo "Non renseigné";}else{echo $_SESSION['user']['dateNaissance'];} ?></li>
-                            <li>Tél : <?php if(empty($_SESSION['user']['tel'])){echo "Non renseigné";}else{echo $_SESSION['user']['tel'];} ?></li>
+                            <li>Date de naissance : <?php if(empty($user['dateNaissance'])){echo "Non renseigné";}else{echo $user['dateNaissance'];} ?></li>
+                            <li>Tél : <?php if(empty($user['tel'])){echo "Non renseigné";}else{echo $user['tel'];} ?></li>
                         </ul>
                     </div>
                 </div>
@@ -86,7 +84,7 @@ include('inc/header.php'); ?>
                 </div>
 
                 <div class="button_type1">
-                    <a href="moncarnet.php?page=1">Mon carnet</a>
+                    <a href="moncarnet.php">Mon carnet</a>
                 </div>
 
             </div>
@@ -94,4 +92,4 @@ include('inc/header.php'); ?>
     </section>
 
 <?php
-include('inc/footer.php'); ?>
+include('inc/footer.php');

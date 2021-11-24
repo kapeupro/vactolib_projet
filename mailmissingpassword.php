@@ -4,7 +4,7 @@ session_start();
 require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
-verifUserAlreadyConnected();
+
 $errors = [];
 if(!empty($_POST['submitted'])) {
     // Faille xss

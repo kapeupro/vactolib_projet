@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Arvo:ital@1&family=Nunito:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
     <title>Vactolib, votre carnet de santé en ligne</title>
     <link rel="stylesheet" href="asset/css/style.css">
-    <link rel="stylesheet" href="asset/css/responsive.css">
 </head>
 <body>
 
@@ -24,7 +23,7 @@
         <nav>
             <ul class="nav_header">
                 <?php if(!empty($_SESSION)){ ?>
-                <li><a href="moncarnet.php?page=1">Mon Carnet</a></li>
+                <li><a href="moncarnet.php">Mon Carnet</a></li>
                 <li class="ligne_black"></li>
                 <li><a href="profil.php">Profil</a></li>
                 <li class="ligne_black"></li>

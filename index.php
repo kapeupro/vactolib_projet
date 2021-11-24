@@ -1,5 +1,7 @@
 <?php
+
 session_start();
+
 require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
@@ -9,7 +11,9 @@ $sql = "SELECT COUNT(*) AS resultUsers FROM vactolib_user ";
 $query = $pdo->prepare($sql);
 $query->execute();
 $allUsers= $query->fetch();
-// Recup tout les ajouts dans carnet pour affichage stats
+
+
+// Recup tout les ajout dans carnet pour affichage stats
 $sql = "SELECT COUNT(*) AS resultAjout FROM vactolib_user_vaccins ";
 $query = $pdo->prepare($sql);
 $query->execute();
@@ -26,6 +30,7 @@ if(!empty($_SESSION)) {
     $query->execute();
     $user = $query->fetch();
 
+
     $_SESSION['user']=array(
         'id'=>$user['id'],
         'nom'=>$user['nom'],
@@ -33,8 +38,8 @@ if(!empty($_SESSION)) {
         'status'=>$user['status'],
     );
 
-    debug($user);
-    debug($_SESSION);
+//    debug($user);
+//    debug($_SESSION);
 
 
     include('inc/header.php'); ?>
@@ -53,7 +58,7 @@ if(!empty($_SESSION)) {
                             <?php } ?>
 
                             <div>
-                                <a class="button_type1" href="moncarnet.php?page=1">Mon Carnet</a>
+                                <a class="button_type1" href="moncarnet.php">Mon Carnet</a>
                             </div>
                         </div>
                     </div>
@@ -69,8 +74,9 @@ if(!empty($_SESSION)) {
 
     <section id="stats">
         <div class="wrap">
+            <div class="tache"></div>
             <div class="title">
-                <h2>Merci d'avoir choisi Vactolib !</h2>
+                <h2>Pourquoi prendre Vactolib ?</h2>
             </div>
             <ul class="boxs">
                 <li>
@@ -126,7 +132,7 @@ if(!empty($_SESSION)) {
             <div class="tache_box tache3">
                 <div class="tache_para">
                     <p><?php echo $allAjout['resultAjout']?></p>
-                    <p>vaccins ajoutés dans leur carnets</p>
+                    <p>vaccins ajouter dans leur carnets</p>
                 </div>
             </div>
             <div class="tache_box tache4">

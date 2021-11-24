@@ -124,14 +124,48 @@ function getUserBySearch($search)
     return $query->fetchAll();
 }
 
+
 function verifUserConnected(){
-    if (empty($_SESSION)){
-        header('Location:login.php');
-    }else{ }
+    if (isLogged()==false){
+        header('Location: login.php');
+    }
 }
 
 function verifUserAlreadyConnected(){
-    if (empty(!$_SESSION)){
-        header('Location:index.php');
+    if (isLogged()==true){
+        header('Location: index.php');
     }else{ }
 }
+
+
+
+function isLogged()
+{
+    if(!empty($_SESSION['user45376'])) {
+        if (!empty($_SESSION['user45376']['id'])) {
+            if (!empty($_SESSION['user45376']['email'])) {
+                if (!empty($_SESSION['user45376']['pseudo'])) {
+                    if (!empty($_SESSION['user45376']['role'])) {
+                        if (!empty($_SESSION['user45376']['ip'])) {
+                            if ($_SESSION['user45376']['ip'] == $_SERVER['REMOTE_ADDR']) {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return false;
+}
+
+function isAdmin()
+{
+    if(isLogged()) {
+        if($_SESSION['user45376']['role'] == 'admin') {
+            return true;
+        }
+    }
+    return false;
+}
+
