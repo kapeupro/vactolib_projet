@@ -4,6 +4,7 @@ session_start();
 require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
+verifUserConnected();
 $id_session=$_SESSION['user']['id'];
 $errors = [];
 
@@ -12,18 +13,18 @@ $query = $pdo->prepare($sql);
 $query->bindValue(':id',$id_session,PDO::PARAM_STR);
 $query->execute();
 $user= $query->fetch();
-
+debug($user);
 
 if(!empty($_POST['submitted'])) {
     // Faille xss
     $email = cleanXss ('email');
     $password = cleanXss ('password');
     $password2 = cleanXss ('password2');
-    $dateNaissance = cleanXss ('dateNaissance');
-    $tel = cleanXss ('tel');
+    $date_de_naissance = cleanXss ('date_de_naissance');
+    $portable = cleanXss ('portable');
 
     $errors = mailValidation($errors, $email,'email');
-    $errors = phoneNumberValidation($errors, $tel, 'tel');
+    $errors = phoneNumberValidation($errors, $portable, 'portable');
 
     if(!empty($_POST['password2'])){
         if(empty($_POST['password'])){
@@ -39,25 +40,34 @@ if(!empty($_POST['submitted'])) {
         }
     }
 
+    if(empty($errors['email'])) {
+        $sql = "SELECT * FROM vactolib_user WHERE email = :email";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':email',$email,PDO::PARAM_STR);
+        $query->execute();
+        $verifPseudo = $query->fetch();
+        if(!empty($verifPseudo)) {
+            if ($verifPseudo['email']!==$user['email'])
+            $errors['email'] = 'Un compte existe déjà sur cette adresse email';
+        }
+    }
+debug($verifPseudo);
     if(count($errors) == 0){
         $hashpassword = password_hash($password2,PASSWORD_DEFAULT);
 
         $sql = "UPDATE vactolib_user
-                SET email = :email, password = :password, date_de_naissance = :dateNaissance, portable = :tel
+                SET email = :email, password = :password, date_de_naissance = :date_de_naissance, portable = :portable
                 WHERE id = :id";
         $query = $pdo->prepare($sql);
         $query->bindValue(':email',$email,PDO::PARAM_STR);
-        $query->bindValue(':dateNaissance',$dateNaissance,PDO::PARAM_INT);
-        $query->bindValue(':tel',$tel,PDO::PARAM_INT);
+        $query->bindValue(':date_de_naissance',$date_de_naissance,PDO::PARAM_INT);
+        $query->bindValue(':portable',$portable,PDO::PARAM_INT);
         $query->bindValue(':password',$hashpassword,PDO::PARAM_STR);
-        $query->bindValue(':id', $_SESSION['user']['id'], PDO::PARAM_INT);
+        $query->bindValue(':id', $user['id'], PDO::PARAM_INT);
         $query->execute();
         header('Location: profil.php');
     }
 }
-
-//debug($_SESSION);
-//debug($errors);
 
 include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style_user.css">
@@ -67,7 +77,7 @@ include('inc/header.php'); ?>
             <div class="info_profil">
                 <div class="icon_profil">
                     <img src="asset/img/user_icon.svg" alt="icone de profil">
-                    <h2><?php echo $_SESSION['user']['nom'] .' '. $_SESSION['user']['prenom'] ?></h2>
+                    <h2><?php echo $user['nom'] .' '. $user['prenom'] ?></h2>
                 </div>
 
                 <div class="box_items">
@@ -80,7 +90,7 @@ include('inc/header.php'); ?>
                             <div class="form_box_modif">
                                 <div class="form_box_input">
                                     <label for="email">Mail :</label>
-                                    <input type="text" name="email" id="email" value="<?=$_SESSION['user']['email']; ?>">
+                                    <input type="text" name="email" id="email" value="<?=$user['email']; ?>">
                                 </div>
 
                                 <div class="error_box">
@@ -110,21 +120,21 @@ include('inc/header.php'); ?>
 
                             <div class="form_box_modif">
                                 <div class="form_box_input">
-                                    <label for="dateNaissance">Date de naissance</label>
-                                    <input type="date" name="dateNaissance" id="dateNaissance" value="<?= $_SESSION['user']['dateNaissance'] ;?>">
+                                    <label for="date_de_naissance">Date de naissance</label>
+                                    <input type="date" name="date_de_naissance" id="date_de_naissance" value="<?= $user['date_de_naissance'] ;?>">
                                 </div>
                                 <div class="error_box">
-                                    <span class="error"><?= viewError($errors,'dateNaissance'); ?></span>
+                                    <span class="error"><?= viewError($errors,'date_de_naissance'); ?></span>
                                 </div>
                             </div>
 
                             <div class="form_box_modif">
                                 <div class="form_box_input">
-                                    <label for="tel">Téléphone :</label>
-                                    <input type="number" name="tel" id="tel" value="<?= $_SESSION['user']['tel'] ;?>">
+                                    <label for="portable">Téléphone :</label>
+                                    <input type="number" name="portable" id="portable" value="<?= $user['portable'] ;?>">
                                 </div>
                                 <div class="error_box">
-                                    <span class="error"><?= viewError($errors,'tel'); ?></span>
+                                    <span class="error"><?= viewError($errors,'portable'); ?></span>
                                 </div>
                             </div>
 
@@ -143,7 +153,7 @@ include('inc/header.php'); ?>
                 </div>
 
                 <div class="button_type1">
-                    <a href="#">Mon carnet</a>
+                    <a href="moncarnet.php?page=1">Mon carnet</a>
                 </div>
 
             </div>

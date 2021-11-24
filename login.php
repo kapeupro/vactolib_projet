@@ -4,7 +4,7 @@ session_start();
 require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
-
+verifUserAlreadyConnected();
 
 $errors = [];
 if(!empty($_POST['submitted'])) {
@@ -17,7 +17,7 @@ if(!empty($_POST['submitted'])) {
     $query->bindValue(':login',$login,PDO::PARAM_STR);
     $query->execute();
     $user= $query->fetch();
-    debug($user);
+//    debug($user);
     if(empty($user)) {
         $errors['login'] = 'Email invalide';
     } else {
@@ -25,9 +25,7 @@ if(!empty($_POST['submitted'])) {
             $_SESSION['user']=array(
                 'id'    =>$user['id'],
                 'email' =>$user['email'],
-                'nom'=>$user['nom'],
-                'prenom'=>$user['prenom'],
-                'role'=>$user['role'],
+                'status'=>$user['status'],
                 'ip'     =>$_SERVER['REMOTE_ADDR'],//::1
             );
         }else {
@@ -63,7 +61,7 @@ if(!empty($_POST['submitted'])) {
             </div>
 
             <div class="info_box_button">
-                <input type="submit" name="submitted" value="ENVOYER">
+                <input type="submit" name="submitted" value="SE CONNECTER">
             </div>
             <div>
                 <?php  echo'<a href="mailmissingpassword.php">Mot de passe oublié ?</a>'?>
