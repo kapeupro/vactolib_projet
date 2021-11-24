@@ -29,5 +29,6 @@ if(!empty($_GET['id']) && is_numeric($_GET['id'])){
     }
 }
 else {
-    die('404');
+    header("Location: 404.php");
+    die();
 }
