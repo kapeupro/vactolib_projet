@@ -2,6 +2,7 @@
 
 require('inc/pdo.php');
 require('inc/fonction.php');
+verifUserAlreadyConnected();
 $success=false;
 $token=urldecode($_GET['token']);
 //debug($token);
