@@ -143,7 +143,7 @@ include('inc/header.php'); ?>
                 </div>
 
                 <div class="button_type1">
-                    <a href="#">Mon carnet</a>
+                    <a href="moncarnet.php?page=1">Mon carnet</a>
                 </div>
 
             </div>

@@ -425,6 +425,16 @@ input[type=submit]{
     display: flex;
 }
 
+/*PAGINATION*/
+
+.pagination{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+}
+
 /*CARNET VIDE*/
 .carnet_vide{
     display: flex;
