@@ -64,6 +64,7 @@ if(!empty($_POST['submitted'])) {
 }
 ?>
 <link rel="stylesheet" href="asset/css/style.css">
+<link rel="stylesheet" href="asset/css/responsive.css">
 <div class="logo">
     <a href="index.php"><img src="asset/img/logo_vactolib.png" alt="logo vactolib"></a>
 </div>
