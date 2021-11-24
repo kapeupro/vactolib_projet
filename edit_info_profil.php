@@ -4,6 +4,7 @@ session_start();
 require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
+verifUserConnected();
 $id_session=$_SESSION['user']['id'];
 $errors = [];
 

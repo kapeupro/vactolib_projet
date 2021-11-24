@@ -22,7 +22,7 @@ $query = $pdo->prepare($sqlleft);
 $query->bindValue(':id_session',$id_session,PDO::PARAM_INT);
 $query->execute();
 $userVaccin = $query->fetch();
-
+verifUserConnected();
 //debug($user);
 //debug($userVaccin);
 

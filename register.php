@@ -2,7 +2,7 @@
 
 require('inc/pdo.php');
 require('inc/fonction.php');
-
+verifUserAlreadyConnected();
 
 $errors = [];
 if(!empty($_POST['submitted'])) {
