@@ -10,11 +10,7 @@
         display: flex;
         margin: 4rem;
     }
-    #stats {
-        display: flex;
-        margin: 4rem;
-    }
-    #stats_chiffre {
+    #stats  #stats_chiffre {
         display: flex;
         margin: 4rem;
     }
@@ -25,26 +21,16 @@
         display: flex;
         margin: 4rem;
     }
-
-    element.style {
-    }
     #stats_chiffre .wrap {
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: center;
-        gap: 1rem;
-        margin: 2rem;
+        /* gap: 0rem; */
+        margin: 0.8rem;
     }
-    #container_header {
-        flex-flow: column nowrap;
-    }
-    #container_header .items_header{
-        padding-right: inherit;
-    }
-    #container_header .logo_vactolib a{
-        display: flex;
-        justify-content: center;
+    .tache_box .tache1 {
+        background-size: 50%;
     }
     footer {
         display: flex;
@@ -79,9 +65,42 @@
         height: 6rem;
         justify-content: center;
     }
-    .boxs{
+    #stats ul.boxs{
+        flex-flow: row wrap;
+
+    }
+    #stats_chiffre {
         display: flex;
-/*j'étais la */
+
+    }
+    .tache_box .tache2 {
+        display: flex;
+    }
+    #stats_chiffre .tache_box{
+        background-size:50%;
+    }
+    #stats_chiffre .wrap{
+        flex-flow: row wrap;
+    }
+
+    #stats ul.boxs li {
+        width: 40%;
+    }
+    #stats_chiffre .tache1 {
+        background: center /contain no-repeat url(../img/tache.png);
+        width: 45%;
+    }
+    #stats_chiffre .tache2 {
+        background: center url(../img/tache2.svg) no-repeat;
+        width: 45%;
+    }
+    #stats_chiffre .tache3 {
+        background: center url(../img/tache3.svg) no-repeat;
+        width: 45%;
+    }
+    #stats_chiffre .tache4 {
+        background: center url(../img/tache4.svg) no-repeat;
+        width: 45%;
     }
 }
 
