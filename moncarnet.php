@@ -64,7 +64,7 @@ include('inc/header.php'); ?>
             </div>
         <?php } ?>
 
-        <div class="pagination">
+        <div class="text-center">
             <?php echo $paginator; ?>
         </div>
 
