@@ -5,8 +5,6 @@ require('../../../../../inc/pdo.php');
 require('../../../../../inc/fonction.php');
 require('../../../../../inc/request.php');
 
-if ($_SESSION['user']['status']=='admin'){
-
 $errors = [];
 $countAllUsers = 0;
 
@@ -14,6 +12,9 @@ if(!empty($_GET['search'])) {
     $search = trim(strip_tags($_GET['search']));
     $searchUsers = getUserBySearch($search);
 }
+
+
+if ($_SESSION['user']['status']=='admin'){
 
     include('../../inc/header.php'); ?>
 

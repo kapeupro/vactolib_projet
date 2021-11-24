@@ -5,7 +5,7 @@ require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
 require('vendor/autoload.php');
-
+verifUserConnected();
 use JasonGrimes\Paginator;
 
 $id_session = $_SESSION['user']['id'];
@@ -16,36 +16,26 @@ $query->bindValue(':id',$id_session,PDO::PARAM_STR);
 $query->execute();
 $user= $query->fetch();
 
-$sqlleft = "SELECT vv.nom_vaccin, vv.laboratoire, vv.id ,vuv.created_at
-        FROM vactolib_user_vaccins AS vuv
-        LEFT JOIN vactolib_vaccins AS vv
-        ON vv.id = vuv.vaccin_id
-        WHERE vuv.user_id = :id_session ORDER BY created_at DESC";
-$query = $pdo->prepare($sqlleft);
-$query->bindValue(':id_session',$id_session,PDO::PARAM_INT);
-$query->execute();
-$userVaccin = $query->fetchAll();
-debug($userVaccin);
 
 // PAGINATION
 $currentPage = 1;
 $itemsPerPage = 2;
+$totalItems = countAllVaccinUser();
+$urlPattern = '?page=(:num)';
 
 if(!empty($_GET['page']) && is_numeric($_GET['page'])) {
     $currentPage = $_GET['page'];
     $offset = ($currentPage - 1) * $itemsPerPage;
-    $user_vaccins = getVaccins($itemsPerPage, $offset, $id_session);
-    $totalItems = countAllVaccinUser();
-    $urlPattern = '?page=(:num)';
-    $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
-}
 
+$user_vaccins = getVaccins($itemsPerPage, $offset, $id_session);
+}
+$paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
 
 //initialisation d'un compteur pour la boucle foreach
 $i = 0;
 
 include('inc/header.php'); ?>
-
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="asset/css/style_user.css">
     <section>
         <div class="title-carnet">
@@ -68,7 +58,7 @@ include('inc/header.php'); ?>
                                 <p> <?php echo $user['nom'];echo' ';echo $user['prenom'] ?></p>
                                 <p><?php echo $user_vaccins[$i]['laboratoire'] ?> fait le <?php echo dateFormatWithoutHour($user_vaccins[$i]['vaccin_date'], 'd/m/Y') ?></p>
                                 <a class="button_type2" href="detail.php?id=<?php echo $user_vaccins[$i]['id']; ?> "> En savoir plus </a>
-                                <a class="button_type2" href="delete.php?id=<?php echo $user_vaccins[$i]['id'] ?>"> Supprimer</a>
+                                <a class="button_type2" href="delete.php?id=<?php echo $user_vaccins[$i]['id'] ?>"> Supprimer </a>
                             </div>
                             <?php $i++; } ?>
                     </div>
@@ -80,7 +70,7 @@ include('inc/header.php'); ?>
             </div>
         <?php } ?>
 
-        <div class="pagination">
+        <div class="text-center">
             <?php echo $paginator; ?>
         </div>
 

@@ -1,10 +1,8 @@
 <?php
 session_start();
-
 require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
-
 verifUserConnected();
     debug($_SESSION);
 $id_session=$_SESSION['user']['id'];
@@ -29,17 +27,6 @@ $query->bindValue(':id_session',$id_session,PDO::PARAM_INT);
 $query->execute();
 $userVaccin = $query->fetch();
 
-//debug($user);
-//debug($userVaccin);
-
-$_SESSION['user']=array(
-    'id'=>$user['id'],
-    'email'=>$user['email'],
-    'nom'=>$user['nom'],
-    'prenom'=>$user['prenom'],
-    'tel'=>$user['portable'],
-    'status'=>$user['status'],
-    'dateNaissance'=>$user['date_de_naissance']);
 
 include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style_user.css">
@@ -91,7 +78,7 @@ include('inc/header.php'); ?>
                 </div>
 
                 <div class="button_type1">
-                    <a href="moncarnet.php">Mon carnet</a>
+                    <a href="moncarnet.php?page=1">Mon carnet</a>
                 </div>
             </div>
         </div>

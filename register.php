@@ -1,8 +1,9 @@
 <?php
-
+session_start();
 require('inc/pdo.php');
 require('inc/fonction.php');
-
+//debug($_SESSION);
+verifUserAlreadyConnected();
 
 $errors = [];
 if(!empty($_POST['submitted'])) {
@@ -83,13 +84,6 @@ if(!empty($_POST['submitted'])) {
                 <input type="text" placeholder="Prénom" id="prenom" name="prenom" value="<?=recupInputValue('prenom');?>">
                 <span class="error"><?= viewError($errors,'prenom'); ?></span>
             </div>
-
-            <div class="info_box">
-                <label for="birthdate"></label>
-                <input type="date" placeholder="Date de naissance" id="birthdate" name="birthdate" value="<?=recupInputValue('birthdate');?>">
-                <span class="error"><?= viewError($errors,'birthdate'); ?></span>
-            </div>
-
             <div class="info_box">
                 <label for="phone"></label>
                 <input type="tel" placeholder="Numéro de téléphone" pattern="[0-9]{10}" maxlength="10" id="phone" name="phone" value="<?= recupInputValue('phone'); ?>">
