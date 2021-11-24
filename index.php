@@ -9,8 +9,7 @@ $sql = "SELECT COUNT(*) AS resultUsers FROM vactolib_user ";
 $query = $pdo->prepare($sql);
 $query->execute();
 $allUsers= $query->fetch();
-
-// Recup tout les ajout dans carnet pour affichage stats
+// Recup tout les ajouts dans carnet pour affichage stats
 $sql = "SELECT COUNT(*) AS resultAjout FROM vactolib_user_vaccins ";
 $query = $pdo->prepare($sql);
 $query->execute();

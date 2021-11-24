@@ -5,6 +5,7 @@ require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
 verifUserConnected();
+$success=false;
 $id_session=$_SESSION['user']['id'];
 $errors=[];
 debug($_POST);
@@ -40,6 +41,7 @@ if(!empty($_POST['submitted'])) {
         $query->bindValue(':vaccin_id',$vaccin_id,PDO::PARAM_INT);
         $query->execute();
         $user_vaccins= $query->fetch();
+        $success=true;
     }
 }
 
@@ -66,7 +68,7 @@ include('inc/header.php');
                     <span class="error"><?php viewError($errors, 'vaccin'); ?></span>
                 </div>
             </form>
-            <?php if(!empty($_POST)){ ?>
+            <?php if($success==true){ ?>
             <div class="success_message" style="text-align:center;color:lightgreen">
                 <h2>Votre vaccin à bien été ajouté à votre carnet</h2>
             </div>
