@@ -3,6 +3,9 @@
 
 
 ?>
+<head>
+    <title>403 not found</title>
+</head>
 <link rel="stylesheet" href="asset/css/style.css">
 
 <div class="error-page">
