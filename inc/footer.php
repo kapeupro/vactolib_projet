@@ -10,6 +10,7 @@
             <a href="index.php"><img src="asset/img/logo_vactolib.png" alt="logo vactolib"></a>
         </div>
         <?php if(!empty($_SESSION)){ ?>
+
             <div class="footer__services">
                 <h3>Nos services</h3>
                 <ul>

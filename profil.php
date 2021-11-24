@@ -4,10 +4,19 @@ require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
 verifUserConnected();
-    debug($_SESSION);
+debug($_SESSION);
 $id_session=$_SESSION['user']['id'];
 
+<<<<<<< HEAD
 $user= getUserBySessionId($id_session);
+=======
+
+$sql = "SELECT * FROM vactolib_user WHERE id=:id ";
+$query = $pdo->prepare($sql);
+$query->bindValue(':id',$id_session,PDO::PARAM_STR);
+$query->execute();
+$user= $query->fetch();
+>>>>>>> 91914628aa1a5fcfe787aae45a2c15db3edc7792
 
 $sqlleft = "SELECT vv.nom_vaccin, vv.laboratoire, vv.id ,vuv.created_at
         FROM vactolib_user_vaccins AS vuv
@@ -21,7 +30,7 @@ $userVaccin = $query->fetch();
 
 
 include('inc/header.php'); ?>
-    <link rel="stylesheet" href="asset/css/style_user.css">
+
 
     <section id="profil_container">
         <div class="wrap">

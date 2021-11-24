@@ -26,17 +26,16 @@ $urlPattern = '?page=(:num)';
 if(!empty($_GET['page']) && is_numeric($_GET['page'])) {
     $currentPage = $_GET['page'];
     $offset = ($currentPage - 1) * $itemsPerPage;
+}
 
 $user_vaccins = getVaccins($itemsPerPage, $offset, $id_session);
-}
+
 $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
 
 //initialisation d'un compteur pour la boucle foreach
 $i = 0;
 
 include('inc/header.php'); ?>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="asset/css/style_user.css">
     <section>
         <div class="title-carnet">
             <h2>Mon Carnet</h2>
