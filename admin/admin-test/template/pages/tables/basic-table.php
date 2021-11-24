@@ -83,6 +83,7 @@ if ($_SESSION['user']['status']=='admin'){
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Nos utilisateurs</h4>
+
                                 <div class="table-responsive pt-3">
                                     <table class="table table-dark">
                                         <!-- BARRE DE RECHERCHE -->

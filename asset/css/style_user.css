@@ -38,8 +38,8 @@ a{text-decoration: none;}
 }
 .button_type2{
     border-radius: 30px;
-    width: 100px;
-    height: 50px;
+    width: 30%;
+    height: 40px;
     text-align: center;
     padding-top: 0.7rem;
     background: var(--bleu);
@@ -309,19 +309,15 @@ a{text-decoration: none;}
 }
 #ajout_vaccin .wrap form{
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
     justify-content: center;
-    margin: 0 auto;
     gap: 1rem;
     padding: 3rem 0;
-    width: 30%;
-
+    margin: 0 auto;
 }
-#ajout_vaccin .wrap form select, #ajout_vaccin .wrap form input, #ajout_vaccin .wrap form label{
+#ajout_vaccin .wrap form select{
     border-radius: 10px;
-    width: 100%;
-    padding: .7rem;
-
+    width: 35%;
 }
 #ajout_vaccin .wrap form .error_box{
     display: flex;

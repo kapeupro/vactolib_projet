@@ -125,7 +125,6 @@ function getUserBySearch($search)
 }
 
 
-
 function verifUserConnected(){
     if (isLogged()==false){
         header('Location: login.php');
@@ -167,3 +166,4 @@ function isAdmin()
     }
     return false;
 }
+

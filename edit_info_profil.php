@@ -4,7 +4,6 @@ session_start();
 require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
-verifUserConnected();
 $id_session=$_SESSION['user']['id'];
 $errors = [];
 
@@ -153,7 +152,7 @@ include('inc/header.php'); ?>
                 </div>
 
                 <div class="button_type1">
-                    <a href="moncarnet.php?page=1">Mon carnet</a>
+                    <a href="#">Mon carnet</a>
                 </div>
 
             </div>

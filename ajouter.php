@@ -4,8 +4,7 @@ session_start();
 require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
-verifUserConnected();
-$success=false;
+
 $id_session=$_SESSION['user']['id'];
 $errors=[];
 debug($_POST);
@@ -43,7 +42,6 @@ if(!empty($_POST['submitted'])) {
         $query->bindValue(':date',$date,PDO::PARAM_INT);
         $query->execute();
         $user_vaccins= $query->fetch();
-        $success=true;
     }
 }
 
@@ -64,6 +62,7 @@ include('inc/header.php');
                     <?php } ?>
                 </select>
 
+
                 <label for="date">Date de l'injection :</label>
                 <input type="date" name="date" id="date">
 
@@ -72,11 +71,11 @@ include('inc/header.php');
                     <span class="error"><?php viewError($errors, 'vaccin'); ?></span>
                 </div>
             </form>
-            <?php if($success==true){ ?>
-                <div class="success_message" style="text-align:center;color:lightgreen">
-                    <h2>Votre vaccin à bien été ajouté à votre carnet</h2>
-                </div>
-            <?php } else{} ?>
+            <?php if(!empty($_POST)){ ?>
+            <div class="success_message" style="text-align:center;color:lightgreen">
+                <h2>Votre vaccin à bien été ajouté à votre carnet</h2>
+            </div>
+           <?php } else{} ?>
         </div>
     </section>
 
