@@ -27,7 +27,6 @@ a{text-decoration: none;}
 .container_accueil .wrap .accueil_buttons_container a{color: black;font-size: 18px;}
 .button_type1 {
     display: flex;
-    color: black;
     justify-content: center;
     align-items: center;
     border-radius: 30px;
@@ -75,7 +74,7 @@ a{text-decoration: none;}
     display: flex;
     flex-flow: column nowrap;
 }
-#register_form .error{color:red;text-align: center;padding-top:1rem;}
+#register_form .error{color:red;text-align: center;}
 #register_form ::placeholder{color:black;}
 #register_form form{display:flex;flex-flow:column nowrap;align-items: center;}
 #register_form textarea {resize: none;min-height: 50px; max-height: 150px; max-width: 350px}
@@ -89,13 +88,12 @@ a{text-decoration: none;}
 }
 #register_form .info_box_button input{
     text-align:center;
-    padding:.6rem 3rem;
+    padding:.6rem 6rem;
     cursor:pointer;
     color:black;
     margin:3rem 0;
-    font-size: .80rem;
 }
-#register_form p{color: #ff7689;font-size: .75rem;}
+#register_form p{color:lightpink;font-size: .75rem;}
 #register_form label{padding:1rem;}
 .logo {display:flex;justify-content: center;margin:2rem;}
 
@@ -157,26 +155,21 @@ a{text-decoration: none;}
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    align-items: center;
     gap: 2rem;
 }
 
-#stats_chiffre .tache1{background: center /contain no-repeat url("../img/tache.png");}
+#stats_chiffre .tache1{background: center /contain no-repeat url("../img/tache1.svg");}
 #stats_chiffre .tache2{background: url("../img/tache2.svg") no-repeat;}
 #stats_chiffre .tache3{background: url("../img/tache3.svg") no-repeat;}
 #stats_chiffre .tache4{background: url("../img/tache4.svg") no-repeat;}
-#stats_chiffre .tache_box{background-size: 100%;}
+#stats_chiffre .tache_box{background-size: 100%;width: 23.33333%;}
 #stats_chiffre .tache_box .tache_para{
-    margin: 5rem;
+    padding: 4.5rem;
     text-align: center;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-flow: column nowrap;
     font-weight: bold;
-}
-#stats_chiffre .tache_box .tache_para .data{
-    font-size: 1.5rem;
 }
 #donnes_secure{margin: 4rem 0;}
 .container_secure{
@@ -266,7 +259,7 @@ a{text-decoration: none;}
 ::placeholder{color: black;padding: .5rem;}
 input[type=submit]{
     border: none;
-    background-color: var(--bleu);
+    background-color: transparent;
     cursor: pointer;
     font-size: 1rem;
 }
@@ -405,6 +398,7 @@ input[type=submit]{
     margin-left: 5rem;
     margin-right: 5rem;
 }
+
 .items-carnet {
     background: var(--bleu);
     border-radius: 20px;
@@ -417,6 +411,8 @@ input[type=submit]{
     width: 400px;
     height: 230px;
 }
+
+
 .items-carnet h3 , .items-carnet p{
     display: flex;
     justify-content: center;
@@ -526,4 +522,3 @@ input[type=submit]{
 .image_vieprivee_2 img{
     width: 100%;
 }
-

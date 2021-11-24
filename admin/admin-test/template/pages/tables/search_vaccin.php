@@ -5,6 +5,8 @@ require('../../../../../inc/pdo.php');
 require('../../../../../inc/fonction.php');
 require('../../../../../inc/request.php');
 
+if ($_SESSION['user']['status']=='admin'){
+
 $errors = [];
 $countAllVaccins = 0;
 
@@ -12,9 +14,6 @@ if(!empty($_GET['search'])) {
     $search = trim(strip_tags($_GET['search']));
     $searchVaccins = getVaccinBySearch($search);
 }
-
-
-if ($_SESSION['user']['status']=='admin'){
 
     include('../../inc/header.php'); ?>
             <div class="main-panel">
