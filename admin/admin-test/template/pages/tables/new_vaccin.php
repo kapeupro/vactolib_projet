@@ -20,25 +20,24 @@ if(!empty($_POST['submitted'])){
 
     if(count($errors) == 0){
 
-    $sql = "INSERT INTO vactolib_vaccins
+        $sql = "INSERT INTO vactolib_vaccins
     (nom_vaccin, laboratoire, description, rappel)
-    VALUES (:nom_vaccin, :laboratoire, :description, :rappel
     VALUES (:nom, :laboratoire, :description, :rappel)";
-    $query = $pdo->prepare($sql);
-    $query->bindValue(':nom', $nom, PDO::PARAM_STR);
-    $query->bindValue(':laboratoire', $laboratoire, PDO::PARAM_STR);
-    $query->bindValue(':description', $description, PDO::PARAM_STR);
-    $query->bindValue(':rappel', $rappel);
-    $query ->execute();
-    header('Location: basic-table.php');
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':nom', $nom, PDO::PARAM_STR);
+        $query->bindValue(':laboratoire', $laboratoire, PDO::PARAM_STR);
+        $query->bindValue(':description', $description, PDO::PARAM_STR);
+        $query->bindValue(':rappel', $rappel);
+        $query ->execute();
+        header('Location: basic-table.php');
     }else{
-    die("404");
+        die("404");
     }
 }
 
 if ($_SESSION['user']['status']=='admin'){
 
-include('../../inc/header.php'); ?>
+    include('../../inc/header.php'); ?>
 
     <div class="main-panel">
         <div class="content-wrapper">
@@ -95,4 +94,6 @@ include('../../inc/header.php'); ?>
             </div>
         </div>
     </div>
-<?php include('../../inc/footer.php'); } else{die('403');} ?>
+
+
+    <?php include('../../inc/footer.php'); } else{die('403');} ?>

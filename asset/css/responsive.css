@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+/* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 1100px */
+@media screen and (max-width: 1100px) {
+    .container_accueil{
+        display: flex;
+        margin: 4rem;
+    }
+    #stats {
+        display: flex;
+        margin: 4rem;
+    }
+    #stats_chiffre {
+        display: flex;
+        margin: 4rem;
+    }
+    #donnes_secure {
+        display: flex;
+        margin: 4rem;
+    }
+    footer {
+        display: flex;
+
+    }
+}
+/* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 990px */
+@media screen and (max-width: 990px) {
+
+}
+
+/* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 760px */
+@media screen and (max-width: 768px) {
+    .container_accueil{
+        display: flex;
+        margin: 4rem;
+    }
+    .items_accueil {
+        display: flex;
+    }
+    .items_groupe img {
+        display: none;
+    }
+    .items_groupe{
+        width: 0%;
+    }
+    .items_accueil_p {
+        display: flex;
+    }
+    .separator {
+        background-size: cover;
+        height: 6rem;
+        justify-content: center;
+    }
+    .boxs{
+        display: flex;
+/*j'étais la */
+    }
+}
+
+/* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 425px */
+@media screen and (max-width: 425px) {
+
+}
+
+/* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 375px */
+@media screen and (max-width: 375px) {
+
+}
+
+/* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 325px */
+@media screen and (max-width: 325px) {
+
+}
+
