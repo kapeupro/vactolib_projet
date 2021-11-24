@@ -1,8 +1,9 @@
 <?php
-
+session_start();
 require('inc/pdo.php');
 require('inc/fonction.php');
-
+//debug($_SESSION);
+verifUserAlreadyConnected();
 
 $errors = [];
 if(!empty($_POST['submitted'])) {

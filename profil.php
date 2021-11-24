@@ -1,10 +1,9 @@
 <?php
 session_start();
-
 require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
-
+verifUserConnected();
 $id_session=$_SESSION['user']['id'];
 
 $sql = "SELECT * FROM vactolib_user WHERE id=:id ";
@@ -22,8 +21,9 @@ $query = $pdo->prepare($sqlleft);
 $query->bindValue(':id_session',$id_session,PDO::PARAM_INT);
 $query->execute();
 $userVaccin = $query->fetch();
-
+verifUserConnected();
 //debug($user);
+//debug($_SESSION);
 //debug($userVaccin);
 
 $_SESSION['user']=array(

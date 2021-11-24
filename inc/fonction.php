@@ -124,4 +124,14 @@ function getUserBySearch($search)
     return $query->fetchAll();
 }
 
+function verifUserConnected(){
+    if (empty($_SESSION)){
+        header('Location:login.php');
+    }else{ }
+}
 
+function verifUserAlreadyConnected(){
+    if (empty(!$_SESSION)){
+        header('Location:index.php');
+    }else{ }
+}

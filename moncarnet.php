@@ -5,7 +5,7 @@ require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
 require('vendor/autoload.php');
-
+verifUserConnected();
 use JasonGrimes\Paginator;
 
 $id_session = $_SESSION['user']['id'];
@@ -29,7 +29,7 @@ $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern
 $i = 0;
 
 include('inc/header.php'); ?>
-
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="asset/css/style_user.css">
     <section>
         <div class="title-carnet">
