@@ -15,7 +15,6 @@ if(!empty($_POST['submitted'])) {
     $password2 = cleanXss('password2');
 
     // Validation
-
     if(empty($errors['email'])) {
         $sql = "SELECT * FROM vactolib_user WHERE token=:token ";
         $query = $pdo->prepare($sql);
