@@ -15,6 +15,7 @@ if(!empty($_GET['id']) && is_numeric($_GET['id'])){
         $query ->execute();
         header('Location: basic-table.php');
     }else{
-        die('404');
+        header("Location: 404.php");
+        die();
     }
 }
