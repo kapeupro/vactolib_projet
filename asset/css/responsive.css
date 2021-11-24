@@ -15,6 +15,9 @@
     #profil_container .wrap img{
         display: none;
     }
+    #profil_container .wrap{
+        flex-flow: column nowrap;
+    }
     #stats {
         display: flex;
         margin: 4rem;
@@ -48,6 +51,12 @@
         display: flex;
         justify-content: center;
     }
+    .ajout-vaccin a{
+        margin: 0 auto;
+        transform: translateX(50%);
+        padding: 1rem;
+    }
+
     footer {
         display: flex;
     }
@@ -142,6 +151,9 @@
     #profil_container .wrap .info_profil .box_items{
         width: 25rem;
     }
+    #profil_container .wrap .info_profil .box_items .info_list form .form_box_modif .form_box_input{
+        gap: 3rem;
+    }
 }
 
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 375px */
@@ -149,10 +161,25 @@
     #profil_container .wrap .info_profil .box_items{
         width: 18rem;
     }
+    .items-carnet{
+        width: 300px;
+    }
+    .pagination{
+        flex-flow: row wrap;
+    }
+    .ajout-vaccin{
+        justify-content: center;
+        width: 10rem;
+    }
+    #profil_container .wrap .info_profil .box_items .info_list form .form_box_modif .form_box_input{
+        gap: 1rem;
+    }
 }
 
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 325px */
 @media screen and (max-width: 325px) {
-
+    .items-carnet{
+        width: 250px;
+    }
 }
 
