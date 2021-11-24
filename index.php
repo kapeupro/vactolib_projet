@@ -12,7 +12,6 @@ $query = $pdo->prepare($sql);
 $query->execute();
 $allUsers= $query->fetch();
 
-
 // Recup tout les ajout dans carnet pour affichage stats
 $sql = "SELECT COUNT(*) AS resultAjout FROM vactolib_user_vaccins ";
 $query = $pdo->prepare($sql);
@@ -30,7 +29,6 @@ if(!empty($_SESSION)) {
     $query->execute();
     $user = $query->fetch();
 
-
     $_SESSION['user']=array(
         'id'=>$user['id'],
         'nom'=>$user['nom'],
@@ -38,8 +36,8 @@ if(!empty($_SESSION)) {
         'status'=>$user['status'],
     );
 
-//    debug($user);
-//    debug($_SESSION);
+    debug($user);
+    debug($_SESSION);
 
 
     include('inc/header.php'); ?>
