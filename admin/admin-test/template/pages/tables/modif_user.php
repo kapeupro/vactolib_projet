@@ -5,6 +5,8 @@ require('../../../../../inc/pdo.php');
 require('../../../../../inc/fonction.php');
 require('../../../../../inc/request.php');
 
+if ($_SESSION['user']['status']=='admin'){
+
 $errors = [];
 if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
     $id = $_GET['id'];
@@ -45,9 +47,9 @@ if(!empty($user)){
     }
 }
 
-if ($_SESSION['user']['status']=='admin'){
+include('../../inc/header.php');
 
-    include('../../inc/header.php'); ?>
+?>
 
 
             <div class="main-panel">
@@ -112,4 +114,5 @@ if ($_SESSION['user']['status']=='admin'){
                 </div>
             </div>
 
-<?php include('../../inc/footer.php'); } else{die('403');} ?>
+<?php include('../../inc/footer.php'); } else{header("Location: 403.php");
+    die();} ?>
