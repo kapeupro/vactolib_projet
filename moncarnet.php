@@ -34,18 +34,12 @@ $itemsPerPage = 2;
 if(!empty($_GET['page']) && is_numeric($_GET['page'])) {
     $currentPage = $_GET['page'];
     $offset = ($currentPage - 1) * $itemsPerPage;
-
-<<<<<<< HEAD
-$user_vaccins = getVaccins($itemsPerPage, $offset, $id_session);
+    $user_vaccins = getVaccins($itemsPerPage, $offset, $id_session);
+    $totalItems = countAllVaccinUser();
+    $urlPattern = '?page=(:num)';
+    $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
 }
-=======
-$totalItems = countAllVaccinUser();
-$urlPattern = '?page=(:num)';
 
-$user_vaccins = getVaccins($itemsPerPage, $offset, $id_session);
->>>>>>> d077cf5886064efc4bdc46ad7724d7867ecfb132
-$paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
-}
 
 //initialisation d'un compteur pour la boucle foreach
 $i = 0;

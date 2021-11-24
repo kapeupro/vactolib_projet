@@ -8,8 +8,4 @@ try {
     ));
 } catch (PDOException $e) {
     echo 'Erreur de connexion : ' . $e->getMessage();
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> d077cf5886064efc4bdc46ad7724d7867ecfb132

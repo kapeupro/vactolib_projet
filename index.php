@@ -30,11 +30,9 @@ if(!empty($_SESSION)) {
     $query->execute();
     $user = $query->fetch();
 
-<<<<<<< HEAD
-
     debug($user);
     debug($_SESSION);
-=======
+
 
     $_SESSION['user']=array(
         'id'=>$user['id'],
@@ -46,7 +44,6 @@ if(!empty($_SESSION)) {
 //    debug($user);
 //    debug($_SESSION);
 
->>>>>>> d077cf5886064efc4bdc46ad7724d7867ecfb132
 
     include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style_user.css">
