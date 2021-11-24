@@ -69,7 +69,6 @@ if(!empty($_SESSION)) {
 
     <section id="stats">
         <div class="wrap">
-            <div class="tache"></div>
             <div class="title">
                 <h2>Merci d'avoir choisi Vactolib !</h2>
             </div>

@@ -18,9 +18,23 @@
         display: flex;
         margin: 4rem;
     }
+    #stats_chiffre .tache_box .tache_para {
+        background-size:50%
+    }
     #donnes_secure {
         display: flex;
         margin: 4rem;
+    }
+
+    element.style {
+    }
+    #stats_chiffre .wrap {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        margin: 2rem;
     }
     footer {
         display: flex;
