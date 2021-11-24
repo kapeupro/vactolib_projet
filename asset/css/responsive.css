@@ -10,7 +10,11 @@
         display: flex;
         margin: 4rem;
     }
-    #stats  #stats_chiffre {
+    #stats {
+        display: flex;
+        margin: 4rem;
+    }
+    #stats_chiffre {
         display: flex;
         margin: 4rem;
     }
@@ -26,11 +30,18 @@
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: center;
-        /* gap: 0rem; */
-        margin: 0.8rem;
+        gap: 1rem;
+        margin: 2rem;
     }
-    .tache_box .tache1 {
-        background-size: 50%;
+    #container_header {
+        flex-flow: column nowrap;
+    }
+    #container_header .items_header{
+        padding-right: inherit;
+    }
+    #container_header .logo_vactolib a{
+        display: flex;
+        justify-content: center;
     }
     footer {
         display: flex;
