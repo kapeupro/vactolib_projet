@@ -25,13 +25,13 @@
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
             <a class="navbar-brand brand-logo mr-5" href="../../../../../index.php"><img src="../../../../../asset/img/logo_vactolib.svg" class="mr-2" alt="logo"/></a>
-            <a class="navbar-brand brand-logo-mini" href="../../../../../index.php"><img src="../../../../../asset/img/logo_vactolib.svg" alt="logo"/></a>
+            <a class="navbar-brand brand-logo-mini" href="../../../../../index.php"><img src="../../../../../asset/img/vactolib_coeur.svg" alt="logo"/></a>
         </div>
     </nav>
 
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
-        <nav class="sidebar" id="sidebar">
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <ul class="nav">
                 <li class="nav-item">
                     <a class="nav-link" href="../../index.php">
