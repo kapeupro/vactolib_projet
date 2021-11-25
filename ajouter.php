@@ -22,7 +22,6 @@ if(!empty($_POST['submitted'])) {
     $vaccin_id= cleanXss('vaccin');
     $vaccin_date= cleanXss('vaccin_date');
 
-
 //Requete pour récuperer la durée du Rappel
 $vaccin_rappel=getRappelDuree($vaccin_id)['rappel'];
 debug($vaccin_rappel);
