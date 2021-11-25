@@ -92,7 +92,11 @@ if ($_SESSION['user']['status']=='admin'){
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="formGroupExampleInput" class="form-label">Status :</label>
-                                                    <input type="text" class="form-control" name="status" value="<?php echo $user['status']; ?>" id="status" placeholder="status">
+                                                    <select class="form-control col-4" name="status" id="status">
+                                                        <option value="<?php echo $user['status']; ?>"><?php echo $user['status']; ?></option>
+                                                        <option value="admin">admin</option>
+                                                        <option value="user">user</option>
+                                                    </select>
                                                     <span class="text-danger"><?php viewError($errors, 'status'); ?></span>
                                                 </div>
                                             </div>
