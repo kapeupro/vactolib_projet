@@ -5,6 +5,7 @@ require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
 verifUserConnected();
+
 $success=false;
 $id_session=$_SESSION['user']['id'];
 $errors=[];
@@ -21,10 +22,14 @@ if(!empty($_POST['submitted'])) {
     $vaccin_id= cleanXss('vaccin');
     $vaccin_date= cleanXss('vaccin_date');
 
-     debug($_POST);
+    debug($_POST);
     if(!empty($_POST['vaccin'])){
     }else{
         $errors['vaccin'] = "* Veuillez séléctionner un vaccin";
+    }
+    if(!empty($_POST['vaccin_date'])){
+    }else{
+        $errors['vaccin_date'] = "* Veuillez renseigner une date";
     }
 
     if(count($errors) == 0){
@@ -56,13 +61,21 @@ include('inc/header.php');
                         <option value="<?php echo $vaccin['id'] ?> "><?php echo $vaccin['nom_vaccin'] ?></option>
                     <?php } ?>
                 </select>
+
+                <div class="error_box">
+                    <span class="error"><?php viewError($errors, 'vaccin'); ?></span>
+                </div>
+
                 <label for="vaccin_date">Date de l'injection :</label>
                 <input type="date" name="vaccin_date">
 
                 <div class="error_box">
-                    <input class="button_type1" type="submit" name="submitted" id="submitted" value="Ajouter">
-                    <span class="error"><?php viewError($errors, 'vaccin'); ?></span>
+                    <span class="error"><?php viewError($errors, 'vaccin_date'); ?></span>
                 </div>
+
+                <input class="button_type1" type="submit" name="submitted" id="submitted" value="Ajouter">
+
+
             </form>
             <?php if($success==true){ ?>
                 <div class="success_message" style="text-align:center;color:lightgreen">

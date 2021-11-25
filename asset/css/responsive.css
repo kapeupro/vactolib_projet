@@ -77,6 +77,40 @@
         display: flex;
     }
 }
+@media screen and (max-width: 1024px) {
+    #stats_chiffre .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+    #stats_chiffre {
+        display: flex;
+        margin: 1rem;
+    }
+    #stats_chiffre .wrap {
+        display: flex;
+        flex-flow: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #stats_chiffre .tache1 {
+        background: center /contain no-repeat url(../img/tache.png);
+        width: 45%;
+    }
+    #stats_chiffre .tache2 {
+        background: center url(../img/tache2.svg) no-repeat;
+        width: 45%;
+    }
+    #stats_chiffre .tache3 {
+        background: center url(../img/tache3.svg) no-repeat;
+        width: 45%;
+    }
+    #stats_chiffre .tache4 {
+        background: center url(../img/tache4.svg) no-repeat;
+        width: 45%;
+    }
+}
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 990px */
 @media screen and (max-width: 992px) {
     .container_vieprivee_1, .container_vieprivee_2{
@@ -151,6 +185,13 @@
         width: 40%;
 
     }
+    .ds_text {
+        display: flex;
+        gap: 4rem;
+    }
+    .logo_coffre img {
+        width: 100%;
+    }
     #stats_chiffre .tache1 {
         background: center /contain no-repeat url(../img/tache.png);
         width: 45%;
@@ -204,6 +245,12 @@
     }
 }
 
+/* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 558px */
+@media screen and (max-width: 558px) {
+
+}
+
+
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 375px */
 @media screen and (max-width: 440px) {
     #profil_container .wrap .info_profil .box_items{
@@ -226,11 +273,6 @@
         width: 15rem;
     }
 }
+{
 
-/* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 325px */
-@media screen and (max-width: 325px) {
-    .items-carnet{
-        width: 250px;
-    }
 }
-
