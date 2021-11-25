@@ -18,7 +18,6 @@ $query->bindValue(':id_session',$id_session,PDO::PARAM_INT);
 $query->execute();
 $userVaccin = $query->fetch();
 
-debug($userVaccin);
 
 include('inc/header.php'); ?>
 
