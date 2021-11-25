@@ -35,9 +35,19 @@
     #stats_chiffre .tache_box .tache_para {
         background-size:50%
     }
+    #stats ul.boxs {
+        display: flex;
+        justify-content: center;
+        flex-flow: row nowrap;
+        padding: 4rem 0 4rem 0;
+        gap: 10rem;
+    }
     #donnes_secure {
         display: flex;
         margin: 4rem;
+    }
+    #stats ul.boxs{
+        flex-flow: row wrap;
     }
     #stats_chiffre .wrap {
         display: flex;
@@ -111,6 +121,9 @@
     .items_groupe{
         display: none;
     }
+    .p_items_a {
+        text-align: center;
+    }
     .separator {
         background-size: cover;
         height: 6rem;
@@ -118,8 +131,9 @@
     }
     #stats ul.boxs{
         flex-flow: row wrap;
-
+        gap: 5rem;
     }
+
     #stats_chiffre {
         display: flex;
 
@@ -136,6 +150,7 @@
 
     #stats ul.boxs li {
         width: 40%;
+
     }
     #stats_chiffre .tache1 {
         background: center /contain no-repeat url(../img/tache.png);
