@@ -3,6 +3,9 @@
 
 
 ?>
+<head>
+    <title>404 not found</title>
+</head>
 <link rel="stylesheet" href="asset/css/style.css">
 
 <div class="error-page">
@@ -11,4 +14,3 @@
         <p data-p="NOT FOUND">NOT FOUND</p>
     </div>
 </div>
-<div id="particles-js"></div>

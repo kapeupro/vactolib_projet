@@ -5,10 +5,24 @@
     font-family: 'Nunito', sans-serif;
 }
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 1100px */
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1210px) {
+    #register_form .img_float1, #register_form .img_float2 {
+        background: none;
+    }
+}
+
+@media screen and (max-width: 1110px) {
     .container_accueil{
         display: flex;
-        margin: 4rem;
+    }
+    #profil_container .wrap{
+        flex-flow: column nowrap;
+    }
+    #profil_container .wrap img{
+        display: none;
+    }
+    #profil_container .wrap{
+        flex-flow: column nowrap;
     }
     #stats {
         display: flex;
@@ -53,18 +67,50 @@
         display: flex;
         justify-content: center;
     }
+    .ajout-vaccin a{
+        margin: 0 auto;
+        transform: translateX(50%);
+        padding: 1rem;
+    }
+
     footer {
         display: flex;
-
     }
 }
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 990px */
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 992px) {
+    .container_vieprivee_1, .container_vieprivee_2{
+        margin: inherit;
+        padding: inherit;
+    }
+    .container_vieprivee_1{
+        flex-flow: column-reverse;
+    }
+    .container_vieprivee_2{
+        flex-flow: column-reverse;
+    }
 
+    /*ADMIN*/
+
+    #register_form .wrap2{
+        width: 90%;
+    }
+    #register_form input {
+        width: 80%;
+    }
 }
 
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 760px */
 @media screen and (max-width: 768px) {
+    #container_header .nav_header{
+        flex-flow: column nowrap;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    #container_header .nav_header .ligne_black{
+        height: 2px;
+        width: 10rem;
+    }
     .container_accueil{
         display: flex;
         margin: 4rem;
@@ -72,14 +118,8 @@
     .items_accueil {
         display: flex;
     }
-    .items_groupe img {
-        display: none;
-    }
     .items_groupe{
-        width: 0%;
-    }
-    .items_accueil_p {
-        display: flex;
+        display: none;
     }
     .separator {
         background-size: cover;
@@ -125,20 +165,60 @@
         background: center url(../img/tache4.svg) no-repeat;
         width: 45%;
     }
+
+    #footer .footer__container{
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+    }
+    #footer .footer__copyright{
+        flex-flow: column nowrap;
+        text-align: center;
+    }
+    #footer .footer__logo img{
+        display: none;
+    }
 }
 
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 425px */
-@media screen and (max-width: 425px) {
-
+@media screen and (max-width: 610px) {
+    #profil_container .wrap .info_profil .box_items{
+        width: 25rem;
+    }
+    #profil_container .wrap .info_profil .box_items .info_list form .form_box_modif .form_box_input{
+        gap: 3rem;
+    }
+    .container_vieprivee_1 img, .container_vieprivee_2 img{
+        display: none;
+    }
 }
 
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 375px */
-@media screen and (max-width: 375px) {
-
+@media screen and (max-width: 440px) {
+    #profil_container .wrap .info_profil .box_items{
+        width: 18rem;
+    }
+    .items-carnet{
+        width: 300px;
+    }
+    .pagination{
+        flex-flow: row wrap;
+    }
+    .ajout-vaccin{
+        justify-content: center;
+        width: 10rem;
+    }
+    #profil_container .wrap .info_profil .box_items .info_list form .form_box_modif .form_box_input{
+        gap: 1rem;
+    }
 }
 
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 325px */
 @media screen and (max-width: 325px) {
-
+    .items-carnet{
+        width: 250px;
+    }
 }
 
