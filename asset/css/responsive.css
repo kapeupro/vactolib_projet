@@ -251,7 +251,19 @@
 
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 558px */
 @media screen and (max-width: 558px) {
-
+    #stats .wrap ul li{
+        width: 15rem;
+    }
+    #stats_chiffre .wrap{
+        gap: inherit;
+    }
+    #stats_chiffre .tache_box{
+        width: 100%;
+        background-size: 12rem;
+    }
+    .container_secure{
+        display: none;
+    }
 }
 
 
