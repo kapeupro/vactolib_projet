@@ -7,7 +7,7 @@ require('inc/request.php');
 include('inc/header.php'); ?>
 
     <section>
-        <?php if(!empty($_SESSION)){ echo'<link rel="stylesheet" href="asset/css/style_user.css">';} else {} ?>
+        <?php if(!empty($_SESSION)){ echo'<link rel="stylesheet" href="asset/css/style_user.css">';} else {echo '<link rel="stylesheet" href="asset/css/style.css">';} ?>
         <div class="wrap">
             <div class="container-donnees-personnelles-et-cookies">
                 <div id="title-h2-donnees-personnelles-et-cookies">

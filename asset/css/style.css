@@ -26,7 +26,6 @@ a{text-decoration: none;}
 }
 .container_accueil .wrap .accueil_buttons_container a{color: black;font-size: 18px;}
 .button_type1 {
-    display: flex;
     color: black;
     justify-content: center;
     align-items: center;
@@ -266,7 +265,7 @@ a{text-decoration: none;}
 ::placeholder{color: black;padding: .5rem;}
 input[type=submit]{
     border: none;
-    background-color: var(--bleu);
+    background-color: transparent;
     cursor: pointer;
     font-size: 1rem;
 }
