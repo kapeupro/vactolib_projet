@@ -121,9 +121,7 @@
     .items_groupe{
         display: none;
     }
-    .p_items_a {
-        text-align: center;
-    }
+
     .separator {
         background-size: cover;
         height: 6rem;
@@ -184,6 +182,13 @@
         display: none;
     }
 }
+
+@media screen and (max-width: 610px){
+    .items_accueil, .container_accueil, .separator{
+        display: none;
+    }
+}
+
 
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 425px */
 @media screen and (max-width: 610px) {
