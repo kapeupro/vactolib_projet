@@ -117,6 +117,10 @@
         margin: inherit;
         padding: inherit;
     }
+    .ds_text{
+        display: flex;
+        gap: 4rem;
+    }
     .container_vieprivee_1{
         flex-flow: column-reverse;
     }
@@ -288,3 +292,5 @@
 {
 
 }
+
+@media screen and (max-width: 440px){}
