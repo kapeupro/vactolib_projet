@@ -26,7 +26,6 @@ a{text-decoration: none;}
 }
 .container_accueil .wrap .accueil_buttons_container a{color: black;font-size: 18px;}
 .button_type1 {
-    display: flex;
     color: black;
     justify-content: center;
     align-items: center;
@@ -74,6 +73,13 @@ a{text-decoration: none;}
     padding:0.2rem;
     display: flex;
     flex-flow: column nowrap;
+    color:lightgreen;
+    text-align: center;
+    margin:0 1rem;
+}
+#register_form .info_box a{
+    margin-top:1rem;
+    text-decoration: none;
 }
 #register_form .error{color:red;text-align: center;padding-top:1rem;}
 #register_form ::placeholder{color:black;}
@@ -266,7 +272,7 @@ a{text-decoration: none;}
 ::placeholder{color: black;padding: .5rem;}
 input[type=submit]{
     border: none;
-    background-color: var(--bleu);
+    background-color: transparent;
     cursor: pointer;
     font-size: 1rem;
 }
@@ -277,6 +283,7 @@ input[type=submit]{
     display: flex;
     flex-flow: column nowrap;
 }
+
 .title_contact {
     display: flex;
     justify-content: center;

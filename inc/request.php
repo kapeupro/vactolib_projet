@@ -10,15 +10,16 @@ function getUserById($id){
     $query->execute();
     return $query->fetch();
 }
-
-
-function getUser(){
+function getUserResetPassword($email,$token){
     global $pdo;
-    $sql="SELECT * FROM vactolib_user";
+    $sql="SELECT * FROM vactolib_user WHERE email = :email AND token= :token";
     $query = $pdo->prepare($sql);
+    $query ->bindValue(':email',$email,PDO::PARAM_INT);
+    $query ->bindValue(':token',$token,PDO::PARAM_INT);
     $query->execute();
-    return $query->fetchAll();
+    return $query->fetch();
 }
+
 function getUserBySessionId($id_session){
     global $pdo;
     $sql = "SELECT * FROM vactolib_user WHERE id=:id";
@@ -27,7 +28,14 @@ function getUserBySessionId($id_session){
     $query->execute();
     return $query->fetch();
 }
-
+function verifUserByEmail($email){
+    global $pdo;
+    $sql = "SELECT * FROM vactolib_user WHERE email=:email";
+    $query = $pdo->prepare($sql);
+    $query->bindValue(':email',$email,PDO::PARAM_STR);
+    $query->execute();
+    return $query->fetch();
+}
 function getUserVaccinsBySessionId($id_session){
     global $pdo;
     $sql = "SELECT * FROM vactolib_user_vaccins WHERE user_id=:id ";
@@ -37,14 +45,6 @@ function getUserVaccinsBySessionId($id_session){
     return $query->fetchAll();
 }
 
-function getUserByToken($token){
-    global $pdo;
-    $sql = "SELECT * FROM vactolib_user WHERE token=:token";
-    $query = $pdo->prepare($sql);
-    $query->bindValue(':token',$token,PDO::PARAM_STR);
-    $query->execute();
-    return $query->fetch();
-}
 function getVaccinById($id)
 {
     global $pdo;
@@ -83,4 +83,50 @@ function getVaccins(int $limit = 10, $offset = 0, $id_session)
     $query->execute();
     return $query->fetchAll();
 
+}
+
+function getVaccinBySearch($search)
+{
+    global $pdo;
+    $sql = "SELECT * FROM vactolib_vaccins WHERE nom_vaccin LIKE :search OR laboratoire LIKE :search";
+    $query = $pdo->prepare($sql);
+    $query->bindValue(':search','%'.$search.'%',PDO::PARAM_STR);
+    $query->execute();
+    return $query->fetchAll();
+}
+
+function getUserBySearch($search)
+{
+    global $pdo;
+    $sql = "SELECT * FROM vactolib_user WHERE nom LIKE :search OR prenom LIKE :search";
+    $query = $pdo->prepare($sql);
+    $query->bindValue(':search','%'.$search.'%',PDO::PARAM_STR);
+    $query->execute();
+    return $query->fetchAll();
+}
+
+
+// Recup tout les vaccins pour affichage stats
+function recupUserStats(){
+    global $pdo;
+    $sql = "SELECT COUNT(*) AS resultUsers FROM vactolib_user ";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    return $query->fetch();
+}
+
+// Recup tout les ajouts dans carnet pour affichage stats
+function recupVaccinsStats(){
+    global $pdo;
+    $sql = "SELECT COUNT(*) AS resultAjout FROM vactolib_vaccins ";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    return $query->fetch();
+}
+function recupVaccins(){
+    global $pdo;
+    $sql = "SELECT * FROM vactolib_vaccins";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    return $query->fetchAll();
 }

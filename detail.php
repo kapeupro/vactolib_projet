@@ -9,7 +9,7 @@ $id_session=$_SESSION['user']['id'];
 
 /*Recupere l'id du vaccin selectionné*/
 $vaccin_select = getVaccinById($_GET['id']);
-//debug($vaccin_select);
+
 
 $user=getUserBySessionId($id_session);
 $user_vaccins=getUserVaccinsBySessionId($id_session);

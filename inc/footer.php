@@ -28,7 +28,9 @@
             <ul>
                 <li><a href="donnees-personnelles-et-cookies.php">Données personnelles et cookies</a></li>
                 <li><a href="mentionslegal.php">Mentions légales</a></li>
-                <li><a href="deleteaccount.php">Supprimer son compte</a></li>
+                <?php if(!empty($_SESSION)){ ?>
+                    <li><a href="deleteaccount.php">Supprimer son compte</a></li>
+               <?php } ?>
             </ul>
         </div>
 
