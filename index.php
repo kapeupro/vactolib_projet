@@ -137,6 +137,7 @@ if(!empty($_SESSION)) {
 <?php } else {
     //PARTIE UTILISATEUR PAS CONNECTED
     include('inc/header.php'); ?>
+    <link rel="stylesheet" href="asset/css/style.css">
     <section>
         <div class="container_accueil">
             <div class="wrap">

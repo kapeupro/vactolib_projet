@@ -31,7 +31,7 @@
 
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <nav class="sidebar" id="sidebar">
             <ul class="nav">
                 <li class="nav-item">
                     <a class="nav-link" href="../../index.php">
