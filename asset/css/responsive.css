@@ -121,6 +121,9 @@
     .items_groupe{
         display: none;
     }
+    .p_items_a {
+        text-align: center;
+    }
     .separator {
         background-size: cover;
         height: 6rem;
