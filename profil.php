@@ -68,8 +68,8 @@ include('inc/header.php'); ?>
                     <img src="asset/img/illustration_profil.svg" alt="Homme avec un ordinateur dans les mains">
                 </div>
 
-                <div class="button_type1">
-                    <a href="moncarnet.php?page=1">Mon carnet</a>
+                <div class="button_profil">
+                    <a class="button_type1" href="moncarnet.php?page=1">Mon carnet</a>
                 </div>
             </div>
         </div>

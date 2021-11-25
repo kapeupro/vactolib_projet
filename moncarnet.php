@@ -49,7 +49,7 @@ include('inc/header.php'); ?>
                                 <p> <?php echo $user['nom'];echo' ';echo $user['prenom'] ?></p>
                                 <p><?php echo $user_vaccins[$i]['laboratoire'] ?> fait le <?php echo dateFormatWithoutHour($user_vaccins[$i]['vaccin_date'], 'd/m/Y') ?></p>
                                 <p> Rappel le <?php $oldDate   = $user_vaccins[$i]['vaccin_date']; $date1 = date("Y-m-d", strtotime($oldDate.'+ '.$user_vaccins[$i]['vaccin_rappel'].' days')); echo dateFormatWithoutHour($date1); ?> </p>
-                                <a class="button_type1" href="detail.php?id=<?php echo $user_vaccins[$i]['id']; ?> "> Plus d'info </a>
+                                <a class="button_type1" style="margin-top: .5rem;" href="detail.php?id=<?php echo $user_vaccins[$i]['id']; ?> "> Plus d'info </a>
                                 <a onclick="return confirm('Voulez-vous vraiment supprimer ce vaccin de votre carnet ?')" class="button_type2" href="delete.php?id=<?php echo $user_vaccins[$i]['id'] ?>"> Supprimer </a>
 
                             </div>
@@ -63,9 +63,12 @@ include('inc/header.php'); ?>
             </div>
         <?php } ?>
 
-        <div class="text-center">
-            <?php echo $paginator; ?>
-        </div>
+        <?php if(!empty($user_vaccins)){ ?>
+            <div class="text-center" style="font-size: 1rem;">
+                <?php echo $paginator; ?>
+            </div>
+        <?php } ?>
+
 
     </section>
 
