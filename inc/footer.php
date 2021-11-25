@@ -16,7 +16,7 @@
                 <ul>
                     <li><a href="moncarnet.php?page=1">Mon carnet</a></li>
                     <li><a href="profil.php">Mon profil</a></li>
-                    <li><a href="#">Ajouter un vaccin</a></li>
+                    <li><a href="ajouter.php">Ajouter un vaccin</a></li>
                 </ul>
             </div>
         <?php } else { ?>
