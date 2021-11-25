@@ -10,6 +10,7 @@ $allUsers= recupUserStats();
 // Recup tout les ajouts dans carnet pour affichage stats
 $allAjout=recupVaccinsStats();
 
+
 //PARTIE UTILISATEUR CONNECTED
 if(!empty($_SESSION)) {
 

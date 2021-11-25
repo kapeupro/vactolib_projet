@@ -29,7 +29,8 @@
                 <li><a href="donnees-personnelles-et-cookies.php">Données personnelles et cookies</a></li>
                 <li><a href="mentionslegal.php">Mentions légales</a></li>
                 <?php if(!empty($_SESSION)){ ?>
-                    <li><a href="deleteaccount.php">Supprimer son compte</a></li>
+                    <li><a onclick="Validation()" href="deleteaccount.php?id=<?php echo $_SESSION['user']['id']?>">Supprimer son compte</a></li>
+                    <script>function Validation() {confirm("Voulez-vous vraiment supprimer votre compte et ses données ?");}</script>
                <?php } ?>
             </ul>
         </div>

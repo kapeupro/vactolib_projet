@@ -10,11 +10,7 @@ use JasonGrimes\Paginator;
 
 $id_session = $_SESSION['user']['id'];
 
-$sql = "SELECT * FROM vactolib_user WHERE id=:id ";
-$query = $pdo->prepare($sql);
-$query->bindValue(':id',$id_session,PDO::PARAM_STR);
-$query->execute();
-$user= $query->fetch();
+$user= getUserBySessionId($id_session);
 
 
 // PAGINATION
@@ -22,19 +18,16 @@ $currentPage = 1;
 $itemsPerPage = 2;
 $totalItems = countAllVaccinUser();
 $urlPattern = '?page=(:num)';
-
 if(!empty($_GET['page']) && is_numeric($_GET['page'])) {
     $currentPage = $_GET['page'];
     $offset = ($currentPage - 1) * $itemsPerPage;
 }
-
 $user_vaccins = getVaccins($itemsPerPage, $offset, $id_session);
-
 $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
 
 //initialisation d'un compteur pour la boucle foreach
 $i = 0;
-
+debug($user_vaccins);
 include('inc/header.php'); ?>
     <section>
         <div class="title-carnet">
@@ -57,8 +50,8 @@ include('inc/header.php'); ?>
                                 <p> <?php echo $user['nom'];echo' ';echo $user['prenom'] ?></p>
                                 <p><?php echo $user_vaccins[$i]['laboratoire'] ?> fait le <?php echo dateFormatWithoutHour($user_vaccins[$i]['vaccin_date'], 'd/m/Y') ?></p>
                                 <a class="button_type2" href="detail.php?id=<?php echo $user_vaccins[$i]['id']; ?> "> En savoir plus </a>
-                                <a onclick="Validation()" class="button_type2" href="delete.php?id=<?php echo $user_vaccins[$i]['id'] ?>"> Supprimer </a>
-                                <script>function Validation() {confirm("Voulez-vous vraiment supprimer ce vaccin de votre carnet ?");}</script>
+                                <a onclick="return confirm('Voulez-vous vraiment supprimer ce vaccin de votre carnet ?')" class="button_type2" href="delete.php?id=<?php echo $user_vaccins[$i]['id'] ?>"> Supprimer </a>
+
                             </div>
                             <?php $i++; } ?>
                     </div>

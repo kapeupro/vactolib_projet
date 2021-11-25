@@ -50,6 +50,12 @@ include('inc/header.php');
 
     <section id="ajout_vaccin">
         <div class="wrap">
+            <?php if($success==true){ ?>
+                <div class="success_message" style="text-align:center;color:lightgreen;padding-bottom:2rem;">
+                    <h2>Votre vaccin à bien été ajouté à votre carnet</h2>
+                </div>
+            <?php } else{} ?>
+
             <h1>Ajout d'un vaccin</h1>
 
             <form action="" method="post">
@@ -73,14 +79,7 @@ include('inc/header.php');
                 </div>
 
                 <input class="button_type1" type="submit" name="submitted" id="submitted" value="Ajouter">
-
-
             </form>
-            <?php if($success==true){ ?>
-                <div class="success_message" style="text-align:center;color:lightgreen">
-                    <h2>Votre vaccin à bien été ajouté à votre carnet</h2>
-                </div>
-            <?php } else{} ?>
         </div>
     </section>
 

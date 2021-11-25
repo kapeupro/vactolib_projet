@@ -4,13 +4,12 @@ require('inc/pdo.php');
 require('inc/fonction.php');
 
 verifUserAlreadyConnected();
-
+$success=false;
 $errors = [];
 if(!empty($_POST['submitted'])) {
     // Faille xss
     $prenom    = cleanXss('prenom');
     $nom       = cleanXss('nom');
-    $birthdate = cleanXss('birthdate');
     $phone     = cleanXss('phone');
     $email     = cleanXss('email');
     $password  = cleanXss('password');
@@ -47,19 +46,19 @@ if(!empty($_POST['submitted'])) {
         // hashpassword
         $hashpassword = password_hash($password,PASSWORD_DEFAULT);
         // INSERT INTO
-        $sql = "INSERT INTO `vactolib_user`(`nom`, `prenom`, `date_de_naissance`, `email`, `portable`, `password`, `token`,`status`, `created_at`) 
-                VALUES (:nom,:prenom,:birthdate,:email,:phone,:password,:token,'user',NOW())";
+        $sql = "INSERT INTO `vactolib_user`(`nom`, `prenom`, `email`, `portable`, `password`, `token`,`status`, `created_at`) 
+                VALUES (:nom,:prenom,:email,:phone,:password,:token,'user',NOW())";
         $query = $pdo->prepare($sql);
         $query->bindValue(':nom',        $nom,      PDO::PARAM_STR);
         $query->bindValue(':prenom',     $prenom,      PDO::PARAM_STR);
         $query->bindValue(':email',      $email,       PDO::PARAM_STR);
-        $query->bindValue(':birthdate',  $birthdate,       PDO::PARAM_STR);
         $query->bindValue(':phone',      $phone,       PDO::PARAM_INT);
         $query->bindValue(':password',   $hashpassword,PDO::PARAM_STR);
         $query->bindValue(':token',      $token,       PDO::PARAM_STR);
         $query->execute();
         // redirection
-        header('Location: index.php');
+        $success=true;
+        header('refresh:5;url=index.php');
     }
 }
 ?>
@@ -85,6 +84,7 @@ if(!empty($_POST['submitted'])) {
     <div class="img_float2"></div>
     <div class="img_float3"></div>
     <div class="wrap2">
+        <?php if($success==false){ ?>
         <form action="" method="post" class="wrapform" novalidate>
 
             <div class="info_box">
@@ -124,6 +124,7 @@ if(!empty($_POST['submitted'])) {
             </div>
             <p>Les champs avec * sont requis</p>
         </form>
+        <?php } else {echo'<div class="info_box_success"><h2>Bienvenue ! Votre compte a bien été créé !</h2><h4>Redirection dans 5 secondes.</h4></div>';} ?>
     </div>
 </section>
 
