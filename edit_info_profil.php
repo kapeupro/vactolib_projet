@@ -23,6 +23,10 @@ if(!empty($_POST['submitted'])) {
     $errors = mailValidation($errors, $email,'email');
     $errors = phoneNumberValidation($errors, $portable, 'portable');
 
+    if(empty($_POST['password'])) {
+        $errors['password'] = "Confirmez votre mot de passe pour valider les informations.";
+    }
+
     if(!empty($_POST['password2'])){
         if(empty($_POST['password'])){
             $errors['password'] = "Vous devez entrer votre ancien mot de passe";
@@ -89,17 +93,6 @@ include('inc/header.php'); ?>
                                     <span class="error"><?= viewError($errors,'email'); ?></span>
                                 </div>
                             </div>
-
-                            <div class="form_box_modif">
-                                <div class="form_box_input">
-                                    <label for="password">Ancien mot de passe :</label>
-                                    <input type="password" name="password" id="password" value="">
-                                </div>
-                                <div class="error_box">
-                                    <span class="error"><?= viewError($errors,'password'); ?></span>
-                                </div>
-                            </div>
-
                             <div class="form_box_modif">
                                 <div class="form_box_input">
                                     <label for="password">Nouveau mot de passe :</label>
@@ -127,6 +120,16 @@ include('inc/header.php'); ?>
                                 </div>
                                 <div class="error_box">
                                     <span class="error"><?= viewError($errors,'portable'); ?></span>
+                                </div>
+                            </div>
+
+                            <div class="form_box_modif">
+                                <div class="form_box_input">
+                                    <label for="password">Mot de passe de validation :</label>
+                                    <input type="password" name="password" id="password" value="">
+                                </div>
+                                <div class="error_box">
+                                    <span class="error"><?= viewError($errors,'password'); ?></span>
                                 </div>
                             </div>
 
