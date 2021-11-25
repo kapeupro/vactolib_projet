@@ -61,6 +61,7 @@ $vaccin_rappel=getRappelDuree($vaccin_id)['rappel'];
     }
 }
 
+
 include('inc/header.php');
 ?>
     <link rel="stylesheet" href="asset/css/style_user.css">

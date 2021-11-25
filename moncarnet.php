@@ -20,6 +20,7 @@ if(!empty($_GET['page']) && is_numeric($_GET['page'])) {
     $currentPage = $_GET['page'];
     $offset = ($currentPage - 1) * $itemsPerPage;
 }
+
 $user_vaccins = getVaccins($itemsPerPage, $offset, $id_session);
 $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
 
