@@ -15,12 +15,17 @@ $user= getUserById($id_session);
 /*Requete pour aller chercher tout les vaccins*/
 $vaccins=recupVaccins();
 
-
+debug($vaccins);
 if(!empty($_POST['submitted'])) {
     // Faille xss
     $vaccin = cleanXss('vaccin');
     $vaccin_id= cleanXss('vaccin');
     $vaccin_date= cleanXss('vaccin_date');
+
+
+//Requete pour récuperer la durée du Rappel
+$vaccin_rappel=getRappelDuree($vaccin_id)['rappel'];
+debug($vaccin_rappel);
 
     if(!empty($_POST['vaccin'])){
     }else{
@@ -31,13 +36,26 @@ if(!empty($_POST['submitted'])) {
         $errors['vaccin_date'] = "* Veuillez renseigner une date";
     }
 
+    if(empty($errors['vaccin'])) {
+        $sql = "SELECT * FROM vactolib_user_vaccins WHERE vaccin_id = :id";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':id',$vaccin_id,PDO::PARAM_STR);
+        $query->execute();
+        $verifPseudo = $query->fetch();
+        if(!empty($verifPseudo)) {
+            $errors['vaccin'] = 'Vous avez déjà ajouté ce vaccin à votre carnet';
+        }
+    }
+
     if(count($errors) == 0){
-        $sql = "INSERT INTO `vactolib_user_vaccins`(`user_id`, `vaccin_id`, `vaccin_date` ,`created_at` ) 
-    VALUES (:user_id,:vaccin_id, :vaccin_date ,NOW() )";
+        $sql = "INSERT INTO `vactolib_user_vaccins`(`user_id`, `vaccin_id`, `vaccin_date`,`vaccin_rappel` ,`created_at` ) 
+    VALUES (:user_id,:vaccin_id, :vaccin_date,:vaccin_rappel ,NOW() )";
         $query = $pdo->prepare($sql);
         $query->bindValue(':user_id',$id_session,PDO::PARAM_INT);
         $query->bindValue(':vaccin_id',$vaccin_id,PDO::PARAM_INT);
         $query->bindValue(':vaccin_date',$vaccin_date,PDO::PARAM_STR);
+        $query->bindValue(':vaccin_rappel',$vaccin_rappel,PDO::PARAM_INT);
+
         $query->execute();
         $user_vaccins= $query->fetch();
         $success=true;

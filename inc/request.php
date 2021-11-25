@@ -73,7 +73,7 @@ function countAllVaccinUser()
 function getVaccins(int $limit = 10, $offset = 0, $id_session)
 {
     global $pdo;
-    $sqlleft = "SELECT vv.nom_vaccin, vv.laboratoire, vv.id ,vuv.vaccin_date
+    $sqlleft = "SELECT vv.nom_vaccin, vv.laboratoire, vv.id ,vuv.vaccin_date, vuv.vaccin_rappel
         FROM vactolib_user_vaccins AS vuv
         LEFT JOIN vactolib_vaccins AS vv
         ON vv.id = vuv.vaccin_id
@@ -129,4 +129,13 @@ function recupVaccins(){
     $query = $pdo->prepare($sql);
     $query->execute();
     return $query->fetchAll();
+}
+
+function getRappelDuree($idVaccin){
+    global $pdo;
+    $sql = "SELECT * FROM vactolib_vaccins WHERE id=:id_vaccin";
+    $query = $pdo->prepare($sql);
+    $query->bindValue(':id_vaccin', $idVaccin,PDO::PARAM_INT);
+    $query->execute();
+    return $query->fetch();
 }
