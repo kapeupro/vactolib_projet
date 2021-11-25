@@ -95,8 +95,9 @@
     #register_form .wrap2{
         width: 90%;
     }
-    #register_form input {
-        width: 80%;
+
+    .logo img{
+        width: 25rem;
     }
 }
 
@@ -220,6 +221,9 @@
     }
     #profil_container .wrap .info_profil .box_items .info_list form .form_box_modif .form_box_input{
         gap: 1rem;
+    }
+    .logo img{
+        width: 15rem;
     }
 }
 
