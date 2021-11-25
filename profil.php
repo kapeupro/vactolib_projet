@@ -41,7 +41,7 @@ include('inc/header.php'); ?>
                             <li>Mail : <?php echo $user['email'] ?></li>
                             <li>Mot de passe : ******</li>
                             <li>Date de naissance : <?php if(empty($user['date_de_naissance'])){echo "Non renseigné";}else{echo date(   $user['date_de_naissance']);} ?></li>
-                            <li>Tél : +33 <?php if(empty($user['portable'])){echo "Non renseigné";}else{echo $user['portable'];} ?></li>
+                            <li>Tél : <?php if(empty($user['portable'])){echo "Non renseigné";}else{echo  '+33 '.$user['portable'].'';} ?></li>
                         </ul>
                     </div>
                 </div>
