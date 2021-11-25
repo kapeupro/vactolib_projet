@@ -66,7 +66,7 @@ if(!empty($_SESSION)) {
                         <img src="asset/img/pq_vactolib2.png" alt="img2">
                     </div>
                     <div class="boxs_text">
-                        <p>Retrouvez votre historique de vacination et vos documents de rappel.</p>
+                        <p>Inscription rapide et gratuite.</p>
                     </div>
                 </li>
                 <li>
@@ -74,7 +74,7 @@ if(!empty($_SESSION)) {
                         <img src="asset/img/pq_vactolib3.png" alt="img3">
                     </div>
                     <div class="boxs_text">
-                        <p>Accédez aux disponibilités de dizaines de milliers de professionnels de santé.</p>
+                        <p>Accédez à votre carnet vaccinal en toute simplicité.</p>
                     </div>
                 </li>
                 <li>
@@ -82,7 +82,7 @@ if(!empty($_SESSION)) {
                         <img src="asset/img/pq_vactolib4.png" alt="img4">
                     </div>
                     <div class="boxs_text">
-                        <p>Prenez rendez vous en ligne, 24h/24 et 7j/7, pour une consultation physique ou vidéo.</p>
+                        <p>Retrouvez votre historique de vacination et vos documents de rappel.</p>
                     </div>
                 </li>
             </ul>
@@ -186,7 +186,7 @@ if(!empty($_SESSION)) {
                         <img src="asset/img/pq_vactolib2.png" alt="img2">
                     </div>
                     <div class="boxs_text">
-                        <p>Retrouvez votre historique de vacination et vos documents de rappel.</p>
+                        <p>Inscription rapide et gratuite.</p>
                     </div>
                 </li>
                 <li>
@@ -194,7 +194,7 @@ if(!empty($_SESSION)) {
                         <img src="asset/img/pq_vactolib3.png" alt="img3">
                     </div>
                     <div class="boxs_text">
-                        <p>Accédez aux disponibilités de dizaines de milliers de professionnels de santé.</p>
+                        <p>Accédez à votre carnet vaccinal en toute simplicité.</p>
                     </div>
                 </li>
                 <li>
@@ -202,7 +202,7 @@ if(!empty($_SESSION)) {
                         <img src="asset/img/pq_vactolib4.png" alt="img4">
                     </div>
                     <div class="boxs_text">
-                        <p>Prenez rendez vous en ligne, 24h/24 et 7j/7, pour une consultation physique ou vidéo.</p>
+                        <p>Retrouvez votre historique de vacination et vos documents de rappel.</p>
                     </div>
                 </li>
             </ul>
