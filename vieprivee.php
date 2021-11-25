@@ -8,7 +8,7 @@ require('inc/request.php');
 
 
 include('inc/header.php'); ?>
-
+<?php if(!empty($_SESSION)){ echo'<link rel="stylesheet" href="asset/css/style_user.css">';} else {echo '<link rel="stylesheet" href="asset/css/style.css">';} ?>
     <section>
         <div class="title_vieprivee">
             <h2>Avec Vactolib, vous êtes les chefs de vos données !</h2>

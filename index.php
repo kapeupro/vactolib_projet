@@ -18,7 +18,6 @@ if(!empty($_SESSION)) {
     $user = getUserById($id);
 
     include('inc/header.php'); ?>
-    <link rel="stylesheet" href="asset/css/style_user.css">
     <section>
         <div class="container_accueil">
             <div class="wrap">
@@ -33,8 +32,8 @@ if(!empty($_SESSION)) {
                             <?php } ?>
 
                             <div class="accueil_buttons_container">
-                                <a class="button_type1" href="moncarnet.php?page=1">Mon Carnet</a>
-                                <a class="button_type1" href="profil.php">Mon Profil</a>
+                                <a class="button_type1" href="moncarnet.php?page=1">Carnet</a>
+                                <a class="button_type1" href="profil.php">Profil</a>
                             </div>
                         </div>
                     </div>
@@ -138,6 +137,7 @@ if(!empty($_SESSION)) {
     //PARTIE UTILISATEUR PAS CONNECTED
     include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/responsive.css">
     <section>
         <div class="container_accueil">
             <div class="wrap">
@@ -145,7 +145,7 @@ if(!empty($_SESSION)) {
                     <div class="items_accueil_p">
                         <div class="p_items_a">
                             <p>Vactolib est une application <br>
-                                pilotée par l'État pour vous retrouver dans vos différents vaccins.</p>
+                                permettant de vous retrouver dans vos différents vaccins.</p>
                         </div>
                         <div class="accueil_buttons_container">
                             <div class="button_type1">

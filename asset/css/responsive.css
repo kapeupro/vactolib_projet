@@ -35,9 +35,19 @@
     #stats_chiffre .tache_box .tache_para {
         background-size:50%
     }
+    #stats ul.boxs {
+        display: flex;
+        justify-content: center;
+        flex-flow: row nowrap;
+        padding: 4rem 0 4rem 0;
+        gap: 10rem;
+    }
     #donnes_secure {
         display: flex;
         margin: 4rem;
+    }
+    #stats ul.boxs{
+        flex-flow: row wrap;
     }
     #stats_chiffre .wrap {
         display: flex;
@@ -65,6 +75,40 @@
 
     footer {
         display: flex;
+    }
+}
+@media screen and (max-width: 1024px) {
+    #stats_chiffre .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+    #stats_chiffre {
+        display: flex;
+        margin: 1rem;
+    }
+    #stats_chiffre .wrap {
+        display: flex;
+        flex-flow: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #stats_chiffre .tache1 {
+        background: center /contain no-repeat url(../img/tache.png);
+        width: 45%;
+    }
+    #stats_chiffre .tache2 {
+        background: center url(../img/tache2.svg) no-repeat;
+        width: 45%;
+    }
+    #stats_chiffre .tache3 {
+        background: center url(../img/tache3.svg) no-repeat;
+        width: 45%;
+    }
+    #stats_chiffre .tache4 {
+        background: center url(../img/tache4.svg) no-repeat;
+        width: 45%;
     }
 }
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 990px */
@@ -111,6 +155,7 @@
     .items_groupe{
         display: none;
     }
+
     .separator {
         background-size: cover;
         height: 6rem;
@@ -118,8 +163,9 @@
     }
     #stats ul.boxs{
         flex-flow: row wrap;
-
+        gap: 5rem;
     }
+
     #stats_chiffre {
         display: flex;
 
@@ -136,6 +182,14 @@
 
     #stats ul.boxs li {
         width: 40%;
+
+    }
+    .ds_text {
+        display: flex;
+        gap: 4rem;
+    }
+    .logo_coffre img {
+        width: 100%;
     }
     #stats_chiffre .tache1 {
         background: center /contain no-repeat url(../img/tache.png);
@@ -170,6 +224,13 @@
     }
 }
 
+@media screen and (max-width: 610px){
+    .items_accueil, .container_accueil, .separator{
+        display: none;
+    }
+}
+
+
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 425px */
 @media screen and (max-width: 610px) {
     #profil_container .wrap .info_profil .box_items{
@@ -182,6 +243,12 @@
         display: none;
     }
 }
+
+/* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 558px */
+@media screen and (max-width: 558px) {
+
+}
+
 
 /* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 375px */
 @media screen and (max-width: 440px) {
@@ -202,11 +269,6 @@
         gap: 1rem;
     }
 }
+{
 
-/* Écriture du code CSS souhaité pour les appareils avec écran et dont la largeur maximale est de 325px */
-@media screen and (max-width: 325px) {
-    .items-carnet{
-        width: 250px;
-    }
 }
-
