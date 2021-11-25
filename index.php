@@ -5,30 +5,17 @@ require('inc/fonction.php');
 require('inc/request.php');
 
 // Recup tout les vaccins pour affichage stats
-$sql = "SELECT COUNT(*) AS resultUsers FROM vactolib_user ";
-$query = $pdo->prepare($sql);
-$query->execute();
-$allUsers= $query->fetch();
+$allUsers= recupUserStats();
+
 // Recup tout les ajouts dans carnet pour affichage stats
-$sql = "SELECT COUNT(*) AS resultAjout FROM vactolib_vaccins ";
-$query = $pdo->prepare($sql);
-$query->execute();
-$allAjout= $query->fetch();
+$allAjout=recupVaccinsStats();
 
 //PARTIE UTILISATEUR CONNECTED
 if(!empty($_SESSION)) {
 
-    $id_session = $_SESSION['user']['id'];
+    $id= $_SESSION['user']['id'];
 
-    $sql = "SELECT * FROM vactolib_user WHERE id=:id ";
-    $query = $pdo->prepare($sql);
-    $query->bindValue(':id', $id_session, PDO::PARAM_STR);
-    $query->execute();
-    $user = $query->fetch();
-
-
-    debug($user);
-    debug($_SESSION);
+    $user = getUserById($id);
 
     include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style_user.css">

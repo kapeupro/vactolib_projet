@@ -8,37 +8,32 @@ verifUserConnected();
 $success=false;
 $id_session=$_SESSION['user']['id'];
 $errors=[];
-debug($_POST);
 
-$sql = "SELECT * FROM vactolib_user WHERE id=:id ";
-$query = $pdo->prepare($sql);
-$query->bindValue(':id',$id_session,PDO::PARAM_STR);
-$query->execute();
-$user= $query->fetch();
+$user= getUserById($id_session);
 
 /*Requete pour aller chercher tout les vaccins*/
-$sql = "SELECT * FROM vactolib_vaccins";
-$query = $pdo->prepare($sql);
-$query->execute();
-$vaccins= $query->fetchAll();
+$vaccins=recupVaccins();
 
 
 if(!empty($_POST['submitted'])) {
     // Faille xss
     $vaccin = cleanXss('vaccin');
-    $vaccin_id= $_POST['vaccin'];
+    $vaccin_id= cleanXss('vaccin');
+    $vaccin_date= cleanXss('vaccin_date');
 
-    if (!empty($_POST['vaccin'])){
+     debug($_POST);
+    if(!empty($_POST['vaccin'])){
     }else{
         $errors['vaccin'] = "* Veuillez séléctionner un vaccin";
     }
 
     if(count($errors) == 0){
-        $sql = "INSERT INTO `vactolib_user_vaccins`(`user_id`, `vaccin_id`, `created_at` ) 
-    VALUES (:user_id,:vaccin_id, NOW() )";
+        $sql = "INSERT INTO `vactolib_user_vaccins`(`user_id`, `vaccin_id`, `vaccin_date` ,`created_at` ) 
+    VALUES (:user_id,:vaccin_id, :vaccin_date ,NOW() )";
         $query = $pdo->prepare($sql);
         $query->bindValue(':user_id',$id_session,PDO::PARAM_INT);
         $query->bindValue(':vaccin_id',$vaccin_id,PDO::PARAM_INT);
+        $query->bindValue(':vaccin_date',$vaccin_date,PDO::PARAM_STR);
         $query->execute();
         $user_vaccins= $query->fetch();
         $success=true;
@@ -61,8 +56,9 @@ include('inc/header.php');
                         <option value="<?php echo $vaccin['id'] ?> "><?php echo $vaccin['nom_vaccin'] ?></option>
                     <?php } ?>
                 </select>
-                <label for="date">Date de l'injection :</label>
-                <input type="date" name="date_vaccin">
+                <label for="vaccin_date">Date de l'injection :</label>
+                <input type="date" name="vaccin_date">
+
                 <div class="error_box">
                     <input class="button_type1" type="submit" name="submitted" id="submitted" value="Ajouter">
                     <span class="error"><?php viewError($errors, 'vaccin'); ?></span>
