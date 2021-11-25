@@ -109,6 +109,11 @@ function verifUserConnected(){
         header('Location: login.php');
     }
 }
+function verifUserConnectedAdmin(){
+    if (isAdmin()==false){
+        header('Location: ../../../403.php');
+    }
+}
 
 function verifUserAlreadyConnected(){
     if (isLogged()==true){

@@ -17,7 +17,7 @@ if(!empty($_POST['submitted'])) {
     $query->bindValue(':login',$login,PDO::PARAM_STR);
     $query->execute();
     $user= $query->fetch();
-//    debug($user);
+
     if(empty($user)) {
         $errors['login'] = 'Email invalide';
     } else {

@@ -22,7 +22,6 @@ if(!empty($_POST['submitted'])) {
     $vaccin_id= cleanXss('vaccin');
     $vaccin_date= cleanXss('vaccin_date');
 
-    debug($_POST);
     if(!empty($_POST['vaccin'])){
     }else{
         $errors['vaccin'] = "* Veuillez séléctionner un vaccin";

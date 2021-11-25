@@ -29,7 +29,7 @@ if(!empty($_GET['page']) && is_numeric($_GET['page'])) {
 }
 
 $user_vaccins = getVaccins($itemsPerPage, $offset, $id_session);
-debug($user_vaccins);
+
 $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
 
 //initialisation d'un compteur pour la boucle foreach

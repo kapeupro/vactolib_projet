@@ -6,11 +6,8 @@ require('inc/fonction.php');
 require('inc/request.php');
 verifUserConnected();
 
-debug($_SESSION);
 $id_session=$_SESSION['user']['id'];
-
 $user=getUserBySessionId($id_session);
-debug($user);
 
 if(!empty($_GET['id']) && is_numeric($_GET['id'])){
 

@@ -3,7 +3,8 @@ session_start();
 require('../../../inc/pdo.php');
 require('../../../inc/fonction.php');
 require('../../../inc/request.php');
-if ($_SESSION['user']['status']=='admin'){
+verifUserConnectedAdmin();
+
 // Recup tout les vaccins pour affichage stats
 $sql = "SELECT COUNT(*) AS resultUsers FROM vactolib_user ";
 $query = $pdo->prepare($sql);
@@ -212,4 +213,3 @@ $allVaccins= $query->fetch();
 </body>
 
 </html>
-<?php } else{die('403');} ?>

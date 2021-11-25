@@ -44,7 +44,7 @@ if(!empty($_POST['submitted'])) {
             $errors['email'] = 'Un compte existe déjà sur cette adresse email';
         }
     }
-debug($verifPseudo);
+
     if(count($errors) == 0){
         $hashpassword = password_hash($password2,PASSWORD_DEFAULT);
 
@@ -53,7 +53,7 @@ debug($verifPseudo);
                 WHERE id = :id";
         $query = $pdo->prepare($sql);
         $query->bindValue(':email',$email,PDO::PARAM_STR);
-        $query->bindValue(':date_de_naissance',$date_de_naissance,PDO::PARAM_INT);
+        $query->bindValue(':date_de_naissance',$date_de_naissance,PDO::PARAM_STR);
         $query->bindValue(':portable',$portable,PDO::PARAM_INT);
         $query->bindValue(':password',$hashpassword,PDO::PARAM_STR);
         $query->bindValue(':id', $user['id'], PDO::PARAM_INT);

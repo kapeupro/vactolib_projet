@@ -4,12 +4,9 @@ require('inc/pdo.php');
 require('inc/fonction.php');
 require('inc/request.php');
 verifUserConnected();
-debug($_SESSION);
+
 $id_session=$_SESSION['user']['id'];
-
 $user= getUserBySessionId($id_session);
-
-
 
 $sqlleft = "SELECT vv.nom_vaccin, vv.laboratoire, vv.id ,vuv.created_at
         FROM vactolib_user_vaccins AS vuv
@@ -43,7 +40,7 @@ include('inc/header.php'); ?>
                         <ul>
                             <li>Mail : <?php echo $user['email'] ?></li>
                             <li>Mot de passe : ******</li>
-                            <li>Date de naissance : <?php if(empty($user['date_de_naissance'])){echo "Non renseigné";}else{echo $user['date_de_naissance'];} ?></li>
+                            <li>Date de naissance : <?php if(empty($user['date_de_naissance'])){echo "Non renseigné";}else{echo date(   $user['date_de_naissance']);} ?></li>
                             <li>Tél : +33 <?php if(empty($user['portable'])){echo "Non renseigné";}else{echo $user['portable'];} ?></li>
                         </ul>
                     </div>

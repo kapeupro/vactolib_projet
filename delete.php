@@ -7,16 +7,16 @@ require('inc/fonction.php');
 require('inc/request.php');
 verifUserConnected();
 $id_session= $_SESSION['user']['id'];
-debug($id_session);
+
 
 //Recupère l'id singulier du vaccin à supprimer
 $vaccin_id=$_GET['id'];
 $vaccin_select = getVaccinById($vaccin_id);
-debug($vaccin_select);
+
 
 //On récupère tous les vaccins de l'utilisateur
 $user_vaccins=getUserVaccinsBySessionId($id_session);
-debug($user_vaccins);
+
 
 
 if(!empty($_GET['id']) && is_numeric($_GET['id'])){
