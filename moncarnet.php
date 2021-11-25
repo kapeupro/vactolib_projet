@@ -27,7 +27,7 @@ $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern
 
 //initialisation d'un compteur pour la boucle foreach
 $i = 0;
-debug($user_vaccins);
+
 include('inc/header.php'); ?>
     <section>
         <div class="title-carnet">
