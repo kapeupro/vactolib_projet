@@ -57,7 +57,8 @@ include('inc/header.php'); ?>
                                 <p> <?php echo $user['nom'];echo' ';echo $user['prenom'] ?></p>
                                 <p><?php echo $user_vaccins[$i]['laboratoire'] ?> fait le <?php echo dateFormatWithoutHour($user_vaccins[$i]['vaccin_date'], 'd/m/Y') ?></p>
                                 <a class="button_type2" href="detail.php?id=<?php echo $user_vaccins[$i]['id']; ?> "> En savoir plus </a>
-                                <a class="button_type2" href="delete.php?id=<?php echo $user_vaccins[$i]['id'] ?>"> Supprimer </a>
+                                <a onclick="Validation()" class="button_type2" href="delete.php?id=<?php echo $user_vaccins[$i]['id'] ?>"> Supprimer </a>
+                                <script>function Validation() {confirm("Voulez-vous vraiment supprimer ce vaccin de votre carnet ?");}</script>
                             </div>
                             <?php $i++; } ?>
                     </div>
