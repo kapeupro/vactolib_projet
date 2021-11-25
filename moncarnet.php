@@ -20,6 +20,7 @@ if(!empty($_GET['page']) && is_numeric($_GET['page'])) {
     $currentPage = $_GET['page'];
     $offset = ($currentPage - 1) * $itemsPerPage;
 }
+
 $user_vaccins = getVaccins($itemsPerPage, $offset, $id_session);
 $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
 
@@ -47,9 +48,9 @@ include('inc/header.php'); ?>
                             <div class="items-carnet">
                                 <h3>Vaccination <?php echo $user_vaccins[$i]['nom_vaccin']; ?></h3>
                                 <p> <?php echo $user['nom'];echo' ';echo $user['prenom'] ?></p>
-<!--                                <p> Rappel le --><?php //echo date_add($user_vaccins[$i]['vaccin_date'],date_interval_create_from_date_string($user_vaccins[$i]['vaccin_rappel'])) ?><!-- </p>-->git p
                                 <p><?php echo $user_vaccins[$i]['laboratoire'] ?> fait le <?php echo dateFormatWithoutHour($user_vaccins[$i]['vaccin_date'], 'd/m/Y') ?></p>
-                                <a class="button_type1" href="detail.php?id=<?php echo $user_vaccins[$i]['id']; ?> "> Plus d'info </a>
+                                <p> Rappel le <?php $oldDate   = $user_vaccins[$i]['vaccin_date']; $date1 = date("Y-m-d", strtotime($oldDate.'+ '.$user_vaccins[$i]['vaccin_rappel'].' days')); echo dateFormatWithoutHour($date1); ?> </p>
+                                <a class="button_type1" style="margin-top: .5rem;" href="detail.php?id=<?php echo $user_vaccins[$i]['id']; ?> "> Plus d'info </a>
                                 <a onclick="return confirm('Voulez-vous vraiment supprimer ce vaccin de votre carnet ?')" class="button_type2" href="delete.php?id=<?php echo $user_vaccins[$i]['id'] ?>"> Supprimer </a>
 
                             </div>
@@ -63,9 +64,12 @@ include('inc/header.php'); ?>
             </div>
         <?php } ?>
 
-        <div class="text-center">
-            <?php echo $paginator; ?>
-        </div>
+        <?php if(!empty($user_vaccins)){ ?>
+            <div class="text-center" style="font-size: 1rem;">
+                <?php echo $paginator; ?>
+            </div>
+        <?php } ?>
+
 
     </section>
 

@@ -443,6 +443,10 @@ input[type=submit]{
     display: flex;
 }
 
+.items-carnet .button_type1{
+    height: 40px;
+}
+
 /*PAGINATION*/
 
 .pagination{

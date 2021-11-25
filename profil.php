@@ -8,7 +8,7 @@ verifUserConnected();
 $id_session=$_SESSION['user']['id'];
 $user= getUserBySessionId($id_session);
 
-$sqlleft = "SELECT vv.nom_vaccin, vv.laboratoire, vv.id ,vuv.created_at
+$sqlleft = "SELECT vv.nom_vaccin, vv.laboratoire, vv.id ,vuv.created_at, vuv.vaccin_date, vuv.vaccin_rappel
         FROM vactolib_user_vaccins AS vuv
         LEFT JOIN vactolib_vaccins AS vv
         ON vv.id = vuv.vaccin_id
@@ -56,7 +56,7 @@ include('inc/header.php'); ?>
                             <li>Dernier vaccin : <?php if(!empty($userVaccin)) {echo $userVaccin['nom_vaccin'];} else{ echo'Aucun vaccin n\'a été enregistré'; } ?></li>
                             <?php if (!empty($userVaccin)){ ?>
                             <li>Ajouté le : <?php if(!empty($userVaccin)) { echo dateFormatWithoutHour($userVaccin['created_at']); } ?> </li>
-                            <li>Rappel le : </li>
+                            <li>Rappel le : <?php $oldDate = $userVaccin['vaccin_date']; $date1 = date("Y-m-d", strtotime($oldDate.' + '.$userVaccin['vaccin_rappel'].' days')); echo dateFormatWithoutHour($date1); ?></li>
                             <?php } ?>
                         </ul>
                     </div>
@@ -68,8 +68,8 @@ include('inc/header.php'); ?>
                     <img src="asset/img/illustration_profil.svg" alt="Homme avec un ordinateur dans les mains">
                 </div>
 
-                <div class="button_type1">
-                    <a href="moncarnet.php?page=1">Mon carnet</a>
+                <div class="button_profil">
+                    <a class="button_type1" href="moncarnet.php?page=1">Mon carnet</a>
                 </div>
             </div>
         </div>

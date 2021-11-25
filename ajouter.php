@@ -15,7 +15,7 @@ $user= getUserById($id_session);
 /*Requete pour aller chercher tout les vaccins*/
 $vaccins=recupVaccins();
 
-debug($vaccins);
+
 if(!empty($_POST['submitted'])) {
     // Faille xss
     $vaccin = cleanXss('vaccin');
@@ -24,7 +24,7 @@ if(!empty($_POST['submitted'])) {
 
 //Requete pour récuperer la durée du Rappel
 $vaccin_rappel=getRappelDuree($vaccin_id)['rappel'];
-debug($vaccin_rappel);
+
 
     if(!empty($_POST['vaccin'])){
     }else{
@@ -60,6 +60,7 @@ debug($vaccin_rappel);
         $success=true;
     }
 }
+
 
 include('inc/header.php');
 ?>
