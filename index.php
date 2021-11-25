@@ -18,7 +18,6 @@ if(!empty($_SESSION)) {
     $user = getUserById($id);
 
     include('inc/header.php'); ?>
-    <link rel="stylesheet" href="asset/css/style_user.css">
     <section>
         <div class="container_accueil">
             <div class="wrap">
@@ -138,6 +137,7 @@ if(!empty($_SESSION)) {
     //PARTIE UTILISATEUR PAS CONNECTED
     include('inc/header.php'); ?>
     <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/responsive.css">
     <section>
         <div class="container_accueil">
             <div class="wrap">
