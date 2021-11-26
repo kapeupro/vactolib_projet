@@ -16,7 +16,7 @@ include('inc/header.php'); ?>
             <div class="container_vieprivee_1">
                 <div class="items_vie_1">
                     <h3>Les crypto-identifiants échangés sont anonymes et sécurisés</h3>
-                    <p>Les données de TousAntiCovid sont stockées localement sur votre téléphone et peuvent être supprimées à tout moment.
+                    <p>Les données de Vactolib sont stockées localement sur votre téléphone et peuvent être supprimées à tout moment.
                         Son fonctionnement rend impossible, et pour quiconque, la possiblité de reconstituer la liste des personnes ayant
                         déclaré être contaminées. Il s'agit du principe au cœur de l’application, de telle manière que personne ne puisse ni
                         retracer la liste des personnes testées positives ni, le cas échéant, reconstituer la chaîne de transmission.</p>
@@ -31,7 +31,7 @@ include('inc/header.php'); ?>
                     <h3>Un stockage exclusivement local de vos documents</h3>
                     <p>Tant que vous ne vous vous déclarez pas comme positif à la Covid-19, c'est l'application qui vérifie auprès du serveur si ses propres crypto-identifiants se trouvent parmi ceux disponibles
                         sur le serveur et non l'inverse. Par ailleurs, lors du contrôle d'un pass sanitaire sur le territoire national ou lors de vos voyages, les autorités compétentes (personnel habilité, police)
-                        peuvent accéder à vos certificats avec l’application TAC Verif. Seule l'authenticité de signature du certificat est alors vérifiée par un serveur dédié d'IN Groupe (Imprimerie Nationale).</p>
+                        peuvent accéder à vos certificats avec l’application TAC Verif carnet. Seule l'authenticité de signature du certificat est alors vérifiée par un serveur dédié d'IN Groupe (Imprimerie Nationale).</p>
                 </div>
                 <div class="image_vieprivee_1">
                     <a href="https://www.o2switch.fr/">
