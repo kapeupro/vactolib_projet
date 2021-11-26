@@ -14,8 +14,5 @@ if(!empty($_GET['id']) && is_numeric($_GET['id'])){
         $query->bindValue(':id', $id, PDO::PARAM_INT);
         $query ->execute();
         header('Location: basic-table.php');
-    }else{
-        header("Location: 404.php");
-        die();
     }
 }

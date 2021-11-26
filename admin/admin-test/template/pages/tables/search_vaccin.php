@@ -115,5 +115,4 @@ if ($_SESSION['user']['status']=='admin'){
                     </div>
                 </div>
             </div>
-
 <?php include('../../inc/footer.php'); } ?>
