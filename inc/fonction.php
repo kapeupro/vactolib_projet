@@ -111,12 +111,12 @@ function verifUserConnected(){
 }
 function verifUserConnectedAdmin(){
     if (isAdmin()==false){
-        header('Location: http://localhost/Vactolib/403.php');
+        header('Location: ../../../403.php');
     }
 }
 function verifUserConnectedAdminTables(){
     if (isAdmin()==false){
-        header('Location: http://localhost/Vactolib/403.php');
+        header('Location:../../../../../403.php');
     }
 }
 

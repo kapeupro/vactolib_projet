@@ -35,16 +35,16 @@ if(!empty($_POST['submitted'])) {
 
 
     if(empty($errors['vaccin'])) {
-        $sql = "SELECT * FROM vactolib_user_vaccins WHERE vaccin_id = :id";
+        $sql = "SELECT * FROM vactolib_user_vaccins WHERE vaccin_id = :id AND user_id = :user_id";
         $query = $pdo->prepare($sql);
         $query->bindValue(':id',$vaccin_id,PDO::PARAM_STR);
+        $query->bindValue(':user_id',$id_session,PDO::PARAM_STR);
         $query->execute();
         $verifPseudo = $query->fetch();
         if(!empty($verifPseudo)) {
             $errors['vaccin'] = 'Vous avez déjà ajouté ce vaccin à votre carnet';
         }
     }
-
     if(count($errors) == 0){
         $vaccin_rappel=getRappelDuree($vaccin_id)['rappel'];
         $sql = "INSERT INTO `vactolib_user_vaccins`(`user_id`, `vaccin_id`, `vaccin_date`,`vaccin_rappel` ,`created_at` ) 
