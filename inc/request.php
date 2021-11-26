@@ -59,11 +59,12 @@ function getVaccinById($id)
 
 /*COMPTER TOUT LES VACCIN AJOUTE*/
 
-function countAllVaccinUser()
+function countAllVaccinUser($id)
 {
     global $pdo;
-    $sql = "SELECT COUNT(id) FROM vactolib_user_vaccins";
+    $sql = "SELECT COUNT(id) FROM vactolib_user_vaccins WHERE user_id=:id";
     $query = $pdo->prepare($sql);
+    $query->bindValue(':id', $id, PDO::PARAM_INT);
     $query->execute();
     return $query->fetchColumn();
 }

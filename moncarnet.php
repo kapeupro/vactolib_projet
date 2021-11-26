@@ -14,7 +14,7 @@ $user= getUserBySessionId($id_session);
 // PAGINATION
 $currentPage = 1;
 $itemsPerPage = 2;
-$totalItems = countAllVaccinUser();
+$totalItems = countAllVaccinUser($id_session);
 $urlPattern = '?page=(:num)';
 if(!empty($_GET['page']) && is_numeric($_GET['page'])) {
     $currentPage = $_GET['page'];
