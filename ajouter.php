@@ -22,8 +22,6 @@ if(!empty($_POST['submitted'])) {
     $vaccin_id= cleanXss('vaccin');
     $vaccin_date= cleanXss('vaccin_date');
 
-//Requete pour récuperer la durée du Rappel
-$vaccin_rappel=getRappelDuree($vaccin_id)['rappel'];
 
 
     if(!empty($_POST['vaccin'])){
@@ -34,6 +32,7 @@ $vaccin_rappel=getRappelDuree($vaccin_id)['rappel'];
     }else{
         $errors['vaccin_date'] = "* Veuillez renseigner une date";
     }
+
 
     if(empty($errors['vaccin'])) {
         $sql = "SELECT * FROM vactolib_user_vaccins WHERE vaccin_id = :id";
@@ -47,6 +46,7 @@ $vaccin_rappel=getRappelDuree($vaccin_id)['rappel'];
     }
 
     if(count($errors) == 0){
+        $vaccin_rappel=getRappelDuree($vaccin_id)['rappel'];
         $sql = "INSERT INTO `vactolib_user_vaccins`(`user_id`, `vaccin_id`, `vaccin_date`,`vaccin_rappel` ,`created_at` ) 
     VALUES (:user_id,:vaccin_id, :vaccin_date,:vaccin_rappel ,NOW() )";
         $query = $pdo->prepare($sql);
@@ -60,7 +60,6 @@ $vaccin_rappel=getRappelDuree($vaccin_id)['rappel'];
         $success=true;
     }
 }
-
 
 include('inc/header.php');
 ?>
