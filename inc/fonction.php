@@ -33,9 +33,9 @@ function textValidation($errors,$value,$key,$min=0,$max=500)
 {
 if(!empty($value)){
 if (mb_strlen($value)<$min) {
-$errors[$key]='Min '.$min.' caractères svp';
+$errors[$key]='Veuillez renseigner au minimum '.$min.' caractères';
 } elseif(mb_strlen($value)>$max){
-$errors[$key]='Max '.$max.' caractères svp';
+$errors[$key]='Veuillez renseigner au maximum '.$max.' caractères ';
 }
 } else{
 $errors[$key]='Veuillez renseigner ce champ';
@@ -111,7 +111,12 @@ function verifUserConnected(){
 }
 function verifUserConnectedAdmin(){
     if (isAdmin()==false){
-        header('Location: ../../../403.php');
+        header('Location: http://localhost/Vactolib/403.php');
+    }
+}
+function verifUserConnectedAdminTables(){
+    if (isAdmin()==false){
+        header('Location: http://localhost/Vactolib/403.php');
     }
 }
 

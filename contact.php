@@ -13,10 +13,7 @@ if(!empty($_POST['submitted']))
     $message   = cleanXss('message');
 
     $errors=mailValidation($errors,$email,'email');
-    $errors=textValidation($errors,$nom,'nom',2);
-    $errors=textValidation($errors,$phone,'phone',2);
     $errors=textValidation($errors,$message,'message',10,500);
-
 
     //If no error
     if(count($errors)==0){
@@ -34,23 +31,23 @@ include('inc/header.php');
     <form action="" method="post" class="wrapform" novalidate>
         <div class="boxinfo_contact_bis">
             <label for="nom"></label>
-            <input type="text" placeholder="Nom Prenom*" id="nom" name="nom" value="<?=recupInputValue('nom');?>">
+            <input type="text" placeholder="Nom Prenom" id="nom" name="nom" value="<?=recupInputValue('nom');?>">
             <span class="error"><?= viewError($errors,'nom'); ?></span>
+        </div>
+        <div class="boxinfo_contact_bis">
+            <label for="phone"></label>
+            <input type="tel" placeholder="Numéro de téléphone" pattern="[0-9]{10}" maxlength="10" id="phone" name="phone" value="<?= recupInputValue('phone'); ?>">
+            <span class="error"><?= viewError($errors,'phone'); ?></span>
         </div>
         <div class="boxinfo_contact">
             <label for="email"></label>
             <input type="email" placeholder="Email*" id="email" name="email" value="<?= recupInputValue('email'); ?>">
             <span class="error"><?= viewError($errors,'email'); ?></span>
         </div>
-        <div class="boxinfo_contact_bis">
-            <label for="phone"></label>
-            <input type="tel" placeholder="Numéro de téléphone*" pattern="[0-9]{10}" maxlength="10" id="phone" name="phone" value="<?= recupInputValue('phone'); ?>">
-            <span class="error"><?= viewError($errors,'phone'); ?></span>
-        </div>
         <div class="boxinfo_contact">
             <label for="message"></label>
             <textarea type="text" placeholder="Votre message...*" id="message" name="message" value=""></textarea>
-            <span class="error"><?= viewError($errors,'email'); ?></span>
+            <span class="error"><?= viewError($errors,'message'); ?></span>
         </div>
         <div class="button_type1">
             <input type="submit" name="submitted" value="ENVOYER">

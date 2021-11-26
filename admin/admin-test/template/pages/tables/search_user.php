@@ -4,7 +4,7 @@ session_start();
 require('../../../../../inc/pdo.php');
 require('../../../../../inc/fonction.php');
 require('../../../../../inc/request.php');
-
+verifUserConnectedAdminTables();
 $errors = [];
 $countAllUsers = 0;
 
@@ -115,5 +115,4 @@ if ($_SESSION['user']['status']=='admin'){
                 </div>
             </div>
 
-<?php include('../../inc/footer.php'); } else{header("Location: 403.php");
-    die();} ?>
+<?php include('../../inc/footer.php'); }  ?>

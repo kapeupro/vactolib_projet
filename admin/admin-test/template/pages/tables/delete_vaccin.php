@@ -4,7 +4,7 @@ session_start();
 require('../../../../../inc/pdo.php');
 require('../../../../../inc/fonction.php');
 require('../../../../../inc/request.php');
-
+verifUserConnectedAdminTables();
 if(!empty($_GET['id']) && is_numeric($_GET['id'])){
     $id = $_GET['id'];
     $vaccin = getVaccinById($id);
