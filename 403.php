@@ -11,6 +11,6 @@
 <div class="error-page">
     <div>
         <h1 data-h1="403">403</h1>
-        <p data-p="NOT FOUND">ACCESS DENIED</p>
+        <p data-p="ACCESS DENIED">ACCESS DENIED</p>
     </div>
 </div>
